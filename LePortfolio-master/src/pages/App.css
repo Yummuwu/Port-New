@@ -1,0 +1,62 @@
+.main-container {
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.children-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.child-container {
+  border: 2px dashed #ccc;
+  padding: 10px;
+  width: 200px;
+  height: 250px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.child-container input {
+  width: 100%;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.image-preview {
+  flex: 1;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.image-preview img {
+  max-width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+}
+
+
+
+
+#back {
+  background-color: rgb(34, 33, 33);
+  /*background-image: url("../assets/back.png"); */
+  background-size: cover; /* extend width */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@import "tailwindcss";
+
+@theme {
+  --animate-border: border 4s linear infinite;
+
+  @keyframes border {
+    to { --border-angle: 360deg; }
+  }
+}
+
