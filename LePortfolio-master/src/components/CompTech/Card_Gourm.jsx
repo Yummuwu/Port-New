@@ -5,44 +5,36 @@ import { useState } from "react";
 const techStack = [
   { label: "HTML / CSS", color: "text-orange-400 border-orange-400/40 bg-orange-400/5" },
   { label: "PHP", color: "text-indigo-400 border-indigo-400/40 bg-indigo-400/5" },
-  { label: "Laravel", color: "text-red-400 border-red-400/40 bg-red-400/5" },
+  { label: "Vue.js", color: "text-red-400 border-red-400/40 bg-red-400/5" },
   { label: "MySQL", color: "text-cyan-400 border-cyan-400/40 bg-cyan-400/5" },
   { label: "JavaScript", color: "text-purple-400 border-purple-400/40 bg-purple-400/5" },
 ];
 
 const deliverables = [
   {
-    title: "Site web",
-    desc: "Interface utilisateur regroupant les fonctionnalités de réservation, catalogue de jeux et gestion de compte ainsi que d'autres informations comme le contact ou la carte des snacks.",
+    title: "API RESTful",
+    desc: "Relis la base de données MySQL avec l'application web et mobile via une API RESTful sécurisée.",
   },
   {
-    title: "Système de compte",
-    desc: "Inscription, connexion et sessions sécurisées grace à Breeze intégré directement dans Laravel",
+    title: "Application web",
+    desc: "L'application web permet aux utilisateurs de s'inscrire à un concours de boulangerie et de consulter les résultats du concours. Elle permet aussi aux admins de générer et publier les résultats du concours.",
   },
   {
-    title: "Catalogue de jeux",
-    desc: "Navigation interactive dans la bibliothèque VR avec filtres intégrés relié à une base de données MySQL",
+    title: "Application mobile",
+    desc: "L'application mobile permet aux juges de noter les participants au concours de boulangerie grace à des codes uniques et de soumettre leurs notes via l'API RESTful.",
   },
   {
-    title: "Système de réservation",
-    desc: "Les utilisateur inscrit et connecté peuvent réserver des craineaux horaires pour faire l'éxpérience des jeux VR seul ou à plusieurs . Réservation synchronisée avec MySQL",
+    title: "Base de données MySQL",
+    desc: "Base de données relationnelle pour stocker les informations sur les participants, les notes, les résultats du concours ainsi que les paramètres du concours.",
   },
-];
-
-const companyCards = [
-  { label: "Secteur", value: "Divertissement VR" },
-  { label: "Localisation", value: "France" },
-  { label: "Activité", value: "Expériences de réalité virtuelle" },
-  { label: "Public cible", value: "Particuliers & professionnels" },
 ];
 
 const screenshots = [
-  { src: "screenshot1.png", label: "Catalogue" },
-  { src: "screenshot2.png", label: "Codes" },
-  { src: "screenshot3.png", label: "Réservation" },
-  { src: "screenshot4.png", label: "Base de données" },
+  { src: "screenshot1.png", label: "Base de données" },
+  { src: "screenshot2.png", label: "Application web" },
+  { src: "screenshot3.png", label: "Application mobile" },
+  { src: "screenshot4.png", label: "API RESTful" },
 ];
-// ─── Data ────────────────────────────────────────────────────────────────────
 
 const gestionProjets = [
   {
@@ -105,7 +97,7 @@ function Lightbox({ img, onClose }) {
 
 // ─── Main Component ───────────────────────────────────────────────────────────
 
-export default function CardVr() {
+export default function CardGourm() {
   const [activeImg, setActiveImg] = useState(null);
 
   return (
@@ -161,7 +153,7 @@ export default function CardVr() {
           </div>
 
           <p className="text-zinc-400 text-xl leading-relaxed max-w-2xl mb-5">
-            Conception et développement d'un site vitrine comprenant un système de réservation permettant aux utilisateurs de réserver des créneaux pour faire l'expérience de jeux VR.
+            Conception et développement d'une application web complète pour un concours de boulangerie fictif, avec une API RESTful en PHP, une base de données MySQL, une interface web pour les utilisateurs et une application mobile pour les juges.
           </p>
 
           <a
@@ -200,7 +192,7 @@ export default function CardVr() {
             <SectionLabel>Difficultés</SectionLabel>
             <GlassCard className="p-4">
               <p className="text-zinc-300 text-xl leading-relaxed">
-                La compléxité du projet en seulement 6 semaines a été le défi majeur. L'apprentissage rapide de Laravel et l'intégration de multiples fonctionnalités (système de compte, catalogue, réservation). Le manque d'encadrement à aussi ralenti l'avancement du projet. Pour finir, la modélisation de la base de données et la gestion des relations entre les différentes entités (utilisateurs, jeux, réservations) a été un aspect particulièrement complexe.
+                Beaucoup de routes possibles pour la structure de l'API RESTful, la base de données et les applications web/mobile. Le token JWT bloquait certaines routes de l'API.
               </p>
             </GlassCard>
           </section>
@@ -261,3 +253,5 @@ export default function CardVr() {
     </>
   );
 }
+
+

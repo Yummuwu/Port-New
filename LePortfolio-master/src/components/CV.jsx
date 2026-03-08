@@ -1,5 +1,3 @@
-import React from "react";
-import CV from "react-cv";
 
 export const Profil = () => {
   return (

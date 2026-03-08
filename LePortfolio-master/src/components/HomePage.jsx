@@ -2,14 +2,9 @@ import sql from '../assets/sql.png';
 import { motion } from "motion/react";
 import Logos from './CompTech/TechLogos';
 import Contact from './Contact';
-import CardBdd from './CompTech/Card_bdd';
-import CardBh from './CompTech/Card_bh';
-import CardCata from './CompTech/Card_cata';
-import CardReserv from './CompTech/Card_reserv';
-import CardGeek from './CompTech/Card_geek';
-import logoVr from '../assets/logoVr.png';
 import ParcoursCombined from './testComp';
 import CountUp from 'react-countup';
+import StackedImages from './CompTech/images';
 
 
 
@@ -191,7 +186,6 @@ const HomeP = () => {
                     </motion.div>
                 </div>
             </section>
-
             {/* Projects Section */}
             <section id="projects-section" className="px-4 sm:px-6 pb-20">
                 <div className="max-w-[120rem] mx-auto">
@@ -200,337 +194,52 @@ const HomeP = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="bg-gradient-to-br from-white/6 to-transparent backdrop-blur-xl rounded-[2rem] shadow-xl/30 p-8 md:p-12 border-2 border-purple-500/20 hover:border-blue-500/30 transition-all duration-500"
-                    >
-                        {/* Header */}
-                        <div className="flex flex-col lg:flex-row border-b pb-4 mb-6">
-                            <div className="flex flex-col items-center lg:items-start lg:w-1/3 mb-4 lg:mb-0">
-                                <div className="bg-teal-200 text-center w-24 h-24 flex items-center justify-center font-bold text-xs">
-                                    <img src={logoVr} alt="Description of the image" />
-                                </div>
-                            </div>
-            
-                            {/* Title and Date */}
-                            <div className="lg:w-2/3 pl-0 lg:pl-6">
-                            <h1 className="text-3xl font-bold text-teal-800 mb-2">VRtueux</h1>
-                            <p className="text-sm text-white/90">
-                                Cappello Alicia
-                                <br />
-                                5 janvier - 13 février 2026
-                            </p>
-                            </div>
-                        </div>
-                            <div className="flex gap-6">
-                            <div className="flex-1 pb-5 rounded-2xl p-10 min-h-[180px] flex items-start justify-start relative overflow-hidden group">
-                                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                <div className="relative z-10 w-full">
-                                    <div className="text-white/80 text-lg font-medium hover:text-purple-300 transition-colors duration-300">
-                                        <CardBdd />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="mt-16">
-                            <div className="flex items-center gap-4 mb-8">
-                                <div className="h-1 w-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-                                <div className="text-3xl md:text-3xl font-bold text-white tracking-tight">SWIPER</div>
-                            </div>
-                            <div>
-                                <div className="flex gap-6">
-                                <div className="flex-1 pb-5 rounded-2xl p-10 min-h-[180px] flex items-center relative overflow-hidden group">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                    <div className="relative z-10 w-full">
-                                    <div className="text-white/80 text-lg font-medium hover:text-purple-300 transition-colors duration-300">
-                                        <CardGeek />
-                                    </div>
-                                    </div>
-                                </div>
-
-                                <div className="flex-1 pb-5 rounded-2xl p-10 min-h-[180px] flex items-center relative overflow-hidden group">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                    <div className="relative z-10 w-full">
-                                    <div className="text-white/80 text-lg font-medium hover:text-purple-300 transition-colors duration-300">
-                                        <CardBh />
-                                    </div>
-                                    </div>
-                                </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                            <div className="mt-16">
-                            <div className="flex items-center gap-4 mb-8">
-                                <div className="h-1 w-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-                                <div className="text-3xl md:text-3xl font-bold text-white tracking-tight">Projets scolaires</div>
-                            </div>
-                            <div>
-                                <div className="flex gap-6">
-                                <div className="flex-1 pb-5 rounded-2xl p-10 min-h-[180px] flex items-center relative overflow-hidden group">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                    <div className="relative z-10 w-full">
-                                    <div className="text-white/80 text-lg font-medium hover:text-purple-300 transition-colors duration-300">
-                                        <CardGeek />
-                                    </div>
-                                    </div>
-                                </div>
-
-                                <div className="flex-1 pb-5 rounded-2xl p-10 min-h-[180px] flex items-center relative overflow-hidden group">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                    <div className="relative z-10 w-full">
-                                    <div className="text-white/80 text-lg font-medium hover:text-purple-300 transition-colors duration-300">
-                                        <CardBh />
-                                    </div>
-                                    </div>
-                                </div>
-
-                                <div className="flex-1 pb-5 rounded-2xl p-10 min-h-[180px] flex items-center relative overflow-hidden group">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                    <div className="relative z-10 w-full">
-                                    <div className="text-white/80 text-lg font-medium hover:text-purple-300 transition-colors duration-300">
-                                        <CardBh />
-                                    </div>
-                                    </div>
-                                </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </motion.div>
-                </div>  
-            </section>
-
-            {/* Projects Section */}
-            <section id="projects-section" className="px-4 sm:px-6 pb-20">
-                <div className="max-w-[120rem] mx-auto">
-                    <motion.div 
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                        className="bg-gradient-to-br from-white/6 to-transparent backdrop-blur-xl rounded-[2rem] shadow-xl/30 p-8 md:p-12 border-2 border-purple-500/20 hover:border-blue-500/30 transition-all duration-500"
-                    >
-                        {/* Header */}
-                        <div className="flex flex-col lg:flex-row border-b pb-4 mb-6">
-                            <div className="flex flex-col items-center lg:items-start lg:w-1/3 mb-4 lg:mb-0">
-                                <div className="bg-teal-200 text-center w-24 h-24 flex items-center justify-center font-bold text-xs">
-                                    <img src={logoVr} alt="Description of the image" />
-                                </div>
-                            </div>
-            
-                            {/* Title and Date */}
-                            <div className="lg:w-2/3 pl-0 lg:pl-6">
-                            <h1 className="text-3xl font-bold text-teal-800 mb-2">Elixir Création</h1>
-                            <p className="text-sm text-white/90">
-                                Cappello Alicia
-                                <br />
-                                5 janvier - 13 février 2026
-                            </p>
-                            </div>
-                        </div>
-                        <CardBdd />
-                            <div>
-                            <div className="pb-5 rounded-2xl p-10 min-h-[180px] relative overflow-hidden group">
-                                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                <div className="relative z-10 w-full">
-                                    <div className="text-white/80 text-lg font-medium hover:text-purple-300 transition-colors duration-300">
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="mt-16">
-                            <div className="flex items-center gap-4 mb-8">
-                                <div className="h-1 w-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-                                <div className="text-3xl md:text-3xl font-bold text-white tracking-tight">SWIPER</div>
-                            </div>
-                            <div>
-                                <div className="flex gap-6">
-                                <div className="flex-1 pb-5 rounded-2xl p-10 min-h-[180px] flex items-center relative overflow-hidden group">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                    <div className="relative z-10 w-full">
-                                    <div className="text-white/80 text-lg font-medium hover:text-purple-300 transition-colors duration-300">
-                                        <CardGeek />
-                                    </div>
-                                    </div>
-                                </div>
-
-                                <div className="flex-1 pb-5 rounded-2xl p-10 min-h-[180px] flex items-center relative overflow-hidden group">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                    <div className="relative z-10 w-full">
-                                    <div className="text-white/80 text-lg font-medium hover:text-purple-300 transition-colors duration-300">
-                                        <CardBh />
-                                    </div>
-                                    </div>
-                                </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                            <div className="mt-16">
-                            <div className="flex items-center gap-4 mb-8">
-                                <div className="h-1 w-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-                                <div className="text-3xl md:text-3xl font-bold text-white tracking-tight">Projets scolaires</div>
-                            </div>
-                            <div>
-                                <div className="flex gap-6">
-                                <div className="flex-1 pb-5 rounded-2xl p-10 min-h-[180px] flex items-center relative overflow-hidden group">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                    <div className="relative z-10 w-full">
-                                    <div className="text-white/80 text-lg font-medium hover:text-purple-300 transition-colors duration-300">
-                                        <CardGeek />
-                                    </div>
-                                    </div>
-                                </div>
-
-                                <div className="flex-1 pb-5 rounded-2xl p-10 min-h-[180px] flex items-center relative overflow-hidden group">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                    <div className="relative z-10 w-full">
-                                    <div className="text-white/80 text-lg font-medium hover:text-purple-300 transition-colors duration-300">
-                                        <CardBh />
-                                    </div>
-                                    </div>
-                                </div>
-
-                                <div className="flex-1 pb-5 rounded-2xl p-10 min-h-[180px] flex items-center relative overflow-hidden group">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                    <div className="relative z-10 w-full">
-                                    <div className="text-white/80 text-lg font-medium hover:text-purple-300 transition-colors duration-300">
-                                        <CardBh />
-                                    </div>
-                                    </div>
-                                </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </motion.div>
-                </div>  
-            </section>
-
-            {/* Projects Section */}
-            <section id="projects-section" className="px-4 sm:px-6 pb-20">
-                <div className="max-w-[120rem] mx-auto">
-                    <motion.div 
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                        className="bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-xl rounded-[2rem] shadow-xl/30 p-8 md:p-12 border-2 border-purple-500/20 hover:border-blue-500/30 transition-all duration-500"
+                        className="bg-gradient-to-br from-[#2B2B2B] to-[#1F1F1F] backdrop-blur-xl rounded-[2rem] shadow-xl/30 p-8 md:p-12 border-2 border-purple-500/20 hover:border-blue-500/30 transition-all duration-500"
                     >
                         <div className="flex items-center gap-4 mb-12">
-                            <div className="h-1 w-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+                            <div className="h-1 w-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
                             <div className="text-4xl md:text-6xl text-white">
                                 Projets
                             </div>
                         </div>
-                        <div className="mt-16">
-                            <div className="flex items-center gap-4 mb-8">
-                                <div className="h-1 w-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-                                <div className="text-3xl md:text-3xl font-bold text-white tracking-tight">Stage 1</div>
-                            </div>
-                                <div className="flex gap-6">
-                                <div className="flex-1 pb-5 rounded-2xl p-10 min-h-[180px] flex items-center relative overflow-hidden group">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                    <div className="relative z-10 w-full">
-                                    <div className="text-white/80 text-lg font-medium hover:text-purple-300 transition-colors duration-300">
-                                        <CardBdd />
-                                    </div>
-                                    </div>
-                                </div>
-
-                                <div className="flex-1 pb-5 rounded-2xl p-10 min-h-[180px] flex items-center relative overflow-hidden group">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                    <div className="relative z-10 w-full">
-                                    <div className="text-white/80 text-lg font-medium hover:text-purple-300 transition-colors duration-300">
-                                        <CardCata />
-                                    </div>
-                                    </div>
-                                </div>
-
-                                <div className="flex-1 pb-5 rounded-2xl p-10 min-h-[180px] flex items-center relative overflow-hidden group">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                    <div className="relative z-10 w-full">
-                                    <div className="text-white/80 text-lg font-medium hover:text-purple-300 transition-colors duration-300">
-                                        <CardReserv />
-                                    </div>
-                                    </div>
-                                </div>
-                                </div>
-
-                        </div>
-                        
-                        <div className="mt-16">
-                            <div className="flex items-center gap-4 mb-8">
-                                <div className="h-1 w-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-                                <div className="text-3xl md:text-3xl font-bold text-white tracking-tight">Stage 2</div>
-                            </div>
-                            <div>
-                                <div className="flex gap-6">
-                                <div className="flex-1 pb-5 rounded-2xl p-10 min-h-[180px] flex items-center relative overflow-hidden group">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                    <div className="relative z-10 w-full">
-                                    <div className="text-white/80 text-lg font-medium hover:text-purple-300 transition-colors duration-300">
-                                        <CardGeek />
-                                    </div>
-                                    </div>
-                                </div>
-
-                                <div className="flex-1 pb-5 rounded-2xl p-10 min-h-[180px] flex items-center relative overflow-hidden group">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                    <div className="relative z-10 w-full">
-                                    <div className="text-white/80 text-lg font-medium hover:text-purple-300 transition-colors duration-300">
-                                        <CardBh />
-                                    </div>
-                                    </div>
-                                </div>
-                                </div>
-
-                            </div>
-                        </div>
 
                         <div className="mt-16">
-                            <div className="flex items-center gap-4 mb-8">
-                                <div className="h-1 w-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-                                <div className="text-3xl md:text-3xl font-bold text-white tracking-tight">Projets scolaires</div>
-                            </div>
-                            <div>
-                                <div className="flex gap-6">
-                                <div className="flex-1 pb-5 rounded-2xl p-10 min-h-[180px] flex items-center relative overflow-hidden group">
+                            <div className="flex gap-6">
+
+                                {/* Projets stages */}
+                                <div className="bg-gradient-to-br from-purple-900/20 via-pink-900/20 to-blue-900/20 
+                                                backdrop-blur-sm rounded-2xl p-10 border border-purple-400/30 
+                                                flex-1 pb-5 min-h-[180px] flex items-center relative overflow-hidden group">
                                     <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                     <div className="relative z-10 w-full">
-                                    <div className="text-white/80 text-lg font-medium hover:text-purple-300 transition-colors duration-300">
-                                        <CardGeek />
-                                    </div>
+                                        <div className="text-center w-full">
+                                            <a href='/Projets' className='hover:underline text-2xl font-semibold text-white/80 hover:text-purple-300 transition-colors duration-300'>
+                                                Projets stages
+                                            </a>
+                                        </div>
+                                        <StackedImages />
                                     </div>
                                 </div>
 
-                                <div className="flex-1 pb-5 rounded-2xl p-10 min-h-[180px] flex items-center relative overflow-hidden group">
+                                {/* Projets stages */}
+                                <div className="bg-gradient-to-br from-purple-900/20 via-pink-900/20 to-blue-900/20 
+                                                backdrop-blur-sm rounded-2xl p-10 border border-purple-400/30 
+                                                flex-1 pb-5 min-h-[180px] flex items-center relative overflow-hidden group">
                                     <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                     <div className="relative z-10 w-full">
-                                    <div className="text-white/80 text-lg font-medium hover:text-purple-300 transition-colors duration-300">
-                                        <CardBh />
+                                        <div className="text-center w-full">
+                                            <a href='/Projets' className='hover:underline text-2xl font-semibold text-white/80 hover:text-purple-300 transition-colors duration-300'>
+                                                Projets scolaires
+                                            </a>
+                                        </div>
+                                        <StackedImages />
                                     </div>
-                                    </div>
-                                </div>
-
-                                <div className="flex-1 pb-5 rounded-2xl p-10 min-h-[180px] flex items-center relative overflow-hidden group">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                    <div className="relative z-10 w-full">
-                                    <div className="text-white/80 text-lg font-medium hover:text-purple-300 transition-colors duration-300">
-                                        <CardBh />
-                                    </div>
-                                    </div>
-                                </div>
                                 </div>
 
                             </div>
                         </div>
                     </motion.div>
-                </div>  
+                </div>
             </section>
 
 

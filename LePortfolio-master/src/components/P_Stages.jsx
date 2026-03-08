@@ -1,7 +1,7 @@
 import essa from "../assets/essa.png";
 import { Link } from 'react-router-dom';
 
-const pStages = () => {
+export const old = () => {
   return (
     <>
     <div id="back" className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
@@ -70,6 +70,4 @@ const pStages = () => {
     </>
   );
 }
-
-export default pStages;
 

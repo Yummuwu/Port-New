@@ -14,7 +14,6 @@ import { Cata } from './pages/Stages/Stage1/Catalogue'
 import { Intern1 } from './pages/Stages/Stage1/VRtueux'
 import { Intern2 } from './pages/Stage2/ElixirCreation'
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import PsychologyOutlinedIcon from '@mui/icons-material/PsychologyOutlined';
 import BatchPredictionOutlinedIcon from '@mui/icons-material/BatchPredictionOutlined';
