@@ -1,4 +1,6 @@
 import { useState } from "react";
+import codee from '../../assets/codee.PNG';
+import multibureau from '../../assets/multibureau.PNG';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -25,10 +27,10 @@ const deliverables = [
 ];
 
 const screenshots = [
-  { src: "screenshot1.png", label: "Base de données" },
-  { src: "screenshot2.png", label: "Application web" },
-  { src: "screenshot3.png", label: "Application mobile" },
-  { src: "screenshot4.png", label: "API RESTful" },
+  { src: codee, label: "Inscription" },
+  { src: multibureau, label: "Maquette Canva" },
+  { src: "screenshot3.png", label: "A ajouter" },
+  { src: "screenshot4.png", label: "A ajouter" },
 ];
 
 const gestionProjets = [

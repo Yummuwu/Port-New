@@ -1,4 +1,8 @@
 import { useState } from "react";
+import serv from '../../assets/serv.png';
+import para from '../../assets/para.png';
+import Accueil from '../../assets/Accueil.png';
+import Divi from '../../assets/Divi.png';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 const techStack = [
@@ -16,10 +20,10 @@ const deliverables = [
 ];
 
 const screenshots = [
-  { src: "screenshot1.png", label: "Page d'accueil" },
-  { src: "screenshot2.png", label: "Page de services" },
-  { src: "screenshot3.png", label: "Page de contact" },
-  { src: "screenshot4.png", label: "Dashboard" },
+  { src: Accueil, label: "Page d'accueil" },
+  { src: para, label: "Page des tariffs" },
+  { src: serv, label: "Page de services" },
+  { src: Divi, label: "Dashboard" },
 ];
 
 const gestionProjets = [

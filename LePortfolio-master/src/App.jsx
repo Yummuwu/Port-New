@@ -2,6 +2,7 @@ import Navbar from './components/TopNavBar'
 import { NotFound } from './pages/NotFound'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { CV } from './pages/Profil'
+import { ProjetScolaire } from './pages/PaScolaire'
 import { Projets } from './pages/Projets'
 import Projet1 from './components/ProjetParadisGeek'
 import Project2 from './components/ProjetBridge'
@@ -111,6 +112,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Profil" element={<CV />} />
+            <Route path="/PScolaire" element={<ProjetScolaire/>}/>
             <Route path="/Projets" element={<Projets />} />
             <Route path="/Stage1" element={<Intern1 />} />
             <Route path="/MissionReser" element={<MissionReserv />} />

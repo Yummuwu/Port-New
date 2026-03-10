@@ -1,6 +1,7 @@
 import logoVr from '../assets/logoVr.png';
 import { Link } from 'react-router-dom';
 
+
 const Elixir = () => {
   return (
     <div className="h-screen overflow-auto bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 relative">

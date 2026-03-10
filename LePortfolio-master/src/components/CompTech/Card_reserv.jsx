@@ -1,4 +1,8 @@
 import { useState } from "react";
+import Reserv_vr from '../../assets/Reserv_vr.png';
+import catalogue from '../../assets/catalogue.png';
+import bdd from '../../assets/bdd.png';
+import reservC from '../../assets/ReservC.png';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -37,10 +41,10 @@ const companyCards = [
 ];
 
 const screenshots = [
-  { src: "screenshot1.png", label: "Catalogue" },
-  { src: "screenshot2.png", label: "Codes" },
-  { src: "screenshot3.png", label: "Réservation" },
-  { src: "screenshot4.png", label: "Base de données" },
+  { src: catalogue, label: "Catalogue" },
+  { src: reservC, label: "Codes" },
+  { src: Reserv_vr, label: "Réservation" },
+  { src: bdd, label: "Base de données" },
 ];
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -198,7 +202,7 @@ export default function CardVr() {
             <SectionLabel>Difficultés</SectionLabel>
             <GlassCard className="p-4">
               <p className="text-zinc-300 text-xl leading-relaxed">
-                La compléxité du projet en seulement 6 semaines a été le défi majeur. L'apprentissage rapide de Laravel et l'intégration de multiples fonctionnalités (système de compte, catalogue, réservation). Le manque d'encadrement à aussi ralenti l'avancement du projet. Pour finir, la modélisation de la base de données et la gestion des relations entre les différentes entités (utilisateurs, jeux, réservations) a été un aspect particulièrement complexe.
+                - La compléxité du projet en seulement 6 semaines a été le défi majeur.<br></br> - L'apprentissage rapide de Laravel et l'intégration de multiples fonctionnalités (système de compte, catalogue, réservation). <br></br>- Le manque d'encadrement à aussi ralenti l'avancement du projet.<br></br>- La modélisation de la base de données et la gestion des relations entre les différentes entités (utilisateurs, jeux, réservations) a été un aspect particulièrement complexe.
               </p>
             </GlassCard>
           </section>

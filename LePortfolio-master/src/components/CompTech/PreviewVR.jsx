@@ -8,7 +8,7 @@ const stats = [
   { value: "2025", label: "lancement" },
 ];
 
-const tags = ["VR", "Particuliers", "Entreprises", "Formations", "Team-building"];
+const tags = ["Divertissement VR", "Particuliers", "Entreprises", "Formations", "Bar"];
 
 const deliverables = [
   {
@@ -83,6 +83,58 @@ function GlassCard({ children, className = "" }) {
   );
 }
 
+function ImagePlaceholder({ src, alt }) {
+  const [hasImage, setHasImage] = useState(!!src);
+
+  return (
+    <div className="mt-6">
+      <SectionLabel>Photo / Illustration</SectionLabel>
+      <GlassCard className="overflow-hidden">
+        {hasImage ? (
+          <img
+            src={src}
+            alt={alt || "Illustration"}
+            className="w-full h-64 object-cover rounded-xl"
+            onError={() => setHasImage(false)}
+          />
+        ) : (
+          <div className="relative h-64 flex flex-col items-center justify-center gap-3 rounded-xl border-2 border-dashed border-white/10 hover:border-cyan-400/30 transition-colors duration-300 group cursor-pointer">
+            {/* Subtle grid pattern */}
+            <div
+              className="absolute inset-0 rounded-xl opacity-[0.03]"
+              style={{
+                backgroundImage:
+                  "linear-gradient(rgba(103,232,249,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(103,232,249,0.5) 1px, transparent 1px)",
+                backgroundSize: "32px 32px",
+              }}
+            />
+            {/* Icon */}
+            <div className="w-14 h-14 rounded-full bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center group-hover:bg-cyan-400/15 transition-colors duration-300">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-6 h-6 text-cyan-400/60"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={1.5}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3 20.25h18a.75.75 0 00.75-.75V6a.75.75 0 00-.75-.75H3a.75.75 0 00-.75.75v13.5c0 .414.336.75.75.75zM16.5 8.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+                />
+              </svg>
+            </div>
+            <p className="text-zinc-500 text-sm font-mono tracking-wider uppercase">
+              devant de magasin à rajouter
+            </p>
+          </div>
+        )}
+      </GlassCard>
+    </div>
+  );
+}
+
 // ─── Main Component ───────────────────────────────────────────────────────────
 
 export default function VRtueuxCard() {
@@ -113,7 +165,6 @@ export default function VRtueuxCard() {
 
       <div className="vrtueux-root min-h-screen flex flex-wrap text-zinc-200 relative overflow-hidden">
 
-
         <div className="pointer-events-none fixed inset-0 overflow-hidden">
           <div className="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-purple-500/[0.07] blur-[120px]" />
           <div className="absolute top-1/2 -right-40 w-[400px] h-[400px] rounded-full bg-pink-600/[0.05] blur-[100px]" />
@@ -122,25 +173,24 @@ export default function VRtueuxCard() {
 
         <div className="relative z-10 max-w-4xl px-6 py-16 space-y-20">
 
-
           <header className="fade-up d1">
-            <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-purple-300 uppercase border border-purple-400/20 bg-purple-400/5 rounded-full px-4 py-1.5 mb-6">
+            <div className="inline-flex items-center gap-2 text-xl font-mono tracking-widest text-purple-300 uppercase border border-purple-400/20 bg-purple-400/5 rounded-full px-4 py-1.5 mb-6">
               Micro-entreprise · Stage 2025
             </div>
 
             <div className="flex items-center gap-4 mb-4">
               <div>
                 <h1 className="text-white font-bold text-3xl tracking-tight leading-tight">VRtueux</h1>
-                <span className="text-purple-300/80 text-xs font-mono tracking-widest uppercase">Entreprise Individuelle (EI) · Privée</span>
+                <span className="text-purple-300/80 text-xl font-mono tracking-widest uppercase">Entreprise Individuelle (EI)</span>
               </div>
               <div className="ml-auto shrink-0">
-                <span className="px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/25 text-emerald-300 text-xs font-semibold">
+                <span className="px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/25 text-emerald-300 text-xl font-semibold">
                   📍 Vienne, Isère
                 </span>
               </div>
             </div>
 
-            <p className="text-zinc-400 text-lg max-w-2xl leading-relaxed mb-6">
+            <p className="text-zinc-400 text-xl max-w-2xl leading-relaxed mb-6">
               Spécialisée dans le{" "}
               <span className="text-purple-300 font-medium">divertissement en réalité virtuelle</span>,
               VRtueux propose des expériences immersives à destination des particuliers et des entreprises.
@@ -150,7 +200,7 @@ export default function VRtueuxCard() {
               {tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1 rounded-full bg-purple-500/15 border border-purple-400/20 text-purple-200 text-xs font-mono"
+                  className="px-3 py-1 rounded-full bg-purple-500/15 border border-purple-400/20 text-purple-200 text-xl font-mono"
                 >
                   {tag}
                 </span>
@@ -180,13 +230,14 @@ export default function VRtueuxCard() {
                   <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-purple-400 to-pink-500 rounded-l-xl" />
                   <div className="pl-3">
                     <p className="font-semibold text-zinc-100 mb-1">{d.title}</p>
-                    <p className="text-sm text-zinc-400 leading-relaxed">{d.desc}</p>
+                    <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
                   </div>
                 </GlassCard>
               ))}
             </div>
           </section>
         </div>
+
         <div className="flex-1 pt-35">
 
           {/* ── Gestion de projet ── */}
@@ -203,13 +254,10 @@ export default function VRtueuxCard() {
                 </GlassCard>
               ))}
             </div>
-          </section>
 
-          {/* ── Footer status ── */}
-          <footer className="fade-up d5 flex items-center gap-2 pt-4 border-t border-white/[0.06]">
-            <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-zinc-600 text-xs font-mono">Stage 2025 · En cours</span>
-          </footer>
+            {/* ── Image placeholder ── */}
+            <ImagePlaceholder src={null} alt="VRtueux" />
+          </section>
 
         </div>
       </div>

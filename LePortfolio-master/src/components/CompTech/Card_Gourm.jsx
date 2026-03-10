@@ -1,4 +1,6 @@
 import { useState } from "react";
+import trello from '../../assets/trello.png';
+import formualireb from '../../assets/formualireb.png';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -8,6 +10,7 @@ const techStack = [
   { label: "Vue.js", color: "text-red-400 border-red-400/40 bg-red-400/5" },
   { label: "MySQL", color: "text-cyan-400 border-cyan-400/40 bg-cyan-400/5" },
   { label: "JavaScript", color: "text-purple-400 border-purple-400/40 bg-purple-400/5" },
+  { label: "Kotlin", color: "text-yellow-400 border-yellow-400/40 bg-yellow-400/5" },
 ];
 
 const deliverables = [
@@ -30,8 +33,8 @@ const deliverables = [
 ];
 
 const screenshots = [
-  { src: "screenshot1.png", label: "Base de données" },
-  { src: "screenshot2.png", label: "Application web" },
+  { src: formualireb, label: "Formulaire site web" },
+  { src: trello, label: "Gestion du projet" },
   { src: "screenshot3.png", label: "Application mobile" },
   { src: "screenshot4.png", label: "API RESTful" },
 ];
@@ -46,8 +49,12 @@ const gestionProjets = [
     desc: "Utilisation de Trello pour organiser les tâches, suivre l'avancement du projet et collaborer avec l'équipe.",
   },
   {
-    title: "Canvas - Maquette",
+    title: "Canvas - Documentation",
     desc: "Utilisation de Canvas pour créer une documentation pour les spécifications fonctionnelles.",
+  },
+    {
+    title: "Figma - Maquette",
+    desc: "Utilisation de Figma pour créer plusieurs maquettes pour l'application mobile/web.",
   },
   {
     title: "Méthode - Agile",

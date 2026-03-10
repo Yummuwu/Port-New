@@ -1,5 +1,7 @@
 import { useState } from "react";
-
+import NosEspaces from '../../assets/NosEspaces.PNG';
+import slide from '../../assets/slide.PNG';
+import Activite from '../../assets/Activite.PNG';
 // ─── Data ────────────────────────────────────────────────────────────────────
 const techStack = [
   { label: "Wordpress", color: "text-orange-400 border-orange-400/40 bg-orange-400/5" },
@@ -15,10 +17,9 @@ const deliverables = [
 ];
 
 const screenshots = [
-  { src: "screenshot1.png", label: "Page d'accueil" },
-  { src: "screenshot2.png", label: "Page de services" },
-  { src: "screenshot3.png", label: "Page de contact" },
-  { src: "screenshot4.png", label: "Dashboard" },
+  { src: NosEspaces, label: "Page Nos espaces" },
+  { src: slide, label: "Extrait" },
+  { src: Activite, label: "Page Activité" },
 ];
 
 const gestionProjets = [

@@ -1,4 +1,7 @@
 import { useState } from "react";
+import partie from '../../assets/partie.PNG';
+import codeSc from '../../assets/codeSc.PNG';
+import dev from '../../assets/dev.PNG';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -19,10 +22,10 @@ const deliverables = [
 ];
 
 const screenshots = [
-  { src: "screenshot1.png", label: "Base de données" },
-  { src: "screenshot2.png", label: "Application web" },
-  { src: "screenshot3.png", label: "Application mobile" },
-  { src: "screenshot4.png", label: "API RESTful" },
+  { src: dev, label: "Interface Scrabble" },
+  { src: codeSc, label: "Code Application" },
+  { src: partie, label: "Interface Partie" },
+  { src: "screenshot4.png", label: "BDD" },
 ];
 
 const gestionProjets = [
@@ -146,7 +149,7 @@ export default function CardScrabb() {
         <header className="fade-up d1 mb-8">
           <div className="flex flex-wrap items-center gap-3 mb-3">
             <span className="text-[1.45rem] font-mono tracking-widest text-cyan-400 uppercase border border-cyan-400/20 bg-cyan-400/5 rounded-full px-3 py-1">
-              Projet application
+              Projet rabble
             </span>
           </div>
 

@@ -5,11 +5,39 @@ import Contact from './Contact';
 import ParcoursCombined from './testComp';
 import CountUp from 'react-countup';
 import StackedImages from './CompTech/images';
+import pix from '../assets/pix.png';
+import React, { useState } from 'react';
 
 
 
 
 const HomeP = () => {
+    const [showPdf, setShowPdf] = useState(false);
+
+    {/* Modal overlay */}
+    {showPdf && (
+        <div 
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-6"
+            onClick={() => setShowPdf(false)}
+        >
+            <div 
+                className="relative w-full max-w-3xl h-[85vh] bg-gray-900 rounded-2xl overflow-hidden border border-purple-400/30 shadow-2xl"
+                onClick={e => e.stopPropagation()}
+            >
+                <button
+                    onClick={() => setShowPdf(false)}
+                    className="absolute top-4 right-4 z-10 w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors"
+                >
+                    ✕
+                </button>
+                <iframe
+                    src={`${pix}#toolbar=0&navpanes=0`}
+                    className="w-full h-full"
+                    title="Certification"
+                />
+            </div>
+        </div>
+    )}
     return (
         <div className="h-screen overflow-auto  relative font-mono">
             {/* Animated background elements */}
@@ -116,10 +144,9 @@ const HomeP = () => {
                                     <div className="text-xl font-semibold mb-5 text-white">Compétences Backend</div>
 
                                     <div className="flex flex-wrap gap-3 justify-center">
-                                    <span className="px-4 py-2 bg-purple-500/20 border border-purple-400/40 text-purple-200 text-sm rounded-full">API</span>
-                                    <span className="px-4 py-2 bg-pink-500/20 border border-pink-400/40 text-pink-200 text-sm rounded-full">Framework</span>
-                                    <span className="px-4 py-2 bg-blue-500/20 border border-blue-400/40 text-blue-200 text-sm rounded-full">SQL</span>
-                                    <span className="px-4 py-2 bg-indigo-500/20 border border-indigo-400/40 text-indigo-200 text-sm rounded-full">REST</span>
+                                    <span className="px-4 py-2 bg-pink-500/20 border border-pink-400/40 text-pink-200 text-sm rounded-full">Laravel</span>
+                                    <span className="px-4 py-2 bg-blue-500/20 border border-blue-400/40 text-blue-200 text-sm rounded-full">MySQL</span>
+                                    <span className="px-4 py-2 bg-indigo-500/20 border border-indigo-400/40 text-indigo-200 text-sm rounded-full">REST API</span>
                                     </div>
 
                                 </div>
@@ -138,44 +165,55 @@ const HomeP = () => {
                                     <span className="px-4 py-2 bg-cyan-500/20 border border-cyan-400/40 text-cyan-200 text-sm rounded-full">React</span>
                                     <span className="px-4 py-2 bg-cyan-500/20 border border-cyan-400/40 text-cyan-200 text-sm rounded-full">Vue</span>
                                     <span className="px-4 py-2 bg-teal-500/20 border border-teal-400/40 text-teal-200 text-sm rounded-full">Tailwind</span>
+                                    <span className="px-4 py-2 bg-teal-500/20 border border-teal-400/40 text-teal-200 text-sm rounded-full">Kotlin</span>
                                     <span className="px-4 py-2 bg-indigo-500/20 border border-indigo-400/40 text-indigo-200 text-sm rounded-full">Responsive Design</span>
                                     </div>
                                 </div>
 
                             </div>
                                 <div className="flex justify-center mt-8 gap-60">
-                                {[1, 4, 100, 100].map((end, index) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.5 + index * 0.2, duration: 0.6 }}
-                                    className="flex flex-col  p-20 items-center justify-center w-24 h-24 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm rounded-xl border border-white/20 hover:from-purple-500/30 hover:to-pink-500/30 transition-all duration-300"
+                                    {[
+                                    { end: 3, label: "Projets scolaire" },
+                                    { end: 4, label: "Projets Stage" },
+                                    { end: 8, label: "Languages appris" },
+                                    ].map(({ end, label }, index) => (
+                                    <motion.div
+                                        key={index}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.5 + index * 0.2, duration: 0.6 }}
+                                        className="flex flex-col p-20 items-center justify-center w-24 h-24 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm rounded-xl border border-white/20 hover:from-purple-500/30 hover:to-pink-500/30 transition-all duration-300"
                                     >
-                                    <p className="text-white font-bold text-xl md:text-2xl">
+                                        <p className="text-white font-bold text-xl md:text-2xl">
                                         <CountUp end={end} duration={2} />
-                                    </p>
-                                    <p className="text-white/70 text-sm mt-1 text-center">Projets</p>
-                                </motion.div>
-                                ))}
+                                        </p>
+                                        <p className="text-white/70 text-sm mt-1 text-center">{label}</p>
+                                    </motion.div>
+                                    ))}
                             </div>
 
                             </div>
                         <div className="mt-16">
                             <div className="flex items-center gap-4 mb-8">
                                 <div className="h-1 w-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-                                <div className="text-4xl md:text-6xl text-white">Certifications</div>
+                                <div className="text-4xl md:text-6xl text-white">Certification</div>
                             </div>
-                            <div className="bg-gradient-to-br from-purple-900/20 via-pink-900/20 to-blue-900/20 backdrop-blur-sm rounded-2xl p-10 border-2 border-dashed border-purple-400/30 min-h-[180px] flex items-center justify-center relative overflow-hidden group">
-                                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                <div className="text-center relative z-10">
-                                    <div className="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                                        <span className="text-3xl">🎓</span>
+                                {/* Card */}
+                                <div className="bg-gradient-to-br from-purple-900/20 via-pink-900/20 to-blue-900/20 backdrop-blur-sm rounded-2xl p-10 border-2 border-dashed border-purple-400/30 min-h-[180px] flex items-center justify-center relative overflow-hidden group">
+                                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                    <div className="text-center relative z-10">
+                                        <div className="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <span className="text-3xl">🎓</span>
+                                        </div>
+                                        <p className="text-white/80 text-lg font-light mb-4">Certification pix</p>
+                                        <button
+                                            onClick={() => setShowPdf(true)}
+                                            className="px-5 py-2 bg-purple-500/30 hover:bg-purple-500/50 border border-purple-400/40 text-white/80 text-sm rounded-full transition-all duration-200 hover:scale-105"
+                                        >
+                                            Voir le certificat
+                                        </button>
                                     </div>
-                                    <p className="text-white/60 text-lg font-light">Certifications à venir...</p>
-                                    <p className="text-white/40 text-sm mt-2">En cours de préparation</p>
                                 </div>
-                            </div>
                         </div>
                     </motion.div>
                 </div>
@@ -222,7 +260,7 @@ const HomeP = () => {
                                     <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                     <div className="relative z-10 w-full">
                                         <div className="text-center w-full">
-                                            <a href='/Projets' className='hover:underline text-2xl font-semibold text-white/80 hover:text-purple-300 transition-colors duration-300'>
+                                            <a href='/PScolaire' className='hover:underline text-2xl font-semibold text-white/80 hover:text-purple-300 transition-colors duration-300'>
                                                 Projets scolaires
                                             </a>
                                         </div>
@@ -247,10 +285,11 @@ const HomeP = () => {
                         transition={{ duration: 0.6 }}
                         className="bg-gradient-to-br from-white/6 to-transparent backdrop-blur-xl rounded-[2rem] shadow-xl/30 p-8 md:p-12 border-2 border-purple-500/20 hover:border-blue-500/30 transition-all duration-500"
                     >
-                        <div className="flex items-center gap-4 mb-12"></div>
-                        <div className="h-1 w-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-                        <div className="text-4xl md:text-6xl font-black bg-gradient-to-r from-purple-400 via-pink-400 to-purple-500 bg-clip-text text-transparent tracking-tight">
+                        <div className="flex items-center gap-4 mb-12">
+                            <div className="h-1 w-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+                            <div className="text-4xl md:text-6xl text-white">
                                 Contact
+                            </div>
                         </div>
                         <Contact/>
                     </motion.div>

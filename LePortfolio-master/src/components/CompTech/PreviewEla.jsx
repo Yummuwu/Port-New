@@ -1,54 +1,58 @@
 import { useState } from "react";
-import magawork from '../../assets/magawork.png';
+
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 const stats = [
-  { value: "~90", label: "clients/ans" },
-  { value: "2", label: "personne" },
-  { value: "~80k", label: "chiffres d'affaire" },
+  { value: "~30", label: "collaborateurs" },
+  { value: "4", label: "pôles métiers" },
+  { value: "~10 ans", label: "d'existence" },
 ];
 
-const tags = ["Wordpress", "Particuliers", "Entreprises", "Hébergement"];
+const tags = ["Développement", "Infrastructure", "Support", "Gestion de projet", "PME"];
 
 const deliverables = [
   {
-    title: "Gestion/ Hébergement du site web en continu sous contrat",
-    desc: "Maintenance et mise à jour régulière du site web",
+    title: "Documentation",
+    desc: "Fiche descriptive du projet interne et spécifications techniques",
   },
   {
-    title: "Veille technologique",
-    desc: "Suivi des innovations concernant les mises à jour Divi",
+    title: "Application web sur mesure",
+    desc: "Suivi des outils et pratiques DevOps utilisés en interne",
   },
   {
-    title: "Conception de site web vitrine ou dynamique",
-    desc: "Création de maquettes et prototypes, intégration des contenus",
+    title: "Configuration de l'infrastructure",
+    desc: "Mise en place et paramétrage des serveurs et environnements d'hébergement",
   },
   {
-    title: "Refonte de sites web existants",
-    desc: "Modernisation et optimisation des sites web existants",
-  },
-  {
-    title: "Support de premier niveau Wordpress",
-    desc: "Formation Wordpress et accompagnement des clients",
+    title: "Support de premier niveau",
+    desc: "Assistance technique et accompagnement des collaborateurs internes",
   },
 ];
 
 const gestionProjets = [
   {
-    title: "Trello",
-    desc: "Organisation visuelle des tâches et suivi de l'avancement",
+    title: "Jira / Trello / Monday",
+    desc: "Organisation visuelle des tâches et suivi de l'avancement en mode agile",
   },
   {
-    title: "Discord",
-    desc: "Communication en temps réel et partage d'informations avec l'équipe",
+    title: "Figma / Adobe XD",
+    desc: "Conception des maquettes et prototypage UX/UI",
   },
   {
-    title: "Découpage du travail par pages",
-    desc: "Livraison itérative, page par page",
+    title: "NextCloud / Slack",
+    desc: "Communication interne et partage de fichiers entre les équipes",
   },
   {
-    title: "Approche agile",
-    desc: "Feedback régulier et entretiens avec les clients",
+    title: "GitHub (Git)",
+    desc: "Gestion et versioning du code source des projets",
+  },
+  {
+    title: "Daily Stand-up",
+    desc: "Point quotidien de 15 minutes pour suivre l'avancement des sprints",
+  },
+  {
+    title: "Sprint Review",
+    desc: "Démonstration du produit fini au client ou à la direction en fin de sprint",
   },
 ];
 
@@ -91,7 +95,6 @@ function ImagePlaceholder({ src, alt }) {
           />
         ) : (
           <div className="relative h-64 flex flex-col items-center justify-center gap-3 rounded-xl border-2 border-dashed border-white/10 hover:border-cyan-400/30 transition-colors duration-300 group cursor-pointer">
-            {/* Subtle grid pattern */}
             <div
               className="absolute inset-0 rounded-xl opacity-[0.03]"
               style={{
@@ -100,7 +103,6 @@ function ImagePlaceholder({ src, alt }) {
                 backgroundSize: "32px 32px",
               }}
             />
-            {/* Icon */}
             <div className="w-14 h-14 rounded-full bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center group-hover:bg-cyan-400/15 transition-colors duration-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -118,10 +120,7 @@ function ImagePlaceholder({ src, alt }) {
               </svg>
             </div>
             <p className="text-zinc-500 text-sm font-mono tracking-wider uppercase">
-              Ajouter une image
-            </p>
-            <p className="text-zinc-600 text-xs font-mono">
-              PNG, JPG, WEBP · 16:9 recommandé
+              logo?
             </p>
           </div>
         )}
@@ -132,7 +131,7 @@ function ImagePlaceholder({ src, alt }) {
 
 // ─── Main Component ───────────────────────────────────────────────────────────
 
-export default function ElixirCard() {
+export default function ElaborateCard() {
   return (
     <>
       <style>{`
@@ -169,25 +168,26 @@ export default function ElixirCard() {
         <div className="relative z-10 max-w-4xl px-6 py-16 space-y-20">
 
           <header className="fade-up d1">
-            <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-purple-300 uppercase border border-purple-400/20 bg-purple-400/5 rounded-full px-4 py-1.5 mb-6">
-              SARL · Stage 2026
+            <div className="inline-flex items-center gap-2 text-xl font-mono tracking-widest text-purple-300 uppercase border border-purple-400/20 bg-purple-400/5 rounded-full px-4 py-1.5 mb-6">
+              ESN · ~10 ans
             </div>
 
             <div className="flex items-center gap-4 mb-4">
               <div>
-                <h1 className="text-white font-bold text-3xl tracking-tight leading-tight">Elixir Création</h1>
-                <span className="text-purple-300/80 text-xl font-mono tracking-widest uppercase">SARL · Privée</span>
+                <h1 className="text-white font-bold text-3xl tracking-tight leading-tight">Ell@Borate</h1>
+                <span className="text-purple-300/80 text-xl font-mono tracking-widest uppercase">Entreprise de Services du Numérique</span>
               </div>
               <div className="ml-auto shrink-0">
                 <span className="px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/25 text-emerald-300 text-xl font-semibold">
-                  📍 Vienne, Isère
+                  📍 Lyon
                 </span>
               </div>
             </div>
 
             <p className="text-zinc-400 text-xl max-w-2xl leading-relaxed mb-6">
-              Spécialisée dans la{" "}
-              <span className="text-purple-300 font-medium">Conception, développement et hébergement de sites Wordpress.</span>
+              Spécialisée dans le{" "}
+              <span className="text-purple-300 font-medium">développement de solutions logicielles sur mesure</span>{" "}
+              et la mise en place d'infrastructures informatiques destinées à héberger les applications de ses clients PME.
             </p>
 
             <div className="flex flex-wrap gap-2">
@@ -209,7 +209,7 @@ export default function ElixirCard() {
               {stats.map(({ value, label }) => (
                 <GlassCard key={label} className="px-4 py-5 text-center">
                   <div className="text-white font-bold text-2xl leading-none mb-2">{value}</div>
-                  <div className="text-zinc-500 text-xl font-mono uppercase tracking-wider">{label}</div>
+                  <div className="text-zinc-500 text-xs font-mono uppercase tracking-wider">{label}</div>
                 </GlassCard>
               ))}
             </div>
@@ -217,7 +217,7 @@ export default function ElixirCard() {
 
           {/* ── DSI / Deliverables ── */}
           <section className="fade-up d3">
-            <SectionLabel>Missions</SectionLabel>
+            <SectionLabel>DSI — Missions</SectionLabel>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {deliverables.map((d) => (
                 <GlassCard key={d.title} className="p-5 flex gap-4 items-start relative overflow-hidden">
@@ -250,7 +250,7 @@ export default function ElixirCard() {
             </div>
 
             {/* ── Image placeholder ── */}
-            <ImagePlaceholder src={magawork} alt="Elixir Création" />
+            <ImagePlaceholder src={null} alt="Ell@Borate" />
           </section>
 
         </div>

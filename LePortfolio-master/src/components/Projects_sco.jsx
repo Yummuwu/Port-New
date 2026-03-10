@@ -1,12 +1,8 @@
 import { motion } from 'framer-motion';
-import CardGeek from './CompTech/Card_geek';
-import CardBh from './CompTech/Card_bh';
 import CardGourm from './CompTech/Card_Gourm';
-import VRtueuxPreview from './CompTech/PreviewVR';
-import CardVr from './CompTech/Card_reserv';
-import ElixirCard from './CompTech/PreviewEC';
 import CardMulti from './CompTech/Card_Multi';
 import CardScrabb from './CompTech/Card_Scrabble';
+import ElaborateCard from './CompTech/PreviewEla';
 
 // ─── Reusable primitives ──────────────────────────────────────────────────────
 
@@ -56,7 +52,7 @@ const Section = ({ title, date, children }) => (
 );
 
 
-export const PStages = () => {
+export const PScolaire = () => {
     return (
         <div className="h-screen overflow-auto relative font-mono">
 
@@ -67,36 +63,12 @@ export const PStages = () => {
                 <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-500" />
             </div>
 
-            {/* ── VRtueux ──────────────────────────────────────────────────── */}
-            <Section title="5 janvier – 13 février 2026">
-                <CardRow>
-                    <CardSlot>
-                        <VRtueuxPreview />
-                    </CardSlot>
-                    <CardSlot>
-                        <CardVr />
-                    </CardSlot>
-                </CardRow>
-            </Section>
-
-            {/* ── Elixir Création ──────────────────────────────────────────── */}
-            <Section title="5 janvier – 13 février 2026">
-                <CardRow>
-                    <CardSlot>
-                        <ElixirCard />
-                    </CardSlot>
-                    <CardSlot>
-                        <CardGeek />
-                    </CardSlot>
-                    <CardSlot>
-                        <CardBh />
-                    </CardSlot>
-                </CardRow>
-            </Section>
-
             {/* ── Projet Scolaire ──────────────────────────────────────────── */}
             <Section title="Projet Scolaire">
                 <CardRow>
+                    <CardSlot>
+                        <ElaborateCard/>
+                    </CardSlot>
                     <CardSlot>
                         <CardGourm />
                     </CardSlot>

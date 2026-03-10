@@ -1,25 +1,43 @@
 import { useState } from "react";
+import Reserv_vr from '../../assets/Reserv_vr.png';
+import responsive from '../../assets/responsive.png';
+import para from '../../assets/para.png';
+import formu from '../../assets/formu.png';
 
 const images = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80",
+    src: Reserv_vr,
     alt: "Mountain landscape",
-    label: "Summit",
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=600&q=80",
+    src: responsive,
     alt: "Forest path",
-    label: "Forest",
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80",
+    src: para,
     alt: "Ocean beach",
-    label: "Shoreline",
+  },
+
+    {
+    id: 4,
+    src: formu,
+    alt: "Mountain landscape",
+  },
+  {
+    id: 5,
+    src: formu,
+    alt: "Forest path",
+  },
+  {
+    id: 6,
+    src: formu,
+    alt: "Ocean beach",
   },
 ];
+
 
 export default function StackedImages() {
   const [active, setActive] = useState(1);
@@ -80,6 +98,9 @@ export default function StackedImages() {
           pointerEvents: "none",
         }}
       />
+
+
+
 
       {/* Stack */}
       <div
