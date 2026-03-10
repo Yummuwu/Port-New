@@ -3,60 +3,52 @@ import { useState } from "react";
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 const stats = [
-  { value: "~3 000", label: "clients/mois (prév.)" },
-  { value: "1", label: "personne" },
-  { value: "2025", label: "lancement" },
+  { value: "~90", label: "clients/ans" },
+  { value: "2", label: "personne" },
+  { value: "~80k", label: "chiffres d'affaire" },
 ];
 
-const tags = ["VR", "Particuliers", "Entreprises", "Formations", "Team-building"];
+const tags = ["Wordpress", "Particuliers", "Entreprises", "Hébergement"];
 
 const deliverables = [
   {
-    title: "Gestion du site web",
-    desc: "Interface utilisateur intuitive et responsive",
+    title: "Gestion/ Hébergement du site web en continu sous contrat",
+    desc: "Maintenance et mise à jour régulière du site web",
   },
   {
     title: "Veille technologique",
-    desc: "Suivi des innovations dans le secteur VR",
+    desc: "Suivi des innovations concernant les mises à jour Divi",
   },
   {
-    title: "Paramétrage des équipements VR",
-    desc: "Configuration et maintenance du matériel de réalité virtuelle",
+    title: "Conception de site web vitrine ou dynamique",
+    desc: "Création de maquettes et prototypes, intégration des contenus",
   },
   {
-    title: "Configuration des logiciels",
-    desc: "Réservation synchronisée avec MySQL, sans conflits",
+    title: "Refonte de sites web existants",
+    desc: "Modernisation et optimisation des sites web existants",
   },
   {
-    title: "Support de premier niveau",
-    desc: "Assistance technique et accompagnement des utilisateurs",
+    title: "Support de premier niveau Wordpress",
+    desc: "Formation Wordpress et accompagnement des clients",
   },
 ];
 
 const gestionProjets = [
   {
-    title: "Méthode Kanban – To do list",
+    title: "Trello",
     desc: "Organisation visuelle des tâches et suivi de l'avancement",
   },
   {
-    title: "Daily meeting avec le maître de stage",
-    desc: "Points quotidiens pour aligner les priorités",
+    title: "Discord",
+    desc: "Communication en temps réel et partage d'informations avec l'équipe",
   },
   {
     title: "Découpage du travail par pages",
     desc: "Livraison itérative, page par page",
   },
   {
-    title: "Stockage du serveur sur machine virtuelle",
-    desc: "Environnement isolé et reproductible",
-  },
-  {
-    title: "Outil Trello pour le suivi de projet",
-    desc: "Tableau de bord collaboratif en temps réel",
-  },
-  {
-    title: "Versioning avec GitHub",
-    desc: "Historique des modifications et travail en branches",
+    title: "Approche agile",
+    desc: "Feedback régulier et entretiens avec les clients",
   },
 ];
 
@@ -85,7 +77,7 @@ function GlassCard({ children, className = "" }) {
 
 // ─── Main Component ───────────────────────────────────────────────────────────
 
-export default function VRtueuxCard() {
+export default function ElixirCard() {
   return (
     <>
       <style>{`
@@ -125,13 +117,13 @@ export default function VRtueuxCard() {
 
           <header className="fade-up d1">
             <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-purple-300 uppercase border border-purple-400/20 bg-purple-400/5 rounded-full px-4 py-1.5 mb-6">
-              Micro-entreprise · Stage 2025
+              SARL · Stage 2026
             </div>
 
             <div className="flex items-center gap-4 mb-4">
               <div>
-                <h1 className="text-white font-bold text-3xl tracking-tight leading-tight">VRtueux</h1>
-                <span className="text-purple-300/80 text-xs font-mono tracking-widest uppercase">Entreprise Individuelle (EI) · Privée</span>
+                <h1 className="text-white font-bold text-3xl tracking-tight leading-tight">Elixir Création</h1>
+                <span className="text-purple-300/80 text-xs font-mono tracking-widest uppercase">SARL · Privée</span>
               </div>
               <div className="ml-auto shrink-0">
                 <span className="px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/25 text-emerald-300 text-xs font-semibold">
@@ -141,9 +133,8 @@ export default function VRtueuxCard() {
             </div>
 
             <p className="text-zinc-400 text-lg max-w-2xl leading-relaxed mb-6">
-              Spécialisée dans le{" "}
-              <span className="text-purple-300 font-medium">divertissement en réalité virtuelle</span>,
-              VRtueux propose des expériences immersives à destination des particuliers et des entreprises.
+              Spécialisée dans la{" "}
+              <span className="text-purple-300 font-medium">Conception, développement et hébergement de sites Wordpress.</span>
             </p>
 
             <div className="flex flex-wrap gap-2">
@@ -204,12 +195,6 @@ export default function VRtueuxCard() {
               ))}
             </div>
           </section>
-
-          {/* ── Footer status ── */}
-          <footer className="fade-up d5 flex items-center gap-2 pt-4 border-t border-white/[0.06]">
-            <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-zinc-600 text-xs font-mono">Stage 2025 · En cours</span>
-          </footer>
 
         </div>
       </div>

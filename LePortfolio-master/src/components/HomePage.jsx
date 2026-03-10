@@ -79,17 +79,11 @@ const HomeP = () => {
                             </div>
                         </div>
                     </motion.div>
-
-                </div>
-
-                {/* Intro text — now correctly inside the motion.div */}
-                <div className="pt-20 text-white/80 text-lg md:text-2xl lg:text-3xl max-w-[120rem] mx-auto leading-relaxed font-light text-center mt-10 pb-25">
-                    Passionnée par le fait que je sais pas ce que je fais aled?
-                    HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA<br></br>
                 </div>
             </motion.div>            
-
-           <ParcoursCombined />
+            <div className='pt-15'>
+                <ParcoursCombined />
+           </div>
 
         </div>
     </div>
@@ -126,7 +120,6 @@ const HomeP = () => {
                                     <span className="px-4 py-2 bg-pink-500/20 border border-pink-400/40 text-pink-200 text-sm rounded-full">Framework</span>
                                     <span className="px-4 py-2 bg-blue-500/20 border border-blue-400/40 text-blue-200 text-sm rounded-full">SQL</span>
                                     <span className="px-4 py-2 bg-indigo-500/20 border border-indigo-400/40 text-indigo-200 text-sm rounded-full">REST</span>
-                                    <span className="px-4 py-2 bg-emerald-500/20 border border-emerald-400/40 text-emerald-200 text-sm rounded-full">Docker</span>
                                     </div>
 
                                 </div>
@@ -143,6 +136,7 @@ const HomeP = () => {
                                     <span className="px-4 py-2 bg-blue-500/20 border border-blue-400/40 text-blue-200 text-sm rounded-full">CSS</span>
                                     <span className="px-4 py-2 bg-yellow-500/20 border border-yellow-400/40 text-yellow-200 text-sm rounded-full">JavaScript</span>
                                     <span className="px-4 py-2 bg-cyan-500/20 border border-cyan-400/40 text-cyan-200 text-sm rounded-full">React</span>
+                                    <span className="px-4 py-2 bg-cyan-500/20 border border-cyan-400/40 text-cyan-200 text-sm rounded-full">Vue</span>
                                     <span className="px-4 py-2 bg-teal-500/20 border border-teal-400/40 text-teal-200 text-sm rounded-full">Tailwind</span>
                                     <span className="px-4 py-2 bg-indigo-500/20 border border-indigo-400/40 text-indigo-200 text-sm rounded-full">Responsive Design</span>
                                     </div>
@@ -150,7 +144,7 @@ const HomeP = () => {
 
                             </div>
                                 <div className="flex justify-center mt-8 gap-60">
-                                {[0, 4, 100, 100].map((end, index) => (
+                                {[1, 4, 100, 100].map((end, index) => (
                                 <motion.div
                                     key={index}
                                     initial={{ opacity: 0, y: 20 }}

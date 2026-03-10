@@ -177,7 +177,7 @@ export default function CardBh() {
             <SectionLabel>Difficultés</SectionLabel>
             <GlassCard className="p-4">
               <p className="text-zinc-300 text-xl leading-relaxed">
-                Apprentissage d'Elementor <br /> Reproduire un site web à partir d'une maquette
+                - Apprentissage d'Elementor <br /> - Reproduire un site web à partir d'une maquette
               </p>
             </GlassCard>
           </section>

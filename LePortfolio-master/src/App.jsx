@@ -45,8 +45,10 @@ function Sidebar() {
     }
   };
 
+  
+
   return (
-    <div className="relative w-[5%] min-w-[70px] pt-95 bg-gray-900 border border-white/20 flex justify-center">
+    <div className="relative w-[5%] min-w-[70px] pt-95 bg-zinc-900 border border-white/20 flex justify-center">
 
       {/* Vertical progress bar */}
       <div className="absolute top-6 bottom-6 w-[2px] bg-gray-300 rounded-full">

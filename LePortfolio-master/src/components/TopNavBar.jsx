@@ -20,7 +20,7 @@ function FadeMenu() {
     <div>
       <Button
         id="fade-button"
-        onmouseover={handleHover}
+        onMouseOver={handleHover}
         sx={{
           fontFamily: 'inherit',
           color: 'white',
@@ -118,7 +118,7 @@ const Navbar = () => {
             href="/" 
             className="text-[2em] text-white font-semibold tracking-tight hover:text-purple-400 transition-colors duration-300"
           >
-            CAPPELLO Alicia
+            Portfolio
           </a>
           <div class="w-80 h-px bg-gray-400"></div>
           <div class="w-20 h-px bg-gray-400"></div>

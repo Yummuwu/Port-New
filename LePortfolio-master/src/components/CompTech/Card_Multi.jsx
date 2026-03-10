@@ -5,27 +5,22 @@ import { useState } from "react";
 const techStack = [
   { label: "HTML / CSS", color: "text-orange-400 border-orange-400/40 bg-orange-400/5" },
   { label: "PHP", color: "text-indigo-400 border-indigo-400/40 bg-indigo-400/5" },
-  { label: "Vue.js", color: "text-red-400 border-red-400/40 bg-red-400/5" },
   { label: "MySQL", color: "text-cyan-400 border-cyan-400/40 bg-cyan-400/5" },
   { label: "JavaScript", color: "text-purple-400 border-purple-400/40 bg-purple-400/5" },
 ];
 
 const deliverables = [
   {
-    title: "API RESTful",
-    desc: "Relis la base de données MySQL avec l'application web et mobile via une API RESTful sécurisée.",
-  },
-  {
     title: "Application web",
     desc: "L'application web permet aux utilisateurs de s'inscrire à un concours de boulangerie et de consulter les résultats du concours. Elle permet aussi aux admins de générer et publier les résultats du concours.",
   },
   {
-    title: "Application mobile",
-    desc: "L'application mobile permet aux juges de noter les participants au concours de boulangerie grace à des codes uniques et de soumettre leurs notes via l'API RESTful.",
+    title: "Base de donnée MySQL",
+    desc: "La base de données MySQL permet la gestions des équipements lié au système de réservation ainsi que les comptes utlisateurs",
   },
-  {
-    title: "Base de données MySQL",
-    desc: "Base de données relationnelle pour stocker les informations sur les participants, les notes, les résultats du concours ainsi que les paramètres du concours.",
+    {
+    title: "Maquette - Canvas",
+    desc: "Maquette de l'interface web du projet",
   },
 ];
 
@@ -106,7 +101,7 @@ function Lightbox({ img, onClose }) {
 
 // ─── Main Component ───────────────────────────────────────────────────────────
 
-export default function CardGourm() {
+export default function CardMulti() {
   const [activeImg, setActiveImg] = useState(null);
 
   return (
@@ -157,12 +152,12 @@ export default function CardGourm() {
         <header className="fade-up d1 mb-8">
           <div className="flex flex-wrap items-center gap-3 mb-3">
             <span className="text-[1.45rem] font-mono tracking-widest text-cyan-400 uppercase border border-cyan-400/20 bg-cyan-400/5 rounded-full px-3 py-1">
-              Projet Gourmetise
+              Projet Multibureau
             </span>
           </div>
 
           <p className="text-zinc-400 text-xl leading-relaxed max-w-2xl mb-5">
-            Conception et développement d'une application web complète pour un concours de boulangerie fictif, avec une API RESTful en PHP, une base de données MySQL, une interface web pour les utilisateurs et une application mobile pour les juges.
+            Conception d'un site web dynamique avec un système de réservation visant à réserver des bureaux pour travailler ou entreprendre des réunions.
           </p>
 
           <a
@@ -201,7 +196,7 @@ export default function CardGourm() {
             <SectionLabel>Difficultés</SectionLabel>
             <GlassCard className="p-4">
               <p className="text-zinc-300 text-xl leading-relaxed">
-                - Beaucoup de routes possibles pour la structure de l'API RESTful, la base de données et les applications web/mobile. <br /> - Le token JWT bloquait certaines routes de l'API.
+                - Un système de réservation assez complèxe à mettre en oeuvre.
               </p>
             </GlassCard>
           </section>

@@ -1,57 +1,46 @@
 import { useState } from "react";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
-
 const techStack = [
-  { label: "HTML / CSS", color: "text-orange-400 border-orange-400/40 bg-orange-400/5" },
-  { label: "PHP", color: "text-indigo-400 border-indigo-400/40 bg-indigo-400/5" },
-  { label: "Laravel", color: "text-red-400 border-red-400/40 bg-red-400/5" },
-  { label: "MySQL", color: "text-cyan-400 border-cyan-400/40 bg-cyan-400/5" },
-  { label: "JavaScript", color: "text-purple-400 border-purple-400/40 bg-purple-400/5" },
+  { label: "Wordpress", color: "text-orange-400 border-orange-400/40 bg-orange-400/5" },
+  { label: "Shopify", color: "text-indigo-400 border-indigo-400/40 bg-indigo-400/5" },
+  { label: "HTML", color: "text-purple-400 border-purple-400/40 bg-purple-400/5" },
+  { label: "CSS", color: "text-yellow-400 border-yellow-400/40 bg-yellow-400/5" },
 ];
 
 const deliverables = [
   {
-    title: "Site web fonctionnel",
-    desc: "Interface utilisateur intuitive et responsive",
+    title: "Site web vitrine",
+    desc: "Refonte du site web vitrine sur Wordpress en gardant l'identité visuelle de l'agence.",
   },
-  {
-    title: "Système de compte",
-    desc: "Inscription, connexion et sessions sécurisées",
-  },
-  {
-    title: "Catalogue de jeux",
-    desc: "Navigation interactive dans la bibliothèque VR",
-  },
-  {
-    title: "Système de réservation",
-    desc: "Réservation synchronisée avec MySQL, sans conflits",
-  },
-];
-
-const companyCards = [
-  { label: "Secteur", value: "Divertissement VR" },
-  { label: "Localisation", value: "France" },
-  { label: "Activité", value: "Location & expériences de réalité virtuelle" },
-  { label: "Public cible", value: "Particuliers & professionnels" },
 ];
 
 const screenshots = [
-  { src: "screenshot1.png", label: "Catalogue" },
-  { src: "screenshot2.png", label: "Catalogue (détail)" },
-  { src: "screenshot3.png", label: "Réservation" },
-  { src: "screenshot4.png", label: "Base de données" },
+  { src: "screenshot1.png", label: "Page d'accueil" },
+  { src: "screenshot2.png", label: "Page de services" },
+  { src: "screenshot3.png", label: "Page de contact" },
+  { src: "screenshot4.png", label: "Dashboard" },
+];
+
+const gestionProjets = [
+  {
+    title: "Discord - Communication avec le maître de stage",
+    desc: "Discord pour les échanges rapides et la coordination avec le maître de stage ainsi que le partage d'informations/images.",
+  },
+  {
+    title: "Daily meeting avec le maître de stage",
+    desc: "Daily meeting avec le maître de stage pour faire le point sur l'avancement du projet, discuter des difficultés rencontrées et planifier les prochaines étapes.",
+  },
 ];
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
 function SectionLabel({ children }) {
   return (
-    <div className="flex items-start gap-3 mb-6">
+    <div className="flex items-center gap-3 mb-4">
       <span className="text-xl font-mono uppercase tracking-[0.2em] text-cyan-400">
         {children}
       </span>
-      <div className="flex-1 h-px bg-gradient-to-r from-cyan-400/30 to-transparent" />
     </div>
   );
 }
@@ -70,7 +59,7 @@ function Lightbox({ img, onClose }) {
   if (!img) return null;
   return (
     <div
-      className="fixed inset-0 z-50 flex items-start justify-center  backdrop-blur-md p-4"
+      className="fixed inset-0 z-50 flex items-start justify-center backdrop-blur-md p-4"
       onClick={onClose}
     >
       <div
@@ -79,7 +68,7 @@ function Lightbox({ img, onClose }) {
       >
         <img src={img.src} alt={img.label} className="w-full object-contain max-h-[70vh]" />
         <div className="flex items-start justify-between px-5 py-3 border-t border-white/[0.08]">
-          <span className="text-sm text-zinc-400 font-mono">{img.label}</span>
+          <span className="text-xl text-zinc-400 font-mono">{img.label}</span>
           <button
             onClick={onClose}
             className="text-xl text-zinc-500 hover:text-white transition-colors px-3 py-1 rounded-md border border-white/10 hover:border-white/30"
@@ -102,94 +91,81 @@ export default function CardGeek() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap');
 
-        .vrtueux-root * {
-          font-family: 'Syne', sans-serif;
-        }
-        .vrtueux-root .font-mono {
-          font-family: 'DM Mono', monospace !important;
-        }
+        .vrtueux-root * { font-family: 'Syne', sans-serif; }
+        .vrtueux-root .font-mono { font-family: 'DM Mono', monospace !important; }
 
         @keyframes fadeUp {
-          from { opacity: 0; transform: translateY(20px); }
+          from { opacity: 0; transform: translateY(14px); }
           to   { opacity: 1; transform: translateY(0); }
         }
-        .fade-up { animation: fadeUp 0.55s ease both; }
+        .fade-up { animation: fadeUp 0.45s ease both; }
         .d1 { animation-delay: 0.05s; }
-        .d2 { animation-delay: 0.15s; }
-        .d3 { animation-delay: 0.25s; }
-        .d4 { animation-delay: 0.35s; }
-        .d5 { animation-delay: 0.45s; }
+        .d2 { animation-delay: 0.12s; }
+        .d3 { animation-delay: 0.20s; }
+        .d4 { animation-delay: 0.28s; }
 
-        .gallery-thumb {
-          transition: transform 0.25s ease, box-shadow 0.25s ease;
+        .gallery-thumb { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .gallery-thumb:hover { transform: scale(1.04); box-shadow: 0 0 20px rgba(34,211,238,0.15); }
+
+        /*
+          Layout:
+          Col 1 (left)    | Col 2 (right)
+          ────────────────────────────────
+          Technologies    | Difficultés    ← row 1
+          Livrables       | Galerie        ← row 2 (galerie spans rows 2+3)
+          Gestion projet  |                ← row 3
+        */
+        .aligned-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: auto auto auto;
+          gap: 24px;
         }
-        .gallery-thumb:hover {
-          transform: scale(1.04);
-          box-shadow: 0 0 28px rgba(34, 211, 238, 0.18);
-        }
+        .cell-top-left      { grid-column: 1; grid-row: 1; }
+        .cell-top-right     { grid-column: 2; grid-row: 1; }
+        .cell-mid-left      { grid-column: 1; grid-row: 2; }
+        .cell-bottom-left   { grid-column: 1; grid-row: 3; }
+        .cell-right-tall    { grid-column: 2; grid-row: 2 / 4; }
       `}</style>
 
-      <div className="vrtueux-root min-h-screen text-zinc-200 relative overflow-hidden">
+      <div className="vrtueux-root w-full text-zinc-200">
 
-        {/* Ambient blobs */}
-        <div className="pointer-events-none fixed inset-0 overflow-hidden">
-          <div className="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-cyan-500/[0.06] blur-[120px]" />
-          <div className="absolute top-1/2 -right-40 w-[400px] h-[400px] rounded-full bg-blue-600/[0.05] blur-[100px]" />
-          <div className="absolute bottom-0 left-1/3 w-[300px] h-[300px] rounded-full bg-violet-600/[0.04] blur-[100px]" />
-        </div>
+        {/* ── Hero ── */}
+        <header className="fade-up d1 mb-8">
+          <div className="flex flex-wrap items-center gap-3 mb-3">
+            <span className="text-[1.45rem] font-mono tracking-widest text-cyan-400 uppercase border border-cyan-400/20 bg-cyan-400/5 rounded-full px-3 py-1">
+              Projet Web · Wordpress
+            </span>
+          </div>
 
-        <div className="relative z-10 max-w-4xl px-6 py-16 space-y-20">
+          <p className="text-zinc-400 text-xl leading-relaxed max-w-2xl mb-5">
+            Refonte d'une site web vitrine sur Wordpress avec un nouveau thème et des fonctionnalités améliorées.
+          </p>
 
-          {/* ── Hero ── */}
-          <header className="fade-up d1">
-            <div className="inline-flex items-start gap-2 text-xl font-mono tracking-widest text-cyan-400 uppercase border border-cyan-400/20 bg-cyan-400/5 rounded-full px-4 py-1.5 mb-6">
-              Projet Web · Full Stack
-            </div>
+          <a
+            href="dfdfg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-cyan-400 text-black text-xl font-semibold px-4 py-2 rounded-lg hover:bg-cyan-300 transition-colors duration-200"
+          >
+            Voir le projet
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </header>
 
-            <p className="text-zinc-400 text-xl max-w-2xl leading-relaxed mb-8">
-              Conception et développement d'un site web dynamique avec système de compte,
-              catalogue de jeux VR et réservation en ligne, relié à une base de données MySQL.
-            </p>
+        {/* ── Grid ── */}
+        <div className="fade-up d2 aligned-grid">
 
-            <a
-              href="dfdfg"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-cyan-400 mt-10 text-black text-xl font-semibold px-6 py-3 rounded-lg hover:bg-cyan-300 transition-colors duration-200"
-            >
-              Voir le projet
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
-          </header>
-
-          {/* ── Company Info ── */}
-          <section className="fade-up d2">
-            <SectionLabel>L'entreprise VRtueux</SectionLabel>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-              {companyCards.map((card) => (
-                <GlassCard key={card.label} className="p-4 flex flex-col gap-2">
-                  <span className="text-2xl">{card.icon}</span>
-                  <span className="text-[18px] font-mono uppercase tracking-widest text-zinc-500">
-                    {card.label}
-                  </span>
-                  <span className="text-xl text-zinc-200 font-semibold leading-snug">
-                    {card.value}
-                  </span>
-                </GlassCard>
-              ))}
-            </div>
-          </section>
-
-          {/* ── Tech Stack ── */}
-          <section className="fade-up d3">
+          {/* ROW 1 LEFT: Technologies */}
+          <section className="cell-top-left">
             <SectionLabel>Technologies utilisées</SectionLabel>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2">
               {techStack.map((t) => (
                 <span
                   key={t.label}
-                  className={`text-xl font-mono border rounded-lg px-4 py-2 ${t.color}`}
+                  className={`text-xl font-mono border rounded-lg px-3 py-1.5 ${t.color}`}
                 >
                   {t.label}
                 </span>
@@ -197,50 +173,60 @@ export default function CardGeek() {
             </div>
           </section>
 
-          {/* ── Deliverables ── */}
-          <section className="fade-up d3">
+          {/* ROW 1 RIGHT: Difficultés */}
+          <section className="cell-top-right">
+            <SectionLabel>Difficultés</SectionLabel>
+            <GlassCard className="p-4">
+              <p className="text-zinc-300 text-xl leading-relaxed">
+                - Pas d'images fournies par le client donc retouche sur toutes les images. <br /> - Refonte d'un site en gardant une direction artistique similaire.
+                <br /> - Apprentissage de Shopify
+              </p>
+            </GlassCard>
+          </section>
+
+          {/* ROW 2 LEFT: Livrables */}
+          <section className="cell-mid-left">
             <SectionLabel>Livrables</SectionLabel>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 gap-3">
               {deliverables.map((d) => (
-                <GlassCard key={d.title} className="p-5 flex gap-4 items-start">
-                  <span className="text-xl mt-0.5 shrink-0">{d.icon}</span>
-                  <div>
-                    <p className="font-semibold text-zinc-100 mb-1">{d.title}</p>
-                    <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
-                  </div>
+                <GlassCard key={d.title} className="p-4">
+                  <p className="font-semibold text-xl text-zinc-100 mb-0.5">{d.title}</p>
+                  <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
                 </GlassCard>
               ))}
             </div>
           </section>
 
-          {/* ── Challenge ── */}
-          <section className="fade-up d4">
-            <SectionLabel>Difficultés</SectionLabel>
-            <GlassCard className="p-6 relative overflow-hidden">
-              <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-cyan-400 to-blue-600 rounded-l-xl" />
-              <p className="text-zinc-300 text-xl leading-relaxed pl-3">
-                Peu d'encadrement, construire u nsite web en 6 semaines avec front et back{" "}
-              </p>
-            </GlassCard>
+          {/* ROW 3 LEFT: Gestion du projet */}
+          <section className="cell-bottom-left">
+            <SectionLabel>Gestion du projet</SectionLabel>
+            <div className="grid grid-cols-1 gap-3">
+              {gestionProjets.map((d) => (
+                <GlassCard key={d.title} className="p-4">
+                  <p className="font-semibold text-xl text-zinc-100 mb-0.5">{d.title}</p>
+                  <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
+                </GlassCard>
+              ))}
+            </div>
           </section>
 
-          {/* ── Gallery ── */}
-          <section className="fade-up d5">
+          {/* ROWS 2-3 RIGHT: Galerie — spans rows 2 and 3 */}
+          <section className="cell-right-tall">
             <SectionLabel>Galerie</SectionLabel>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <div className="grid grid-cols-2 gap-2">
               {screenshots.map((s) => (
                 <button
                   key={s.src}
                   onClick={() => setActiveImg(s)}
-                  className="group relative rounded-xl overflow-hidden border border-white/[0.08] gallery-thumb cursor-pointer bg-zinc-900 text-left"
+                  className="group relative rounded-lg overflow-hidden border border-white/[0.08] gallery-thumb cursor-pointer bg-zinc-900 text-left"
                 >
                   <img
                     src={s.src}
                     alt={s.label}
-                    className="w-full aspect-video object-cover opacity-75 group-hover:opacity-100 transition-opacity duration-200"
+                    className="w-full aspect-video object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-200"
                   />
-                  <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent px-3 py-2">
-                    <span className="text-[11px] font-mono text-zinc-300">{s.label}</span>
+                  <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent px-2 py-1">
+                    <span className="text-[9px] font-mono text-zinc-300">{s.label}</span>
                   </div>
                 </button>
               ))}

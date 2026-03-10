@@ -177,10 +177,8 @@ export default function CardVr() {
           </a>
         </header>
 
-        {/* ── Grid ── */}
         <div className="fade-up d2 aligned-grid">
 
-          {/* ROW 1 LEFT: Technologies */}
           <section className="cell-top-left">
             <SectionLabel>Technologies utilisées</SectionLabel>
             <div className="flex flex-wrap gap-2">
@@ -195,7 +193,7 @@ export default function CardVr() {
             </div>
           </section>
 
-          {/* ROW 1 RIGHT: Difficultés */}
+
           <section className="cell-top-right">
             <SectionLabel>Difficultés</SectionLabel>
             <GlassCard className="p-4">
@@ -205,8 +203,8 @@ export default function CardVr() {
             </GlassCard>
           </section>
 
-          {/* ROW 2 LEFT: Livrables */}
-          <section className="cell-mid-left">
+
+          <section className="mb-10 cell-mid-left">
             <SectionLabel>Livrables</SectionLabel>
             <div className="grid grid-cols-2 gap-3">
               {deliverables.map((d) => (
