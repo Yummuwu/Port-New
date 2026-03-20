@@ -138,11 +138,11 @@ export default function CardGeek() {
         <header className="fade-up d1 mb-8">
           <div className="flex flex-wrap items-center gap-3 mb-3">
             <span className="text-[1.45rem] font-mono tracking-widest text-cyan-400 uppercase border border-cyan-400/20 bg-cyan-400/5 rounded-full px-3 py-1">
-              Projet Web · Wordpress
+              Wordpress ·Refonte · Paradis du geek
             </span>
           </div>
 
-          <p className="text-zinc-400 text-xl leading-relaxed max-w-2xl mb-5">
+          <p className="text-zinc-400 text-2xl leading-relaxed max-w-2xl mb-5">
             Refonte d'une site web vitrine sur Wordpress avec un nouveau thème et des fonctionnalités améliorées.
           </p>
 

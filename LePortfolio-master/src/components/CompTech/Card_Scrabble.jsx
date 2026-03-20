@@ -8,16 +8,17 @@ import dev from '../../assets/dev.PNG';
 const techStack = [
   { label: "C#", color: "text-orange-400 border-orange-400/40 bg-orange-400/5" },
   { label: "MySQL", color: "text-cyan-400 border-cyan-400/40 bg-cyan-400/5" },
+  { label: "Visual Studio Code", color: "text-yellow-400 border-yellow-400/40 bg-yellow-400/5" },
 ];
 
 const deliverables = [
   {
     title: "Application Scrabble",
-    desc: "L'application Scrabble permet de jouer au jeu scrabble crée sur Visual studio.",
+    desc: "L'application Scrabble permet de jouer au jeu scrabble.",
   },
   {
     title: "Base de donnée MySQL",
-    desc: "La base de donnée MySQL permet de stocké le dictionnaire français ainsi que les informations sur les parties joué",
+    desc: "La base de donnée MySQL permet de stocké le dictionnaire français ainsi que les informations sur les parties jouée.",
   },
 ];
 
@@ -39,7 +40,7 @@ const gestionProjets = [
   },
   {
     title: "Figma - Maquette",
-    desc: "Utilisation de Figma pour la création de la maquette .",
+    desc: "Utilisation de Figma pour la création de la maquette.",
   },
   {
     title: "Méthode - Agile",

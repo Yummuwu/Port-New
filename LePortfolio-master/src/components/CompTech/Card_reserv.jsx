@@ -197,16 +197,17 @@ export default function CardVr() {
             </div>
           </section>
 
-
           <section className="cell-top-right">
             <SectionLabel>Difficultés</SectionLabel>
             <GlassCard className="p-4">
               <p className="text-zinc-300 text-xl leading-relaxed">
-                - La compléxité du projet en seulement 6 semaines a été le défi majeur.<br></br> - L'apprentissage rapide de Laravel et l'intégration de multiples fonctionnalités (système de compte, catalogue, réservation). <br></br>- Le manque d'encadrement à aussi ralenti l'avancement du projet.<br></br>- La modélisation de la base de données et la gestion des relations entre les différentes entités (utilisateurs, jeux, réservations) a été un aspect particulièrement complexe.
+                - Projet complexe à réaliser en 6 semaines.<br />
+                - Apprentissage rapide de Laravel et intégration de plusieurs fonctionnalités.<br />
+                - Manque d’encadrement ayant ralenti l’avancement.<br />
+                - Modélisation de la base de données et gestion des relations complexes.
               </p>
             </GlassCard>
           </section>
-
 
           <section className="mb-10 cell-mid-left">
             <SectionLabel>Livrables</SectionLabel>

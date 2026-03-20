@@ -194,25 +194,12 @@ const HomeP = () => {
                                                 <span className="px-4 py-2 bg-teal-500/20 border border-teal-400/40 text-teal-200 text-sm rounded-full">Kotlin</span>
                                                 <span className="px-4 py-2 bg-teal-500/20 border border-teal-400/40 text-teal-200 text-sm rounded-full">Vite</span>
                                                 <span className="px-4 py-2 bg-teal-500/20 border border-teal-400/40 text-teal-200 text-sm rounded-full">Blade</span>
+                                                <span className="px-4 py-2 bg-teal-500/20 border border-teal-400/40 text-teal-200 text-sm rounded-full">Clip Studio Paint</span>
+                                                <span className="px-4 py-2 bg-teal-500/20 border border-teal-400/40 text-teal-200 text-sm rounded-full">Paint Tool Sai</span>
                                                 <span className="px-4 py-2 bg-indigo-500/20 border border-indigo-400/40 text-indigo-200 text-sm rounded-full">Responsive Design</span>
                                             </div>
 
                                         </div>
-                                    </div>
-
-                                    <div className="pt-20 text-2xl pb-10 text-purple-300/80 text-center italic mb-4 font-medium tracking-wide">
-                                        Logiciels maîtrisé en dehors de ma scolarité
-                                    </div>
-
-                                    <div className="flex gap-6 justify-center items-center py-10">
-                                        {logos.map((logo) => (
-                                            <div
-                                            key={logo.alt}
-                                            className="w-32 h-32 bg-gradient-to-br from-purple-900/20 via-pink-900/20 to-blue-900/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-purple-400/30"
-                                            >
-                                            <img src={logo.src} alt={logo.alt} className="w-20 h-20 object-contain" />
-                                            </div>
-                                        ))}
                                     </div>
                             </div>
                             

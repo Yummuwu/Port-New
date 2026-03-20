@@ -14,7 +14,7 @@ const techStack = [
 const deliverables = [
   {
     title: "Application web",
-    desc: "L'application web permet aux utilisateurs de s'inscrire à un concours de boulangerie et de consulter les résultats du concours. Elle permet aussi aux admins de générer et publier les résultats du concours.",
+    desc: "L'application web permet aux utilisateurs de s'inscrire pour réserver des salle de réunions",
   },
   {
     title: "Base de donnée MySQL",
@@ -198,7 +198,7 @@ export default function CardMulti() {
             <SectionLabel>Difficultés</SectionLabel>
             <GlassCard className="p-4">
               <p className="text-zinc-300 text-xl leading-relaxed">
-                - Un système de réservation assez complèxe à mettre en oeuvre.
+                - Un système de réservation assez complexe à mettre en oeuvre.
               </p>
             </GlassCard>
           </section>

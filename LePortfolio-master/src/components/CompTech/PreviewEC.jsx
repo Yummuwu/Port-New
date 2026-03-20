@@ -12,20 +12,16 @@ const tags = ["Wordpress", "Particuliers", "Entreprises", "Hébergement"];
 
 const deliverables = [
   {
-    title: "Gestion/ Hébergement du site web en continu sous contrat",
+    title: "Conception et refonte de site web vitrine / dynamique",
+    desc: "Création de maquettes et prototypes, intégration des contenus",
+  },
+  {
+    title: "Gestion/ Hébergement du site web",
     desc: "Maintenance et mise à jour régulière du site web",
   },
   {
     title: "Veille technologique",
     desc: "Suivi des innovations concernant les mises à jour Divi",
-  },
-  {
-    title: "Conception de site web vitrine ou dynamique",
-    desc: "Création de maquettes et prototypes, intégration des contenus",
-  },
-  {
-    title: "Refonte de sites web existants",
-    desc: "Modernisation et optimisation des sites web existants",
   },
   {
     title: "Support de premier niveau Wordpress",

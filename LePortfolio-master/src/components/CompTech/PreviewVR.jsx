@@ -12,10 +12,6 @@ const tags = ["Divertissement VR", "Particuliers", "Entreprises", "Formations", 
 
 const deliverables = [
   {
-    title: "Gestion du site web",
-    desc: "Interface utilisateur intuitive et responsive",
-  },
-  {
     title: "Veille technologique",
     desc: "Suivi des innovations dans le secteur VR",
   },
@@ -27,32 +23,20 @@ const deliverables = [
     title: "Configuration des logiciels",
     desc: "Réservation synchronisée avec MySQL, sans conflits",
   },
-  {
-    title: "Support de premier niveau",
-    desc: "Assistance technique et accompagnement des utilisateurs",
-  },
 ];
 
 const gestionProjets = [
   {
     title: "Méthode Kanban – To do list",
-    desc: "Organisation visuelle des tâches et suivi de l'avancement",
+    desc: "Organisation visuelle des tâches et suivi de l'avancement sur Trello",
   },
   {
     title: "Daily meeting avec le maître de stage",
     desc: "Points quotidiens pour aligner les priorités",
   },
   {
-    title: "Découpage du travail par pages",
-    desc: "Livraison itérative, page par page",
-  },
-  {
     title: "Stockage du serveur sur machine virtuelle",
     desc: "Environnement isolé et reproductible",
-  },
-  {
-    title: "Outil Trello pour le suivi de projet",
-    desc: "Tableau de bord collaboratif en temps réel",
   },
   {
     title: "Versioning avec GitHub",

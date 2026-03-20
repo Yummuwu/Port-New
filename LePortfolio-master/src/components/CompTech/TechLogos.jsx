@@ -1,6 +1,7 @@
 import LogoLoop from './LogoLoop';
 import { SiReact, SiTailwindcss } from 'react-icons/si';
-import { FaVuejs,FaLaravel,FaPhp, FaHtml5,FaCss3Alt, FaCss3 } from "react-icons/fa";
+import { FaVuejs,FaLaravel,FaPhp, FaHtml5,FaCss3Alt, FaCss3} from "react-icons/fa";
+import { TbBrandKotlin, TbBrandVite } from "react-icons/tb";
 
 const techLogos = [
 { node: <SiReact color="#61DAFB"/>, title: "React", href: "https://react.dev" },
@@ -11,14 +12,11 @@ const techLogos = [
 { node: <FaCss3Alt color="#1572B6"/>, title: "CSS3", href: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
 { node: <FaVuejs color="#4FC08D"/>, title: "Vue.js", href: "https://vuejs.org" },
 { node: <SiTailwindcss color="#06B6D4"/>, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+{ node: <TbBrandKotlin color="#ac88ffff"/>, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+{ node: <TbBrandVite color="#fdff88ff"/>, title: "Tailwind CSS", href: "https://tailwindcss.com" },
 ];
 
-// Alternative with image sources
-const imageLogos = [
-  { src: "/logos/company1.png", alt: "Company 1", href: "https://company1.com" },
-  { src: "/logos/company2.png", alt: "Company 2", href: "https://company2.com" },
-  { src: "/logos/company3.png", alt: "Company 3", href: "https://company3.com" },
-];
+
 
 function Logos() {
   return (

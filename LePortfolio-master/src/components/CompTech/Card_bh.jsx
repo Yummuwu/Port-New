@@ -134,11 +134,11 @@ export default function CardBh() {
         <header className="fade-up d1 mb-8">
           <div className="flex flex-wrap items-center gap-3 mb-3">
             <span className="text-[1.45rem] font-mono tracking-widest text-cyan-400 uppercase border border-cyan-400/20 bg-cyan-400/5 rounded-full px-3 py-1">
-              Projet Web · Wordpress
+              Wordpress · Bridge Hotel
             </span>
           </div>
 
-          <p className="text-zinc-400 text-xl leading-relaxed max-w-2xl mb-5">
+          <p className="text-zinc-400 text-2xl leading-relaxed max-w-2xl mb-5">
             Conception et développement d'un site web pour une agence tier sur Wordpress avec Elementor.
           </p>
 
