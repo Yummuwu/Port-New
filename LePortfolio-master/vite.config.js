@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import path from "path"
 
 export default defineConfig({
-  base: '/Yummuwu.github.io/', // ✅ AJOUT ICI
+  base: '/Port-New/', // ✅ AJOUT ICI
 
   plugins: [react(), tailwindcss()],
   
