@@ -17,7 +17,7 @@ const techStack = [
 const deliverables = [
   {
     title: "Site web",
-    desc: "Interface utilisateur regroupant les fonctionnalités de réservation, catalogue de jeux et gestion de compte ainsi que d'autres informations comme le contact ou la carte des snacks.",
+    desc: "Interface regroupant la réservation, le catalogue de jeux, la gestion de compte et des informations pratiques (contact, carte des snacks)",
   },
   {
     title: "Système de compte",
@@ -29,15 +29,8 @@ const deliverables = [
   },
   {
     title: "Système de réservation",
-    desc: "Les utilisateur inscrit et connecté peuvent réserver des craineaux horaires pour faire l'éxpérience des jeux VR seul ou à plusieurs . Réservation synchronisée avec MySQL",
+    desc: "Les utilisateurs inscrits peuvent réserver des créneaux VR, seuls ou en groupe, avec synchronisation MySQL.",
   },
-];
-
-const companyCards = [
-  { label: "Secteur", value: "Divertissement VR" },
-  { label: "Localisation", value: "France" },
-  { label: "Activité", value: "Expériences de réalité virtuelle" },
-  { label: "Public cible", value: "Particuliers & professionnels" },
 ];
 
 const screenshots = [
@@ -50,12 +43,48 @@ const screenshots = [
 
 const gestionProjets = [
   {
-    title: "Discord - Communication avec le maître de stage",
-    desc: "Discord pour les échanges rapides et la coordination avec le maître de stage ainsi que le partage d'informations/images.",
+    title: "Discord",
+    desc: "Communication rapide et partage d’infos avec le maître de stage",
   },
   {
-    title: "Daily meeting avec le maître de stage",
-    desc: "Daily meeting avec le maître de stage pour faire le point sur l'avancement du projet, discuter des difficultés rencontrées et planifier les prochaines étapes.",
+    title: "Kanban (Trello)",
+    desc: "Organisation et suivi des tâches",
+  },
+  {
+    title: "Daily meeting",
+    desc: "Alignement quotidien des priorités",
+  },
+  {
+    title: "Machine virtuelle",
+    desc: "Serveur isolé et reproductible",
+  },
+  {
+    title: "GitHub",
+    desc: "Versioning et gestion des modifications",
+  },
+];
+
+
+const Missions = [
+  {
+    title: "Base de donnée",
+    desc: "Communication rapide et partage d’infos avec le maître de stage",
+  },
+  {
+    title: "",
+    desc: "Organisation et suivi des tâches",
+  },
+  {
+    title: "",
+    desc: "Alignement quotidien des priorités",
+  },
+  {
+    title: "Machine virtuelle",
+    desc: "Serveur isolé et reproductible",
+  },
+  {
+    title: "GitHub",
+    desc: "Versioning et gestion des modifications",
   },
 ];
 
@@ -85,22 +114,34 @@ function Lightbox({ img, onClose }) {
   if (!img) return null;
   return (
     <div
-      className="fixed inset-0 z-50 flex items-start justify-center backdrop-blur-md p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(12px)' }}
       onClick={onClose}
     >
       <div
-        className="relative max-w-3xl w-full rounded-2xl border border-white/10 bg-zinc-900 overflow-hidden shadow-2xl"
+        className="relative w-full rounded-2xl border border-white/10 bg-zinc-900 overflow-hidden shadow-2xl"
+        style={{ maxWidth: '90vw', maxHeight: '92vh' }}
         onClick={(e) => e.stopPropagation()}
       >
-        <img src={img.src} alt={img.label} className="w-full object-contain max-h-[70vh]" />
-        <div className="flex items-start justify-between px-5 py-3 border-t border-white/[0.08]">
-          <span className="text-xl text-zinc-400 font-mono">{img.label}</span>
-          <button
-            onClick={onClose}
-            className="text-xl text-zinc-500 hover:text-white transition-colors px-3 py-1 rounded-md border border-white/10 hover:border-white/30"
-          >
-            ✕ Fermer
-          </button>
+        {/* Close button — top-right corner */}
+        <button
+          onClick={onClose}
+          className="absolute top-3 right-3 z-10 text-zinc-400 hover:text-white transition-colors bg-zinc-900/80 backdrop-blur px-3 py-1 rounded-lg border border-white/10 hover:border-white/30 font-mono text-sm"
+        >
+          ✕ Fermer
+        </button>
+
+        {/* Full-size image */}
+        <img
+          src={img.src}
+          alt={img.label}
+          className="w-full object-contain"
+          style={{ maxHeight: '85vh', display: 'block' }}
+        />
+
+        {/* Label bar */}
+        <div className="px-5 py-3 border-t border-white/[0.08]">
+          <span className="text-sm text-zinc-400 font-mono">{img.label}</span>
         </div>
       </div>
     </div>
@@ -141,12 +182,29 @@ export default function CardVr() {
           Livrables       | Galerie        ← row 2 (galerie spans rows 2+3)
           Gestion projet  |                ← row 3
         */
-        .aligned-grid {
-          display: grid;
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        align-items: start;
+      }
+
+      @media (min-width: 1024px) {
+        .portfolio-grid {
           grid-template-columns: 1fr 1fr;
-          grid-template-rows: auto auto auto;
+        }
+
+        .left-col {
+          display: flex;
+          flex-direction: column;
           gap: 24px;
         }
+
+        .right-col {
+          position: sticky;
+          top: 20px;
+        }
+      }
         .cell-top-left    { grid-column: 1; grid-row: 1; }
         .cell-top-right   { grid-column: 2; grid-row: 1; }
         .cell-mid-left    { grid-column: 1; grid-row: 2; }
@@ -165,9 +223,9 @@ export default function CardVr() {
           </div>
 
           <p className="text-zinc-400 text-xl leading-relaxed max-w-2xl mb-5">
-            Conception et développement d'un site vitrine comprenant un système de réservation permettant aux utilisateurs de réserver des créneaux pour faire l'expérience de jeux VR.
+            Conception et développement d'un site web dynamique comprenant un système de réservation permettant aux utilisateurs de réserver des créneaux pour faire l'expérience de jeux VR.
           </p>
-
+        {/* ── A VOIR ── 
           <a
             href="dfdfg"
             target="_blank"
@@ -179,11 +237,15 @@ export default function CardVr() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
+          */}
         </header>
 
-        <div className="fade-up d2 aligned-grid">
+        <div className="fade-up d2 portfolio-grid">
 
-          <section className="cell-top-left">
+        {/* LEFT COLUMN */}
+        <div className="left-col">
+
+          <section>
             <SectionLabel>Technologies utilisées</SectionLabel>
             <div className="flex flex-wrap gap-2">
               {techStack.map((t) => (
@@ -197,19 +259,7 @@ export default function CardVr() {
             </div>
           </section>
 
-          <section className="cell-top-right">
-            <SectionLabel>Difficultés</SectionLabel>
-            <GlassCard className="p-4">
-              <p className="text-zinc-300 text-xl leading-relaxed">
-                - Projet complexe à réaliser en 6 semaines.<br />
-                - Apprentissage rapide de Laravel et intégration de plusieurs fonctionnalités.<br />
-                - Manque d’encadrement ayant ralenti l’avancement.<br />
-                - Modélisation de la base de données et gestion des relations complexes.
-              </p>
-            </GlassCard>
-          </section>
-
-          <section className="mb-10 cell-mid-left">
+          <section>
             <SectionLabel>Livrables</SectionLabel>
             <div className="grid grid-cols-2 gap-3">
               {deliverables.map((d) => (
@@ -221,43 +271,54 @@ export default function CardVr() {
             </div>
           </section>
 
-          {/* ROW 3 LEFT: Gestion du projet */}
-          <section className="cell-bottom-left">
-            <SectionLabel>Gestion du projet</SectionLabel>
-            <div className="grid grid-cols-1 gap-3">
-              {gestionProjets.map((d) => (
-                <GlassCard key={d.title} className="p-4">
-                  <p className="font-semibold text-xl text-zinc-100 mb-0.5">{d.title}</p>
-                  <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
-                </GlassCard>
-              ))}
-            </div>
-          </section>
-
-          {/* ROWS 2-3 RIGHT: Galerie — spans rows 2 and 3 */}
-          <section className="cell-right-tall">
-            <SectionLabel>Galerie</SectionLabel>
-            <div className="grid grid-cols-2 gap-2">
-              {screenshots.map((s) => (
-                <button
-                  key={s.src}
-                  onClick={() => setActiveImg(s)}
-                  className="group relative rounded-lg overflow-hidden border border-white/[0.08] gallery-thumb cursor-pointer bg-zinc-900 text-left"
-                >
-                  <img
-                    src={s.src}
-                    alt={s.label}
-                    className="w-full aspect-video object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-200"
-                  />
-                  <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent px-2 py-1">
-                    <span className="text-[9px] font-mono text-zinc-300">{s.label}</span>
-                  </div>
-                </button>
-              ))}
-            </div>
+          <section>
+            <SectionLabel>Difficultés</SectionLabel>
+            <GlassCard className="p-4">
+              <p className="text-zinc-300 text-xl leading-relaxed">
+                - Projet complexe à réaliser en 6 semaines.<br />
+                - Apprentissage rapide de Laravel et intégration de plusieurs fonctionnalités.<br />
+                - Manque d’encadrement ayant ralenti l’avancement.<br />
+                - Modélisation de la base de données et gestion des relations complexes.
+              </p>
+            </GlassCard>
           </section>
 
         </div>
+
+        {/* RIGHT COLUMN */}
+        <div className="right-col">
+          <SectionLabel>Gestion du projet</SectionLabel>
+          <div className="grid grid-cols-3 gap-3">
+            {gestionProjets.map((d) => (
+              <GlassCard key={d.title} className="p-4">
+                <p className="font-semibold text-xl text-zinc-100 mb-0.5">{d.title}</p>
+                <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
+              </GlassCard>
+            ))}
+          </div>
+          <div className="pt-8"></div>
+          <SectionLabel>Galerie</SectionLabel>
+          <div className="grid grid-cols-2 gap-2">
+            {screenshots.map((s) => (
+              <button
+                key={s.src}
+                onClick={() => setActiveImg(s)}
+                className="group relative rounded-lg overflow-hidden border border-white/[0.08] gallery-thumb cursor-pointer bg-zinc-900 text-left"
+              >
+                <img
+                  src={s.src}
+                  alt={s.label}
+                  className="w-full aspect-video object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-200"
+                />
+                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent px-2 py-1">
+                  <span className="text-[9px] font-mono text-zinc-300">{s.label}</span>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+
+      </div>
       </div>
 
       <Lightbox img={activeImg} onClose={() => setActiveImg(null)} />

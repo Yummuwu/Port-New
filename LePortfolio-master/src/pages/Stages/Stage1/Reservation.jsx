@@ -4,7 +4,7 @@ import MissionReserv from "../../../components/MissionReser";
 export const Res = () => {
   return (
     <div>
-      <div className="sticky">
+      <div id="back" className="sticky">
         {<MissionReserv/>}
       </div>
     </div>

@@ -7,13 +7,7 @@ import CountUp from 'react-countup';
 import StackedImages from './CompTech/images';
 import pix from '../assets/pix.png';
 import React, { useState } from 'react';
-import csp from '../assets/csp.png';
-import pts from '../assets/pts.png';
 
-  const logos = [
-    { src: csp, alt: "CSP" },
-    { src: pts, alt: "PTS" },
-  ];
 
 
 const HomeP = () => {
@@ -207,6 +201,7 @@ const HomeP = () => {
                                         {[
                                         { end: 3, label: "Projets scolaire" },
                                         { end: 4, label: "Projets Stage" },
+                                        { end: 1, label: "Projet personnel" },
                                         { end: 8, label: "Languages appris" },
                                         ].map(({ end, label }, index) => (
                                         <motion.div
@@ -274,7 +269,7 @@ const HomeP = () => {
                                     {/* Projets stages */}
                                     <div className="bg-gradient-to-br from-purple-900/20 via-pink-900/20 to-blue-900/20 
                                                     backdrop-blur-sm rounded-2xl p-10 border border-purple-400/30 
-                                                    flex-1 pb-5 min-h-[180px] flex items-center relative overflow-hidden group">
+                                                    flex-1 pb-5 min-h-[180px] flex items-center relative">
                                         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                         <div className="relative z-10 w-full">
                                             <div className="text-center w-full">
@@ -289,7 +284,7 @@ const HomeP = () => {
                                     {/* Projets scolaires */}
                                     <div className="bg-gradient-to-br from-purple-900/20 via-pink-900/20 to-blue-900/20 
                                                     backdrop-blur-sm rounded-2xl p-10 border border-purple-400/30 
-                                                    flex-1 pb-5 min-h-[180px] flex items-center relative overflow-hidden group">
+                                                    flex-1 pb-5 min-h-[180px] flex items-center relative">
                                         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                         <div className="relative z-10 w-full">
                                             <div className="text-center w-full">
@@ -300,7 +295,20 @@ const HomeP = () => {
                                             <StackedImages />
                                         </div>
                                     </div>
-
+                                    {/* Projets perso */}
+                                    <div className="bg-gradient-to-br from-purple-900/20 via-pink-900/20 to-blue-900/20 
+                                                    backdrop-blur-sm rounded-2xl p-10 border border-purple-400/30 
+                                                    flex-1 pb-5 min-h-[180px] flex items-center relative">
+                                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                        <div className="relative z-10 w-full">
+                                            <div className="text-center w-full">
+                                                <a href='/PPerso' className='hover:underline text-2xl font-semibold text-white/80 hover:text-purple-300 transition-colors duration-300'>
+                                                    Projets personnels
+                                                </a>
+                                            </div>
+                                            <StackedImages/>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>

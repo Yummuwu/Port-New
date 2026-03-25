@@ -1,12 +1,6 @@
 import { motion } from 'framer-motion';
-import CardGeek from './CompTech/Card_geek';
-import CardBh from './CompTech/Card_bh';
-import CardGourm from './CompTech/Card_Gourm';
-import VRtueuxPreview from './CompTech/PreviewVR';
-import CardVr from './CompTech/Card_reserv';
-import ElixirCard from './CompTech/PreviewEC';
-import CardMulti from './CompTech/Card_Multi';
-import CardScrabb from './CompTech/Card_Scrabble';
+import PythonCard from './CompTech/Perso_project';
+
 
 // ─── Reusable primitives ──────────────────────────────────────────────────────
 
@@ -56,7 +50,7 @@ const Section = ({ title, date, children }) => (
 );
 
 
-export const PStages = () => {
+export const Python = () => {
     return (
         <div className="h-screen relative font-mono">
 
@@ -68,43 +62,10 @@ export const PStages = () => {
             </div>
 
             {/* ── VRtueux ──────────────────────────────────────────────────── */}
-            <Section title="5 janvier – 13 février 2026">
+            <Section title="16 février – 22 février 2026">
                 <CardRow>
                     <CardSlot>
-                        <VRtueuxPreview />
-                    </CardSlot>
-                    <CardSlot>
-                        <CardVr />
-                    </CardSlot>
-                </CardRow>
-            </Section>
-
-            {/* ── Elixir Création ──────────────────────────────────────────── */}
-            <Section title="5 janvier – 13 février 2026">
-                <CardRow>
-                    <CardSlot>
-                        <ElixirCard />
-                    </CardSlot>
-                    <CardSlot>
-                        <CardGeek />
-                    </CardSlot>
-                    <CardSlot>
-                        <CardBh />
-                    </CardSlot>
-                </CardRow>
-            </Section>
-
-            {/* ── Projet Scolaire ──────────────────────────────────────────── */}
-            <Section title="Projet Scolaire">
-                <CardRow>
-                    <CardSlot>
-                        <CardGourm />
-                    </CardSlot>
-                    <CardSlot>
-                        <CardMulti />
-                    </CardSlot>
-                    <CardSlot>
-                        <CardScrabb />
+                        <PythonCard />
                     </CardSlot>
                 </CardRow>
             </Section>

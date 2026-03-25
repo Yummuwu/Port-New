@@ -14,15 +14,15 @@ const techStack = [
 const deliverables = [
   {
     title: "Application web",
-    desc: "L'application web permet aux utilisateurs de s'inscrire pour réserver des salle de réunions",
+    desc: "Réservation de salles de réunion.",
   },
   {
     title: "Base de donnée MySQL",
-    desc: "La base de données MySQL permet la gestions des équipements lié au système de réservation ainsi que les comptes utlisateurs",
+    desc: "Gestion des équipements et comptes utilisateurs.",
   },
     {
     title: "Maquette - Canvas",
-    desc: "Maquette de l'interface web du projet",
+    desc: "Maquette de l’interface web.",
   },
 ];
 
@@ -36,19 +36,19 @@ const screenshots = [
 const gestionProjets = [
   {
     title: "Discord - Communication",
-    desc: "Discord pour les échanges rapides et la coordination ainsi que le partage d'informations/images.",
+    desc: "Communication et partage rapide.",
   },
   {
     title: "Trello - Gestion de projet",
-    desc: "Utilisation de Trello pour organiser les tâches, suivre l'avancement du projet et collaborer avec l'équipe.",
+    desc: "Organisation et suivi des tâches.",
   },
   {
     title: "Canvas - Maquette",
-    desc: "Utilisation de Canvas pour créer une documentation pour les spécifications fonctionnelles.",
+    desc: "Documentation des spécifications.",
   },
   {
     title: "Méthode - Agile",
-    desc: "Avancement du projet avec des planifications de sprints ",
+    desc: "Travail en sprints.",
   },
   
 ];
@@ -79,22 +79,34 @@ function Lightbox({ img, onClose }) {
   if (!img) return null;
   return (
     <div
-      className="fixed inset-0 z-50 flex items-start justify-center backdrop-blur-md p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(12px)' }}
       onClick={onClose}
     >
       <div
-        className="relative max-w-3xl w-full rounded-2xl border border-white/10 bg-zinc-900 overflow-hidden shadow-2xl"
+        className="relative w-full rounded-2xl border border-white/10 bg-zinc-900 overflow-hidden shadow-2xl"
+        style={{ maxWidth: '90vw', maxHeight: '92vh' }}
         onClick={(e) => e.stopPropagation()}
       >
-        <img src={img.src} alt={img.label} className="w-full object-contain max-h-[70vh]" />
-        <div className="flex items-start justify-between px-5 py-3 border-t border-white/[0.08]">
-          <span className="text-xl text-zinc-400 font-mono">{img.label}</span>
-          <button
-            onClick={onClose}
-            className="text-xl text-zinc-500 hover:text-white transition-colors px-3 py-1 rounded-md border border-white/10 hover:border-white/30"
-          >
-            ✕ Fermer
-          </button>
+        {/* Close button — top-right corner */}
+        <button
+          onClick={onClose}
+          className="absolute top-3 right-3 z-10 text-zinc-400 hover:text-white transition-colors bg-zinc-900/80 backdrop-blur px-3 py-1 rounded-lg border border-white/10 hover:border-white/30 font-mono text-sm"
+        >
+          ✕ Fermer
+        </button>
+
+        {/* Full-size image */}
+        <img
+          src={img.src}
+          alt={img.label}
+          className="w-full object-contain"
+          style={{ maxHeight: '85vh', display: 'block' }}
+        />
+
+        {/* Label bar */}
+        <div className="px-5 py-3 border-t border-white/[0.08]">
+          <span className="text-sm text-zinc-400 font-mono">{img.label}</span>
         </div>
       </div>
     </div>
@@ -162,6 +174,7 @@ export default function CardMulti() {
             Conception d'un site web dynamique avec un système de réservation visant à réserver des bureaux pour travailler ou entreprendre des réunions.
           </p>
 
+        {/* ── A VOIR ── 
           <a
             href="dfdfg"
             target="_blank"
@@ -173,6 +186,7 @@ export default function CardMulti() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
+          */}
         </header>
 
         {/* ── Grid ── */}

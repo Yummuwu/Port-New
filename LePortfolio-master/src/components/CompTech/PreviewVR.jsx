@@ -8,8 +8,9 @@ const stats = [
   { value: "2025", label: "lancement" },
 ];
 
-const tags = ["Divertissement VR", "Particuliers", "Entreprises", "Formations", "Bar"];
+const tags = ["Divertissement VR", "Particuliers", "Entreprises", "Formations"];
 
+// ─── A VOIR PSK SUREMENT FAUX ────────────────────────────────────────────────────────────────────
 const deliverables = [
   {
     title: "Veille technologique",
@@ -207,7 +208,7 @@ export default function VRtueuxCard() {
 
           {/* ── DSI / Deliverables ── */}
           <section className="fade-up d3">
-            <SectionLabel>DSI — Missions</SectionLabel>
+            <SectionLabel>Missions</SectionLabel>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {deliverables.map((d) => (
                 <GlassCard key={d.title} className="p-5 flex gap-4 items-start relative overflow-hidden">
@@ -226,19 +227,6 @@ export default function VRtueuxCard() {
 
           {/* ── Gestion de projet ── */}
           <section className="fade-up d4">
-            <SectionLabel>Gestion de projet</SectionLabel>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {gestionProjets.map((d) => (
-                <GlassCard key={d.title} className="p-5 flex gap-4 items-start relative overflow-hidden">
-                  <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-cyan-400 to-blue-600 rounded-l-xl" />
-                  <div className="pl-3">
-                    <p className="font-semibold text-zinc-100 mb-1">{d.title}</p>
-                    <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
-                  </div>
-                </GlassCard>
-              ))}
-            </div>
-
             {/* ── Image placeholder ── */}
             <ImagePlaceholder src={null} alt="VRtueux" />
           </section>

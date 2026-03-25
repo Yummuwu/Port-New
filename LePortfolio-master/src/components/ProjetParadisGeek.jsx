@@ -4,12 +4,33 @@ import css from '../assets/css.png';
 import js from '../assets/js.png';
 import { Link } from 'react-router-dom';
 
+// ─── UI Components ───────────────────────────────────────────
 const SectionBadge = ({ children }) => (
-  <div className="inline-block bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm rounded-full px-6 py-2 border border-white/20">
-    <span className="text-white/90 text-base md:text-lg font-medium">{children}</span>
+  <div className="inline-block bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm rounded-full px-6 py-2 border border-white/[0.08]">
+    <span className="text-zinc-200 text-base md:text-lg font-medium">{children}</span>
   </div>
 );
 
+const Card = ({ children }) => (
+  <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-sm hover:border-cyan-400/20 transition-colors duration-300 p-6">
+    {children}
+  </div>
+);
+
+const NumberedList = ({ items }) => (
+  <ul className="space-y-3">
+    {items.map((item, i) => (
+      <li key={i} className="flex items-start gap-3 text-zinc-400 text-base">
+        <span className="mt-0.5 w-6 h-6 flex-shrink-0 rounded-full bg-cyan-400/20 border border-cyan-400/30 text-cyan-400 flex items-center justify-center font-bold text-xs">
+          {i + 1}
+        </span>
+        <span>{item}</span>
+      </li>
+    ))}
+  </ul>
+);
+
+// ─── Main Component ───────────────────────────────────────────
 const Project1 = () => {
   const demarche = [
     "Analyse de l'ancien site du client",
@@ -56,154 +77,135 @@ const Project1 = () => {
   ];
 
   return (
-    <div className="min-h-screen overflow-auto bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 relative">
+    <div className="pt-50 min-h-screen relative bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 text-zinc-200 px-4 sm:px-8 py-16 overflow-auto">
 
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* Animated background orbs */}
+      <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-500"></div>
       </div>
 
-      <section className="relative pb-20 pt-24 px-4 sm:px-6">
-        <div className="max-w-[90rem] mx-auto">
-          <div className="bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-xl rounded-[2rem] shadow-2xl relative p-8 md:p-12 border border-white/20">
+      <div className="max-w-7xl mx-auto space-y-12">
 
-            {/* Decorative orbs */}
-            <div className="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-br from-purple-400 to-pink-600 rounded-full blur-2xl opacity-20 pointer-events-none"></div>
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full blur-2xl opacity-20 pointer-events-none"></div>
-
-            {/* Header */}
-            <div className="flex flex-col lg:flex-row border-b border-white/20 pb-6 mb-8">
-              <div className="flex flex-col items-center lg:items-start lg:w-1/3 mb-4 lg:mb-0">
-                <div className="bg-teal-200 text-center w-24 h-24 flex items-center justify-center font-bold text-xs rounded-xl overflow-hidden">
-                  <img src={logoVr} alt="Logo Elixir Création" />
-                </div>
-                <p className="text-sm mt-2 text-white/70 text-center lg:text-left">Elixir Création</p>
-                <Link to="/CompanyElixir" className="underline text-teal-400 hover:text-teal-300 text-sm mt-1">
-                  Entreprise
-                </Link>
-              </div>
-              <div className="lg:w-2/3 pl-0 lg:pl-6">
-                <h1 className="text-3xl font-bold text-white mb-2">
-                  Refonte d'un site web sous WordPress avec Divi
-                </h1>
-                <p className="text-sm text-white/60">
-                  AAA AAA
-                  <br />
-                  09 février 2026
-                </p>
-              </div>
+        {/* Header */}
+        <div className="flex flex-col lg:flex-row gap-6 border-b border-white/[0.08] pb-6 mb-10">
+          <div className="flex flex-col items-center lg:items-start lg:w-1/3 gap-2">
+            <div className="bg-cyan-200 w-24 h-24 flex items-center justify-center rounded-xl overflow-hidden">
+              <img src={logoVr} alt="Logo Elixir Création" />
             </div>
-
-            {/* Intervenants */}
-            <section className="mb-8">
-              <SectionBadge>Intervenants</SectionBadge>
-              <p className="mt-4 text-white/80 text-lg">Maître de stage</p>
-            </section>
-
-            {/* Objectif */}
-            <section className="mb-8">
-              <SectionBadge>Objectif du projet</SectionBadge>
-              <p className="mt-4 text-white/80 text-lg leading-relaxed">
-                Refonte complète d'un site web existant sous WordPress en utilisant l'extension Divi. L'objectif était de livrer un site WordPress finalisé tout en prenant en main les fonctionnalités de Divi, en conservant les éléments pertinents de l'ancien site et en améliorant le design global.
-              </p>
-            </section>
-
-            {/* Livrables */}
-            <section className="mb-8">
-              <SectionBadge>Livrables</SectionBadge>
-              <p className="mt-4 text-white/80 text-lg leading-relaxed">
-                Site web WordPress finalisé (en attente de contenu)
-              </p>
-            </section>
-
-            {/* Contraintes */}
-            <section className="mb-8">
-              <SectionBadge>Contraintes</SectionBadge>
-              <p className="mt-4 text-white/80 text-lg leading-relaxed">
-                Deux contraintes principales ont encadré ce projet : de nombreux allers-retours entre les pages et le menu de WordPress, ainsi que l'absence de dossier images fourni par le client, rendant l'intégration visuelle dépendante des ressources disponibles sur l'ancien site.
-              </p>
-            </section>
-
-            {/* Outils */}
-            <section className="mb-8">
-              <SectionBadge>Outils utilisés</SectionBadge>
-              <p className="mt-4 text-white/60 text-sm mb-3">WordPress · Divi · Divi Elegant</p>
-              <div className="flex flex-wrap gap-4">
-                {[
-                  { src: html, alt: "HTML" },
-                  { src: css, alt: "CSS" },
-                  { src: js, alt: "JavaScript" },
-                ].map(({ src, alt }) => (
-                  <div
-                    key={alt}
-                    className="w-24 h-24 bg-white/10 border border-white/20 rounded-xl flex items-center justify-center overflow-hidden
-                      transform transition duration-300 hover:scale-105 hover:bg-white/20 hover:shadow-lg backdrop-blur-sm"
-                  >
-                    <img src={src} alt={`Logo ${alt}`} className="max-w-full max-h-full object-contain p-2" />
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* Étapes */}
-            <div className="mb-8">
-              <SectionBadge>Étapes du projet</SectionBadge>
-              <div className="mt-4 space-y-4">
-                {steps.map((step, i) => (
-                  <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm hover:bg-white/10 transition duration-300">
-                    <h3 className="text-teal-400 font-semibold text-xl mb-3 flex items-center gap-2">
-                      <span className="w-7 h-7 rounded-full bg-teal-500/20 border border-teal-400/40 flex items-center justify-center text-sm font-bold text-teal-300">
-                        {i + 1}
-                      </span>
-                      {step.title}
-                    </h3>
-                    <p className="text-white/75 text-base leading-relaxed">{step.content}</p>
-                    <div className="mt-4 w-full h-48 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center text-white/30 text-sm">
-                      Image ici
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Démarche */}
-            <section className="mb-8">
-              <SectionBadge>Démarche de réalisation</SectionBadge>
-              <ul className="mt-4 space-y-3">
-                {demarche.map((d, i) => (
-                  <li key={i} className="flex items-start gap-3 text-white/75 text-base">
-                    <span className="mt-0.5 w-6 h-6 flex-shrink-0 bg-teal-500/20 border border-teal-400/30 text-teal-300 rounded-full flex items-center justify-center font-bold text-xs">
-                      {i + 1}
-                    </span>
-                    <span>{d}</span>
-                  </li>
-                ))}
-              </ul>
-            </section>
-
-            {/* Bilan */}
-            <section className="mb-8">
-              <SectionBadge>Bilan de la mission</SectionBadge>
-              <div className="mt-4 bg-white/5 border border-white/10 rounded-2xl p-6 text-white/80 text-lg leading-relaxed">
-                <p>
-                  Le site est en attente d'images ainsi que de précisions sur certaines modifications attendues par le client.
-                </p>
-                <p className="font-semibold text-white mt-5 mb-2">Bilan personnel :</p>
-                <p className="text-white/75">
-                  Montée en compétences sur WordPress et Divi. La principale difficulté rencontrée est liée à l'absence de contenus (images) fournis par le client, ce qui a ralenti l'intégration visuelle des pages.
-                </p>
-              </div>
-            </section>
-
-            {/* Footer */}
-            <footer className="text-center text-xs text-white/30 mt-8 pt-4 border-t border-white/10">
-              AAA – Portfolio 2025
-            </footer>
+            <p className="text-zinc-400 text-sm">Elixir Création</p>
+            <Link to="/Stage2" className="text-cyan-400 text-sm underline">
+              Entreprise
+            </Link>
+            <Link to="/Bridge" className="text-cyan-400 text-sm underline">
+              Mission conception du site web Bridge Hotel
+            </Link>
+          </div>
+          <div className="lg:w-2/3">
+            <h1 className="text-3xl font-bold text-zinc-200 mb-2">
+              Refonte d'un site web sous WordPress avec Divi
+            </h1>
+            <p className="text-zinc-500 text-sm">
+              AAA AAA
+              <br />
+              09 février 2026
+            </p>
           </div>
         </div>
-      </section>
+
+        {/* Intervenants */}
+        <section>
+          <SectionBadge>Intervenants</SectionBadge>
+          <p className="mt-4 text-zinc-400 text-lg">Maître de stage</p>
+        </section>
+
+        {/* Objectif */}
+        <section>
+          <SectionBadge>Objectif du projet</SectionBadge>
+          <p className="mt-4 text-zinc-400 text-lg leading-relaxed">
+            Refonte complète d'un site web existant sous WordPress en utilisant l'extension Divi. L'objectif était de livrer un site WordPress finalisé tout en prenant en main les fonctionnalités de Divi, en conservant les éléments pertinents de l'ancien site et en améliorant le design global.
+          </p>
+        </section>
+
+        {/* Livrables */}
+        <section>
+          <SectionBadge>Livrables</SectionBadge>
+          <p className="mt-4 text-zinc-400 text-lg leading-relaxed">
+            Site web WordPress finalisé (en attente de contenu)
+          </p>
+        </section>
+
+        {/* Contraintes */}
+        <section>
+          <SectionBadge>Contraintes</SectionBadge>
+          <p className="mt-4 text-zinc-400 text-lg leading-relaxed">
+            Deux contraintes principales ont encadré ce projet : de nombreux allers-retours entre les pages et le menu de WordPress, ainsi que l'absence de dossier images fourni par le client, rendant l'intégration visuelle dépendante des ressources disponibles sur l'ancien site.
+          </p>
+        </section>
+
+        {/* Outils */}
+        <section>
+          <SectionBadge>Outils utilisés</SectionBadge>
+          <p className="mt-4 text-zinc-500 text-sm mb-3">WordPress · Divi · Divi Elegant</p>
+          <div className="flex flex-wrap gap-4">
+            {[html, css, js].map((img, i) => (
+              <div
+                key={i}
+                className="w-24 h-24 bg-white/5 border border-white/[0.08] rounded-xl flex items-center justify-center overflow-hidden hover:scale-105 transition-transform p-2"
+              >
+                <img src={img} alt="" className="max-w-full max-h-full object-contain" />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Étapes */}
+        <section>
+          <SectionBadge>Étapes du projet</SectionBadge>
+          <div className="mt-4 space-y-4">
+            {steps.map((step, i) => (
+              <Card key={i}>
+                <h3 className="text-cyan-400 font-semibold text-xl mb-3 flex items-center gap-2">
+                  <span className="w-7 h-7 rounded-full bg-cyan-400/20 border border-cyan-400/40 flex items-center justify-center text-sm font-bold text-cyan-400">
+                    {i + 1}
+                  </span>
+                  {step.title}
+                </h3>
+                <p className="text-zinc-400 text-base leading-relaxed">{step.content}</p>
+                <div className="mt-4 w-full h-48 bg-white/5 border border-white/[0.08] rounded-xl flex items-center justify-center text-zinc-600 text-sm">
+                  Image ici
+                </div>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* Démarche */}
+        <section>
+          <SectionBadge>Démarche de réalisation</SectionBadge>
+          <NumberedList items={demarche} />
+        </section>
+
+        {/* Bilan */}
+        <section>
+          <SectionBadge>Bilan de la mission</SectionBadge>
+          <Card>
+            <p className="mb-4 text-zinc-400">
+              Le site est en attente d'images ainsi que de précisions sur certaines modifications attendues par le client.
+            </p>
+            <p className="font-semibold mb-2">Bilan personnel :</p>
+            <p className="text-zinc-400">
+              Montée en compétences sur WordPress et Divi. La principale difficulté rencontrée est liée à l'absence de contenus (images) fournis par le client, ce qui a ralenti l'intégration visuelle des pages.
+            </p>
+          </Card>
+        </section>
+
+        {/* Footer */}
+        <footer className="text-center text-xs text-zinc-500 mt-12 border-t border-white/[0.08] pt-4">
+          AAA – Portfolio 2025
+        </footer>
+      </div>
     </div>
   );
 };

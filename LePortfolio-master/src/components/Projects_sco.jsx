@@ -54,7 +54,7 @@ const Section = ({ title, date, children }) => (
 
 export const PScolaire = () => {
     return (
-        <div className="h-screen overflow-auto relative font-mono">
+        <div className="h-screen pt-50 relative font-mono">
 
             {/* Animated background elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>

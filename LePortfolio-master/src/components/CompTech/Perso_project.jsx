@@ -1,40 +1,36 @@
 import { useState } from "react";
-import serv from '../../assets/serv.png';
-import para from '../../assets/para.png';
-import Accueil from '../../assets/Accueil.png';
-import Divi from '../../assets/Divi.png';
+import python_botest from '../../assets/python_botest.png';
+import utilisation from '../../assets/utilisation.png';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
+
 const techStack = [
-  { label: "Wordpress", color: "text-orange-400 border-orange-400/40 bg-orange-400/5" },
-  { label: "Divi", color: "text-blue-400 border-blue-400/40 bg-blue-400/5" },
-  { label: "Shopify", color: "text-indigo-400 border-indigo-400/40 bg-indigo-400/5" },
-  { label: "HTML", color: "text-purple-400 border-purple-400/40 bg-purple-400/5" },
-  { label: "CSS", color: "text-yellow-400 border-yellow-400/40 bg-yellow-400/5" },
+  { label: "Python", color: "text-orange-400 border-orange-400/40 bg-orange-400/5" },
+  { label: "Invité de commande", color: "text-cyan-400 border-cyan-400/40 bg-cyan-400/5" },
+  { label: "NBTExplorer", color: "text-yellow-400 border-yellow-400/40 bg-yellow-400/5" },
+  { label: "Bot discord", color: "text-purple-400 border-purple-400/40 bg-purple-400/5" },
 ];
 
 const deliverables = [
   {
-    title: "Site web vitrine",
-    desc: "Refonte du site web vitrine sur Wordpress en gardant l'identité visuelle de l'agence.",
+    title: "Script Python",
+    desc: "Permet de récupérer certaine données des joueurs pour les afficher dans un channel d'un serveur discord",
+  },
+    {
+    title: "Documentation d'utilisation",
+    desc: "Documentation pour pouvoir compendre ce que le script fait, les données récupérer et son mode d'utilisation",
   },
 ];
 
 const screenshots = [
-  { src: Accueil, label: "Page d'accueil" },
-  { src: para, label: "Page des tariffs" },
-  { src: serv, label: "Page de services" },
-  { src: Divi, label: "Dashboard" },
+  { src: python_botest, label: "Bot_test discord" },
+  { src: utilisation, label: "Documentation d'utilisation" },
 ];
 
 const gestionProjets = [
   {
-    title: "Discord - Communication avec le maître de stage",
-    desc: "Discord pour les échanges rapides et la coordination avec le maître de stage ainsi que le partage d'informations/images.",
-  },
-  {
-    title: "Daily meeting avec le maître de stage",
-    desc: "Daily meeting avec le maître de stage pour faire le point sur l'avancement du projet, discuter des difficultés rencontrées et planifier les prochaines étapes.",
+    title: "Discord - Communication",
+    desc: "Discord pour les échanges rapide avec le gérant du serveur discord et minecraft.",
   },
 ];
 
@@ -100,7 +96,7 @@ function Lightbox({ img, onClose }) {
 
 // ─── Main Component ───────────────────────────────────────────────────────────
 
-export default function CardGeek() {
+export default function CardScrabb() {
   const [activeImg, setActiveImg] = useState(null);
 
   return (
@@ -132,28 +128,11 @@ export default function CardGeek() {
           Livrables       | Galerie        ← row 2 (galerie spans rows 2+3)
           Gestion projet  |                ← row 3
         */
-        .portfolio-grid {
+        .aligned-grid {
           display: grid;
-          grid-template-columns: 1fr;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: auto auto auto;
           gap: 24px;
-          align-items: start;
-        }
-
-        @media (min-width: 1024px) {
-          .portfolio-grid {
-            grid-template-columns: 1fr 1fr;
-          }
-
-          .left-col {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-          }
-
-          .right-col {
-            position: sticky;
-            top: 20px;
-          }
         }
         .cell-top-left    { grid-column: 1; grid-row: 1; }
         .cell-top-right   { grid-column: 2; grid-row: 1; }
@@ -168,52 +147,62 @@ export default function CardGeek() {
         <header className="fade-up d1 mb-8">
           <div className="flex flex-wrap items-center gap-3 mb-3">
             <span className="text-[1.45rem] font-mono tracking-widest text-cyan-400 uppercase border border-cyan-400/20 bg-cyan-400/5 rounded-full px-3 py-1">
-              Wordpress ·Refonte · Paradis du geek
+              Projet Script Python
             </span>
           </div>
 
-          <p className="text-zinc-400 text-2xl leading-relaxed max-w-2xl mb-5">
-            Refonte d'une site web vitrine sur Wordpress avec un nouveau thème et des fonctionnalités améliorées.
+          <p className="text-zinc-400 text-xl leading-relaxed max-w-2xl mb-5">
+            Développement d'un script python permettant la récupération de données des joueurs d'un serveur minecraft pour les afficher dans un channel discord grace à un robot
           </p>
-
-        {/* ── A VOIR ── 
-          <a
-            href="dfdfg"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-cyan-400 text-black text-xl font-semibold px-4 py-2 rounded-lg hover:bg-cyan-300 transition-colors duration-200"
-          >
-            Voir le projet
-            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
-          */}
         </header>
 
-        <div className="fade-up d2 portfolio-grid">
+        {/* ── Grid ── */}
+        <div className="fade-up d2 aligned-grid">
 
-          {/* LEFT COLUMN */}
-          <div className="left-col">
+          {/* ROW 1 LEFT: Technologies */}
+          <section className="cell-top-left">
+            <SectionLabel>Technologies utilisées</SectionLabel>
+            <div className="flex flex-wrap gap-2">
+              {techStack.map((t) => (
+                <span
+                  key={t.label}
+                  className={`text-xl font-mono border rounded-lg px-3 py-1.5 ${t.color}`}
+                >
+                  {t.label}
+                </span>
+              ))}
+            </div>
+          </section>
 
-            <section>
-              <SectionLabel>Technologies utilisées</SectionLabel>
-              <div className="flex flex-wrap gap-2">
-                {techStack.map((t) => (
-                  <span
-                    key={t.label}
-                    className={`text-xl font-mono border rounded-lg px-3 py-1.5 ${t.color}`}
-                  >
-                    {t.label}
-                  </span>
-                ))}
-              </div>
-            </section>
+          {/* ROW 1 RIGHT: Difficultés */}
+          <section className="cell-top-right">
+            <SectionLabel>Difficultés</SectionLabel>
+            <GlassCard className="p-4">
+              <p className="text-zinc-300 text-xl leading-relaxed">
+                - Tests seulement sur 1 fichier <br /> - recherche des bon imports.
+              </p>
+            </GlassCard>
+          </section>
 
-            <section>
-              <SectionLabel>Livrables</SectionLabel>
-              <div className="grid grid-cols-1 gap-3">
-                {deliverables.map((d) => (
+          {/* ROW 2 LEFT: Livrables */}
+          <section className="cell-mid-left">
+            <SectionLabel>Livrables</SectionLabel>
+            <div className="grid grid-cols-2 gap-3">
+              {deliverables.map((d) => (
+                <GlassCard key={d.title} className="p-4">
+                  <p className="font-semibold text-xl text-zinc-100 mb-0.5">{d.title}</p>
+                  <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
+                </GlassCard>
+              ))}
+            </div>
+          </section>
+
+          {/* ROW 3 LEFT: Gestion du projet */}
+          <div className=" flex flex-wrap">
+            <section className="cell-bottom-left">
+              <SectionLabel>Gestion du projet</SectionLabel>
+              <div className="grid grid-cols-3 gap-3">
+                {gestionProjets.map((d) => (
                   <GlassCard key={d.title} className="p-4">
                     <p className="font-semibold text-xl text-zinc-100 mb-0.5">{d.title}</p>
                     <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
@@ -221,31 +210,10 @@ export default function CardGeek() {
                 ))}
               </div>
             </section>
-
-            <section>
-              <SectionLabel>Difficultés</SectionLabel>
-              <GlassCard className="p-4">
-                <p className="text-zinc-300 text-xl leading-relaxed">
-                  - Pas d'images fournies par le client donc retouche sur toutes les images. <br /> - Refonte d'un site en gardant une direction artistique similaire.
-                  <br /> - Apprentissage de Shopify
-                </p>
-              </GlassCard>
-            </section>
-
           </div>
 
-          {/* RIGHT COLUMN */}
-          <div className="right-col">
-            <SectionLabel>Gestion du projet</SectionLabel>
-            <div className="grid grid-cols-1 gap-3">
-              {gestionProjets.map((d) => (
-                <GlassCard key={d.title} className="p-4">
-                  <p className="font-semibold text-xl text-zinc-100 mb-0.5">{d.title}</p>
-                  <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
-                </GlassCard>
-              ))}
-            </div>
-            <div className="pt-8"></div>
+          {/* ROWS 2-3 RIGHT: Galerie — spans rows 2 and 3 */}
+          <section className="cell-right-tall">
             <SectionLabel>Galerie</SectionLabel>
             <div className="grid grid-cols-2 gap-2">
               {screenshots.map((s) => (
@@ -265,7 +233,7 @@ export default function CardGeek() {
                 </button>
               ))}
             </div>
-          </div>
+          </section>
 
         </div>
       </div>
@@ -274,3 +242,5 @@ export default function CardGeek() {
     </>
   );
 }
+
+

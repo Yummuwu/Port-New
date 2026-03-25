@@ -61,7 +61,7 @@ const Project1 = () => {
   ];
 
   return (
-    <div className="min-h-screen overflow-auto bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 relative">
+    <div className="pt-50 min-h-screen overflow-auto bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 relative">
 
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -85,8 +85,11 @@ const Project1 = () => {
                   <img src={logoVr} alt="Logo VRTueux" />
                 </div>
                 <p className="text-sm mt-2 text-white/70 text-center lg:text-left">Elixir Création</p>
-                <Link to="/CompanyElixir" className="underline text-teal-400 hover:text-teal-300 text-sm mt-1">
+                <Link to="/Stage2" className="underline text-teal-400 hover:text-teal-300 text-sm mt-1">
                   Entreprise
+                </Link>
+                <Link to="/ParadisDuGeek" className="underline text-teal-400 hover:text-teal-300 text-sm mt-1">
+                  Mission refonte du site Paradis du geek
                 </Link>
               </div>
               <div className="lg:w-2/3 pl-0 lg:pl-6">

@@ -8,6 +8,7 @@ import Projet1 from './components/ProjetParadisGeek'
 import Project2 from './components/ProjetBridge'
 import MissionReserv from './components/MissionReser'
 import { Home } from './pages/Home'
+import { PersoProj } from './pages/Persopage'
 import { Contact } from './pages/Contact'
 import { Res } from './pages/Stages/Stage1/Reservation'
 import { Bdd } from './pages/Stages/Stage1/Bdd'
@@ -113,6 +114,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/Profil" element={<CV />} />
             <Route path="/PScolaire" element={<ProjetScolaire/>}/>
+            <Route path="/PPerso" element={<PersoProj/>}/>
             <Route path="/Projets" element={<Projets />} />
             <Route path="/Stage1" element={<Intern1 />} />
             <Route path="/MissionReser" element={<MissionReserv />} />

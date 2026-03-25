@@ -7,10 +7,10 @@ const Contact = () => {
           <div className="-mx-4 flex flex-wrap lg:justify-between">
             <div className=" px-4 lg:w-1/2 xl:w-6/12">
               <div className="mb-12 max-w-[570px] lg:mb-0">
-                <div className="mb-6 text-[32px] font-bold uppercase text-dark dark:text-white sm:text-[40px] lg:text-[36px] xl:text-[40px]">
+                <div className="mb-6 text-[32px] text-white font-bold uppercase text-dark sm:text-[40px] lg:text-[36px] xl:text-[40px]">
                   Prenez contact avec moi
                 </div>
-                <div className="mb-9 text-base text-[25px] leading-relaxed text-white dark:text-dark-6">
+                <div className="mb-9 text-base text-[25px] leading-relaxed text-white ">
                   Contactez-moi pour toute question ou demande de projet. Je suis disponible pour discuter de vos besoins et de la manière dont je peux vous aider à atteindre vos objectifs. 
                   <br></br>N'hésitez pas à me contacter par email ou par téléphone, ou à remplir le formulaire de contact ci-dessous.
                 </div>
@@ -30,7 +30,7 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div className="w-full">
-                    <div className="mb-1 text-xl font-bold text-dark dark:text-white">
+                    <div className="mb-1 text-xl font-bold text-white dark:text-white">
                       Ma location
                     </div>
                     <p className="text-base text-body-color dark:text-dark-6">
@@ -70,7 +70,7 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div className="w-full">
-                    <div className="mb-1 text-xl font-bold text-dark dark:text-white">
+                    <div className="mb-1 text-xl font-bold text-white dark:text-white">
                       Phone Number
                     </div>
                     <p className="text-white text-body-color dark:text-dark-6">
@@ -95,7 +95,7 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div className="w-full">
-                    <div className="mb-1 text-xl font-bold text-dark dark:text-white">
+                    <div className="mb-1 text-xl font-bold text-white dark:text-white">
                       Mon email
                     </div>
                     <p className="text-white text-body-color dark:text-dark-6">

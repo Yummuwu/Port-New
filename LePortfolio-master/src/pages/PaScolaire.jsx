@@ -5,7 +5,7 @@ import { PScolaire } from "../components/Projects_sco";
 export const ProjetScolaire = () => {
   return (
     <div>  
-        <div className="h-screen overflow-auto bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 relative pt-50">
+        <div className="h-screen overflow-auto bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950">
         {<PScolaire />}
       </div>
     </div>

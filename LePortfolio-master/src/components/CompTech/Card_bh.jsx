@@ -11,7 +11,7 @@ const techStack = [
 
 const deliverables = [
   {
-    title: "Site web Wordpress",
+    title: "Site web dynamique",
     desc: "Création d'un site web pour une agence tier sur Wordpress avec Elementor, intégrant un thème personnalisé et des plugins pour une plus grande variété de fonctionnalités.",
   },
 ];
@@ -59,22 +59,34 @@ function Lightbox({ img, onClose }) {
   if (!img) return null;
   return (
     <div
-      className="fixed inset-0 z-50 flex items-start justify-center backdrop-blur-md p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      style={{ background: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(12px)' }}
       onClick={onClose}
     >
       <div
-        className="relative max-w-3xl w-full rounded-2xl border border-white/10 bg-zinc-900 overflow-hidden shadow-2xl"
+        className="relative w-full rounded-2xl border border-white/10 bg-zinc-900 overflow-hidden shadow-2xl"
+        style={{ maxWidth: '90vw', maxHeight: '92vh' }}
         onClick={(e) => e.stopPropagation()}
       >
-        <img src={img.src} alt={img.label} className="w-full object-contain max-h-[70vh]" />
-        <div className="flex items-start justify-between px-5 py-3 border-t border-white/[0.08]">
-          <span className="text-xl text-zinc-400 font-mono">{img.label}</span>
-          <button
-            onClick={onClose}
-            className="text-xl text-zinc-500 hover:text-white transition-colors px-3 py-1 rounded-md border border-white/10 hover:border-white/30"
-          >
-            ✕ Fermer
-          </button>
+        {/* Close button — top-right corner */}
+        <button
+          onClick={onClose}
+          className="absolute top-3 right-3 z-10 text-zinc-400 hover:text-white transition-colors bg-zinc-900/80 backdrop-blur px-3 py-1 rounded-lg border border-white/10 hover:border-white/30 font-mono text-sm"
+        >
+          ✕ Fermer
+        </button>
+
+        {/* Full-size image */}
+        <img
+          src={img.src}
+          alt={img.label}
+          className="w-full object-contain"
+          style={{ maxHeight: '85vh', display: 'block' }}
+        />
+
+        {/* Label bar */}
+        <div className="px-5 py-3 border-t border-white/[0.08]">
+          <span className="text-sm text-zinc-400 font-mono">{img.label}</span>
         </div>
       </div>
     </div>
@@ -115,17 +127,34 @@ export default function CardBh() {
           Livrables       | Galerie        ← row 2 (galerie spans rows 2+3)
           Gestion projet  |                ← row 3
         */
-        .aligned-grid {
+        .portfolio-grid {
           display: grid;
-          grid-template-columns: 1fr 1fr;
-          grid-template-rows: auto auto auto;
+          grid-template-columns: 1fr;
           gap: 24px;
+          align-items: start;
         }
-        .cell-top-left      { grid-column: 1; grid-row: 1; }
-        .cell-top-right     { grid-column: 2; grid-row: 1; }
-        .cell-mid-left      { grid-column: 1; grid-row: 2; }
-        .cell-bottom-left   { grid-column: 1; grid-row: 3; }
-        .cell-right-tall    { grid-column: 2; grid-row: 2 / 4; }
+
+        @media (min-width: 1024px) {
+          .portfolio-grid {
+            grid-template-columns: 1fr 1fr;
+          }
+
+          .left-col {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+          }
+
+          .right-col {
+            position: sticky;
+            top: 20px;
+          }
+        }
+        .cell-top-left    { grid-column: 1; grid-row: 1; }
+        .cell-top-right   { grid-column: 2; grid-row: 1; }
+        .cell-mid-left    { grid-column: 1; grid-row: 2; }
+        .cell-bottom-left { grid-column: 1; grid-row: 3; }
+        .cell-right-tall  { grid-column: 2; grid-row: 2 / 4; }
       `}</style>
 
       <div className="vrtueux-root w-full text-zinc-200">
@@ -142,6 +171,7 @@ export default function CardBh() {
             Conception et développement d'un site web pour une agence tier sur Wordpress avec Elementor.
           </p>
 
+        {/* ── A VOIR ── 
           <a
             href="dfdfg"
             target="_blank"
@@ -153,51 +183,53 @@ export default function CardBh() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
+          */}
         </header>
 
-        {/* ── Grid ── */}
-        <div className="fade-up d2 aligned-grid">
+        <div className="fade-up d2 portfolio-grid">
 
-          {/* ROW 1 LEFT: Technologies */}
-          <section className="cell-top-left">
-            <SectionLabel>Technologies utilisées</SectionLabel>
-            <div className="flex flex-wrap gap-2">
-              {techStack.map((t) => (
-                <span
-                  key={t.label}
-                  className={`text-xl font-mono border rounded-lg px-3 py-1.5 ${t.color}`}
-                >
-                  {t.label}
-                </span>
-              ))}
-            </div>
-          </section>
+          {/* LEFT COLUMN */}
+          <div className="left-col">
 
-          {/* ROW 1 RIGHT: Difficultés */}
-          <section className="cell-top-right">
-            <SectionLabel>Difficultés</SectionLabel>
-            <GlassCard className="p-4">
-              <p className="text-zinc-300 text-xl leading-relaxed">
-                - Apprentissage d'Elementor <br /> - Reproduire un site web à partir d'une maquette
-              </p>
-            </GlassCard>
-          </section>
+            <section>
+              <SectionLabel>Technologies utilisées</SectionLabel>
+              <div className="flex flex-wrap gap-2">
+                {techStack.map((t) => (
+                  <span
+                    key={t.label}
+                    className={`text-xl font-mono border rounded-lg px-3 py-1.5 ${t.color}`}
+                  >
+                    {t.label}
+                  </span>
+                ))}
+              </div>
+            </section>
 
-          {/* ROW 2 LEFT: Livrables */}
-          <section className="cell-mid-left">
-            <SectionLabel>Livrables</SectionLabel>
-            <div className="grid grid-cols-1 gap-3">
-              {deliverables.map((d) => (
-                <GlassCard key={d.title} className="p-4">
-                  <p className="font-semibold text-xl text-zinc-100 mb-0.5">{d.title}</p>
-                  <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
-                </GlassCard>
-              ))}
-            </div>
-          </section>
+            <section>
+              <SectionLabel>Livrables</SectionLabel>
+              <div className="grid grid-cols-1 gap-3">
+                {deliverables.map((d) => (
+                  <GlassCard key={d.title} className="p-4">
+                    <p className="font-semibold text-xl text-zinc-100 mb-0.5">{d.title}</p>
+                    <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
+                  </GlassCard>
+                ))}
+              </div>
+            </section>
 
-          {/* ROW 3 LEFT: Gestion du projet */}
-          <section className="cell-bottom-left">
+            <section>
+              <SectionLabel>Difficultés</SectionLabel>
+              <GlassCard className="p-4">
+                <p className="text-zinc-300 text-xl leading-relaxed">
+                  - Apprentissage d'Elementor <br /> - Reproduire un site web à partir d'une maquette
+                </p>
+              </GlassCard>
+            </section>
+
+          </div>
+
+          {/* RIGHT COLUMN */}
+          <div className="right-col">
             <SectionLabel>Gestion du projet</SectionLabel>
             <div className="grid grid-cols-1 gap-3">
               {gestionProjets.map((d) => (
@@ -207,10 +239,7 @@ export default function CardBh() {
                 </GlassCard>
               ))}
             </div>
-          </section>
-
-          {/* ROWS 2-3 RIGHT: Galerie — spans rows 2 and 3 */}
-          <section className="cell-right-tall">
+            <div className="pt-8"></div>
             <SectionLabel>Galerie</SectionLabel>
             <div className="grid grid-cols-2 gap-2">
               {screenshots.map((s) => (
@@ -230,9 +259,9 @@ export default function CardBh() {
                 </button>
               ))}
             </div>
-          </section>
+          </div>
 
-        </div>
+        </div> 
       </div>
 
       <Lightbox img={activeImg} onClose={() => setActiveImg(null)} />
