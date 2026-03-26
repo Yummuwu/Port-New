@@ -3,6 +3,11 @@ import Reserv_vr from '../../assets/Reserv_vr.png';
 import catalogue from '../../assets/catalogue.png';
 import bdd from '../../assets/bdd.png';
 import reservC from '../../assets/ReservC.png';
+import confirm from '../../assets/confirm.png';
+import trelloStage from '../../assets/trelloStage.png';
+import missions from '../../assets/missions.png';
+import mail from '../../assets/mail.png';
+
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -10,6 +15,7 @@ const techStack = [
   { label: "HTML / CSS", color: "text-orange-400 border-orange-400/40 bg-orange-400/5" },
   { label: "PHP", color: "text-indigo-400 border-indigo-400/40 bg-indigo-400/5" },
   { label: "Laravel", color: "text-red-400 border-red-400/40 bg-red-400/5" },
+  { label: "Breeze", color: "text-yellow-400 border-yellow-400/40 bg-yellow-400/5" },
   { label: "MySQL", color: "text-cyan-400 border-cyan-400/40 bg-cyan-400/5" },
   { label: "JavaScript", color: "text-purple-400 border-purple-400/40 bg-purple-400/5" },
 ];
@@ -38,6 +44,10 @@ const screenshots = [
   { src: reservC, label: "Codes" },
   { src: Reserv_vr, label: "Réservation" },
   { src: bdd, label: "Base de données" },
+  { src: missions, label: "Missions" },
+  { src: confirm, label: "Reserv_confirm" },
+  { src: trelloStage, label: "Trello" },
+  { src: mail, label: "Mail" },
 ];
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -52,11 +62,11 @@ const gestionProjets = [
   },
   {
     title: "Daily meeting",
-    desc: "Alignement quotidien des priorités",
+    desc: "Réunion concernant les probèmes/ avancement",
   },
   {
     title: "Machine virtuelle",
-    desc: "Serveur isolé et reproductible",
+    desc: "Vmware",
   },
   {
     title: "GitHub",
@@ -316,6 +326,9 @@ export default function CardVr() {
               </button>
             ))}
           </div>
+          <a href= "/SITE.pdf" target="_blank" rel="noopener noreferrer">
+            PDF Missions
+          </a>
         </div>
 
       </div>

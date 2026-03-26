@@ -223,7 +223,7 @@ const HomeP = () => {
                             <div className="mt-16">
                                 <div className="flex items-center gap-4 mb-8">
                                     <div className="h-1 w-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-                                    <div className="text-4xl md:text-6xl text-white">Certification</div>
+                                    <div className="text-4xl md:text-6xl text-white">Certifications</div>
                                 </div>
                                     {/* Card */}
                                     <div className="bg-gradient-to-br from-purple-900/20 via-pink-900/20 to-blue-900/20 backdrop-blur-sm rounded-2xl p-10 border-2 border-dashed border-purple-400/30 min-h-[180px] flex items-center justify-center relative overflow-hidden group">

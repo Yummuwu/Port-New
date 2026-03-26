@@ -3,6 +3,7 @@ import CardGourm from './CompTech/Card_Gourm';
 import CardMulti from './CompTech/Card_Multi';
 import CardScrabb from './CompTech/Card_Scrabble';
 import ElaborateCard from './CompTech/PreviewEla';
+import { Link } from 'react-router-dom';
 
 // ─── Reusable primitives ──────────────────────────────────────────────────────
 
@@ -66,9 +67,9 @@ export const PScolaire = () => {
             {/* ── Projet Scolaire ──────────────────────────────────────────── */}
             <Section title="Projet Scolaire">
                 <CardRow>
-                    <CardSlot>
+                    {/*<CardSlot>
                         <ElaborateCard/>
-                    </CardSlot>
+                    </CardSlot>*/}
                     <CardSlot>
                         <CardGourm />
                     </CardSlot>
@@ -79,6 +80,13 @@ export const PScolaire = () => {
                         <CardScrabb />
                     </CardSlot>
                 </CardRow>
+            <Link to="/Projets" className="text-cyan-400 text-sm underline">
+              Projets de stage
+            </Link>
+            <br></br>
+            <Link to="/PPerso" className="text-cyan-400 text-sm underline">
+              Projets perso
+            </Link>
             </Section>
 
             {/* Footer decoration */}

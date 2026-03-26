@@ -30,11 +30,11 @@ const screenshots = [
 const gestionProjets = [
   {
     title: "Discord - Communication avec le maître de stage",
-    desc: "Discord pour les échanges rapides et la coordination avec le maître de stage ainsi que le partage d'informations/images.",
+    desc: "Echanges rapides, la coordination et le partage d’informations/images.",
   },
   {
     title: "Daily meeting avec le maître de stage",
-    desc: "Daily meeting avec le maître de stage pour faire le point sur l'avancement du projet, discuter des difficultés rencontrées et planifier les prochaines étapes.",
+    desc: "Réunion quotidienne pour suivre l’avancement, aborder les difficultés et planifier la suite.",
   },
 ];
 

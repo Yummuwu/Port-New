@@ -7,6 +7,7 @@ import CardVr from './CompTech/Card_reserv';
 import ElixirCard from './CompTech/PreviewEC';
 import CardMulti from './CompTech/Card_Multi';
 import CardScrabb from './CompTech/Card_Scrabble';
+import { Link } from 'react-router-dom';
 
 // ─── Reusable primitives ──────────────────────────────────────────────────────
 
@@ -68,7 +69,7 @@ export const PStages = () => {
             </div>
 
             {/* ── VRtueux ──────────────────────────────────────────────────── */}
-            <Section title="5 janvier – 13 février 2026">
+            <Section title="Projets de stage 1">
                 <CardRow>
                     <CardSlot>
                         <VRtueuxPreview />
@@ -80,7 +81,7 @@ export const PStages = () => {
             </Section>
 
             {/* ── Elixir Création ──────────────────────────────────────────── */}
-            <Section title="5 janvier – 13 février 2026">
+            <Section title= "Projets de stage 2">
                 <CardRow>
                     <CardSlot>
                         <ElixirCard />
@@ -92,21 +93,13 @@ export const PStages = () => {
                         <CardBh />
                     </CardSlot>
                 </CardRow>
-            </Section>
-
-            {/* ── Projet Scolaire ──────────────────────────────────────────── */}
-            <Section title="Projet Scolaire">
-                <CardRow>
-                    <CardSlot>
-                        <CardGourm />
-                    </CardSlot>
-                    <CardSlot>
-                        <CardMulti />
-                    </CardSlot>
-                    <CardSlot>
-                        <CardScrabb />
-                    </CardSlot>
-                </CardRow>
+            <Link to="/PScolaire" className="text-cyan-400 text-sm underline">
+              Projets scolaire
+            </Link>
+            <br></br>
+            <Link to="/PPerso" className="text-cyan-400 text-sm underline">
+              Projets perso
+            </Link>
             </Section>
 
             {/* Footer decoration */}

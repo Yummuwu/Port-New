@@ -1,6 +1,7 @@
 import { useState } from "react";
 import python_botest from '../../assets/python_botest.png';
 import utilisation from '../../assets/utilisation.png';
+import testbotty from '../../assets/testbotty.png';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -12,26 +13,27 @@ const techStack = [
 ];
 
 const deliverables = [
-  {
-    title: "Script Python",
-    desc: "Permet de récupérer certaine données des joueurs pour les afficher dans un channel d'un serveur discord",
-  },
-    {
-    title: "Documentation d'utilisation",
-    desc: "Documentation pour pouvoir compendre ce que le script fait, les données récupérer et son mode d'utilisation",
-  },
+{
+  title: "Script Python",
+  desc: "Récupère des données joueurs et les affiche sur un channel Discord",
+},
+{
+  title: "Documentation",
+  desc: "Explique le fonctionnement du script, les données récupérées et son utilisation",
+},
 ];
 
 const screenshots = [
   { src: python_botest, label: "Bot_test discord" },
   { src: utilisation, label: "Documentation d'utilisation" },
+  { src: testbotty, label: "Script" },
 ];
 
 const gestionProjets = [
-  {
-    title: "Discord - Communication",
-    desc: "Discord pour les échanges rapide avec le gérant du serveur discord et minecraft.",
-  },
+{
+  title: "Discord - Communication",
+  desc: "Échanges rapides avec le gérant du serveur Discord et Minecraft",
+},
 ];
 
 // ─── Sub-components ───────────────────────────────────────────────────────────

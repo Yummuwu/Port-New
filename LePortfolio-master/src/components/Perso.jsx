@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import PythonCard from './CompTech/Perso_project';
+import { Link } from 'react-router-dom';
 
 
 // ─── Reusable primitives ──────────────────────────────────────────────────────
@@ -62,12 +63,19 @@ export const Python = () => {
             </div>
 
             {/* ── VRtueux ──────────────────────────────────────────────────── */}
-            <Section title="16 février – 22 février 2026">
+            <Section title="Projets personnel">
                 <CardRow>
                     <CardSlot>
                         <PythonCard />
                     </CardSlot>
                 </CardRow>
+            <Link to="/Projets" className="text-cyan-400 text-sm underline">
+              Projets de stage
+            </Link>
+            <br></br>
+            <Link to="/PScolaire" className="text-cyan-400 text-sm underline">
+              Projets scolaire
+            </Link>
             </Section>
 
             {/* Footer decoration */}

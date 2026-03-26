@@ -44,7 +44,7 @@ const screenshots = [
 const gestionProjets = [
   {
     title: "Discord - Communication",
-    desc: "Communication rapide et partage d’informations/images.",
+    desc: "Communication rapide et partage d'informations/images.",
   },
   {
     title: "Trello - Gestion de projet",
@@ -151,25 +151,29 @@ export default function CardGourm() {
         .gallery-thumb { transition: transform 0.2s ease, box-shadow 0.2s ease; }
         .gallery-thumb:hover { transform: scale(1.04); box-shadow: 0 0 20px rgba(34,211,238,0.15); }
 
-        /*
-          Layout:
-          Col 1 (left)    | Col 2 (right)
-          ────────────────────────────────
-          Technologies    | Difficultés    ← row 1
-          Livrables       | Galerie        ← row 2 (galerie spans rows 2+3)
-          Gestion projet  |                ← row 3
-        */
-        .aligned-grid {
+        .portfolio-grid {
           display: grid;
-          grid-template-columns: 1fr 1fr;
-          grid-template-rows: auto auto auto;
+          grid-template-columns: 1fr;
           gap: 24px;
+          align-items: start;
         }
-        .cell-top-left    { grid-column: 1; grid-row: 1; }
-        .cell-top-right   { grid-column: 2; grid-row: 1; }
-        .cell-mid-left    { grid-column: 1; grid-row: 2; }
-        .cell-bottom-left { grid-column: 1; grid-row: 3; }
-        .cell-right-tall  { grid-column: 2; grid-row: 2 / 4; }
+
+        @media (min-width: 1024px) {
+          .portfolio-grid {
+            grid-template-columns: 1fr 1fr;
+          }
+
+          .left-col {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+          }
+
+          .right-col {
+            position: sticky;
+            top: 20px;
+          }
+        }
       `}</style>
 
       <div className="vrtueux-root w-full text-zinc-200">
@@ -202,52 +206,29 @@ export default function CardGourm() {
         </header>
 
         {/* ── Grid ── */}
-        <div className="fade-up d2 aligned-grid">
+        <div className="fade-up d2 portfolio-grid">
 
-          {/* ROW 1 LEFT: Technologies */}
-          <section className="cell-top-left">
-            <SectionLabel>Technologies utilisées</SectionLabel>
-            <div className="flex flex-wrap gap-2">
-              {techStack.map((t) => (
-                <span
-                  key={t.label}
-                  className={`text-xl font-mono border rounded-lg px-3 py-1.5 ${t.color}`}
-                >
-                  {t.label}
-                </span>
-              ))}
-            </div>
-          </section>
+          {/* LEFT COLUMN */}
+          <div className="left-col">
 
-          {/* ROW 1 RIGHT: Difficultés */}
-          <section className="cell-top-right">
-            <SectionLabel>Difficultés</SectionLabel>
-            <GlassCard className="p-4">
-              <p className="text-zinc-300 text-xl leading-relaxed">
-                - Beaucoup de routes possibles pour la structure de l'API RESTful, la base de données et les applications web/mobile. <br /> - Le token JWT bloquait certaines routes de l'API.
-              </p>
-            </GlassCard>
-          </section>
+            <section>
+              <SectionLabel>Technologies utilisées</SectionLabel>
+              <div className="flex flex-wrap gap-2">
+                {techStack.map((t) => (
+                  <span
+                    key={t.label}
+                    className={`text-xl font-mono border rounded-lg px-3 py-1.5 ${t.color}`}
+                  >
+                    {t.label}
+                  </span>
+                ))}
+              </div>
+            </section>
 
-          {/* ROW 2 LEFT: Livrables */}
-          <section className="cell-mid-left">
-            <SectionLabel>Livrables</SectionLabel>
-            <div className="grid grid-cols-2 gap-3">
-              {deliverables.map((d) => (
-                <GlassCard key={d.title} className="p-4">
-                  <p className="font-semibold text-xl text-zinc-100 mb-0.5">{d.title}</p>
-                  <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
-                </GlassCard>
-              ))}
-            </div>
-          </section>
-
-          {/* ROW 3 LEFT: Gestion du projet */}
-          <div className=" flex flex-wrap">
-            <section className="cell-bottom-left">
-              <SectionLabel>Gestion du projet</SectionLabel>
-              <div className="grid grid-cols-3 gap-3">
-                {gestionProjets.map((d) => (
+            <section>
+              <SectionLabel>Livrables</SectionLabel>
+              <div className="grid grid-cols-2 gap-3">
+                {deliverables.map((d) => (
                   <GlassCard key={d.title} className="p-4">
                     <p className="font-semibold text-xl text-zinc-100 mb-0.5">{d.title}</p>
                     <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
@@ -255,10 +236,30 @@ export default function CardGourm() {
                 ))}
               </div>
             </section>
+
+            <section>
+              <SectionLabel>Difficultés</SectionLabel>
+              <GlassCard className="p-4">
+                <p className="text-zinc-300 text-xl leading-relaxed">
+                  - Beaucoup de routes possibles pour la structure de l'API RESTful, la base de données et les applications web/mobile. <br /> - Le token JWT bloquait certaines routes de l'API.
+                </p>
+              </GlassCard>
+            </section>
+
           </div>
 
-          {/* ROWS 2-3 RIGHT: Galerie — spans rows 2 and 3 */}
-          <section className="cell-right-tall">
+          {/* RIGHT COLUMN */}
+          <div className="right-col">
+            <SectionLabel>Gestion du projet</SectionLabel>
+            <div className="grid grid-cols-3 gap-3">
+              {gestionProjets.map((d) => (
+                <GlassCard key={d.title} className="p-4">
+                  <p className="font-semibold text-xl text-zinc-100 mb-0.5">{d.title}</p>
+                  <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
+                </GlassCard>
+              ))}
+            </div>
+            <div className="pt-8"></div>
             <SectionLabel>Galerie</SectionLabel>
             <div className="grid grid-cols-2 gap-2">
               {screenshots.map((s) => (
@@ -278,7 +279,7 @@ export default function CardGourm() {
                 </button>
               ))}
             </div>
-          </section>
+          </div>
 
         </div>
       </div>
@@ -287,5 +288,3 @@ export default function CardGourm() {
     </>
   );
 }
-
-
