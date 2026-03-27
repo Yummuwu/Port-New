@@ -337,7 +337,9 @@ const HomeP = () => {
                 </section>
 
                 {/* Footer decoration */}
-                <div className="h-2 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500"></div>
+                <div className="h-5 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 flex justify-center items-center text-white">
+                    Le maillon le plus faible de la cybersécurité, c’est l’être humain. - Kevin Mitnick
+                </div>
             </div>
         </>
     )

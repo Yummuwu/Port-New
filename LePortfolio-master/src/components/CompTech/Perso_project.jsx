@@ -154,7 +154,7 @@ export default function CardScrabb() {
           </div>
 
           <p className="text-zinc-400 text-xl leading-relaxed max-w-2xl mb-5">
-            Développement d'un script python permettant la récupération de données des joueurs d'un serveur minecraft pour les afficher dans un channel discord grace à un robot
+            Développement d'un script python permettant la récupération de données des joueurs d'un serveur minecraft pour les afficher dans un channel discord grace à un robot agissant comme log.
           </p>
         </header>
 

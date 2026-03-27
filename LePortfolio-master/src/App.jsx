@@ -54,7 +54,7 @@ function Sidebar() {
 
       {/* Vertical progress bar */}
       <div className="absolute top-6 bottom-6 w-[2px] bg-gray-300 rounded-full">
-        <div className=" rounded-full transition-all duration-200" />
+        <div className="rounded-full transition-all duration-200" />
       </div>
 
       {/* Icons */}

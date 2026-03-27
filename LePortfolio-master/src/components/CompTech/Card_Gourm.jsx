@@ -1,8 +1,9 @@
 import { useState } from "react";
 import trello from '../../assets/trello.png';
-import formualireb from '../../assets/formualireb.png';
 import phone from '../../assets/phone.png';
 import api from '../../assets/api_routes.png';
+import formumu from '../../assets/formumu.png';
+import param from '../../assets/param.png';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -35,7 +36,8 @@ const deliverables = [
 ];
 
 const screenshots = [
-  { src: formualireb, label: "Formulaire site web" },
+  { src: formumu, label: "Formulaire site web" },
+  { src: param, label: "Paramètres concours" },
   { src: trello, label: "Gestion du projet" },
   { src: phone, label: "Application mobile" },
   { src: api, label: "API RESTful" },

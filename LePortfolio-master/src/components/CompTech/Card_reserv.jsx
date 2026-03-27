@@ -21,22 +21,22 @@ const techStack = [
 ];
 
 const deliverables = [
-  {
-    title: "Site web",
-    desc: "Interface regroupant la réservation, le catalogue de jeux, la gestion de compte et des informations pratiques (contact, carte des snacks)",
-  },
-  {
-    title: "Système de compte",
-    desc: "Inscription, connexion et sessions sécurisées grace à Breeze intégré directement dans Laravel",
-  },
-  {
-    title: "Catalogue de jeux",
-    desc: "Navigation interactive dans la bibliothèque VR avec filtres intégrés relié à une base de données MySQL",
-  },
-  {
-    title: "Système de réservation",
-    desc: "Les utilisateurs inscrits peuvent réserver des créneaux VR, seuls ou en groupe, avec synchronisation MySQL.",
-  },
+{
+  "title": "Site web",
+  "desc": "Interface regroupant réservation, catalogue de jeux, compte utilisateur et infos pratiques."
+},
+{
+  "title": "Système de compte",
+  "desc": "Inscription, connexion et sessions sécurisées via Breeze dans Laravel."
+},
+{
+  "title": "Catalogue de jeux",
+  "desc": "Navigation interactive dans la bibliothèque VR avec filtres et base MySQL."
+},
+{
+  "title": "Système de réservation",
+  "desc": "Réservation de créneaux VR, solo ou en groupe, synchronisée avec MySQL."
+}
 ];
 
 const screenshots = [
