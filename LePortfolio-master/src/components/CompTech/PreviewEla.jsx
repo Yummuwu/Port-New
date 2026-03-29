@@ -184,7 +184,7 @@ export default function ElaborateCard() {
               </div>
             </div>
 
-            <p className="text-zinc-400 text-xl max-w-2xl leading-relaxed mb-6">
+            <p className="text-zinc-400 text-2xl max-w-2xl leading-relaxed mb-6">
               Spécialisée dans le{" "}
               <span className="text-purple-300 font-medium">développement de solutions logicielles sur mesure</span>{" "}
               et la mise en place d'infrastructures informatiques destinées à héberger les applications de ses clients PME.

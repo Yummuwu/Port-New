@@ -4,202 +4,231 @@ import css from '../assets/css.png';
 import js from '../assets/js.png';
 import { Link } from 'react-router-dom';
 
-// ─── UI Components ───────────────────────────────────────────────────────────
+// ─── UI STYLE ────────────────────────────────────────────────────────────────
 
-const Section = ({ title, children }) => (
-  <section className="mb-10">
-    <div className="inline-block bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm rounded-full px-6 py-2 border border-white/20">
-      <span className="text-white/90 text-base md:text-lg font-medium">
-        {title}
+function SectionLabel({ children }) {
+  return (
+    <div className="flex items-center gap-3 mb-4">
+      <span className="text-2xl font-mono uppercase tracking-[0.2em] text-cyan-400">
+        {children}
       </span>
     </div>
-    <div className="mt-4">{children}</div>
-  </section>
-);
+  );
+}
 
-const Card = ({ children }) => (
-  <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm hover:bg-white/10 transition duration-300">
-    {children}
-  </div>
-);
+function GlassCard({ children, className = "" }) {
+  return (
+    <div
+      className={`rounded-xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-sm hover:border-cyan-400/20 transition-colors duration-300 ${className}`}
+    >
+      {children}
+    </div>
+  );
+}
 
-const NumberedList = ({ items }) => (
-  <ul className="space-y-3">
-    {items.map((item, i) => (
-      <li key={i} className="flex gap-3 text-white/75">
-        <span className="w-6 h-6 flex items-center justify-center rounded-full bg-teal-500/20 border border-teal-400/30 text-teal-300 text-xs font-bold">
-          {i + 1}
-        </span>
-        {item}
-      </li>
-    ))}
-  </ul>
-);
-
-// ─── Main Component ───────────────────────────────────────────────────────────
+// ─── MAIN ────────────────────────────────────────────────────────────────────
 
 const Project1 = () => {
 
-  const demarche = [
-    "Création de la table jeu",
-    "Réutilisation de codes existants",
-    "Création barre de recherche dynamique",
-    "Ajout colonne image",
-    "Migration vers Laravel",
-    "Création architecture MVC",
-    "Ajout requêtes SQL filtres",
-    "Ajout bouton réservation",
-    "Transmission du jeu sélectionné",
-    "Ajout page détail jeu",
-  ];
-
   const steps = [
     {
-      title: "Récupération des codes",
-      content: "Base issue de projets précédents pour accélérer le développement.",
+      title: "Création de la table jeu",
+      content:
+        "Création de la table jeu dans la base de données, reprise d'un autre projet.",
     },
     {
-      title: "Recherche dynamique",
-      content: "Recherche en temps réel par titre/type via requêtes dynamiques.",
+      title: "Récupération des codes",
+      content:
+        "Récupération de codes utiles réalisés en cours pour la construction de la page catalogue.",
+    },
+    {
+      title: "Barre de recherche dynamique",
+      content:
+        "Développement d'une barre de recherche dynamique permettant de rechercher un jeu par son titre ou son type.",
+    },
+    {
+      title: "Modification de la table jeu",
+      content:
+        "Ajout d'une colonne pour stocker et afficher l'image de chaque jeu sur le site.",
     },
     {
       title: "Migration Laravel",
-      content: "Adaptation MVC avec controllers, services, repository.",
+      content:
+        "Migration et adaptation du code sous Laravel avec architecture MVC complète.",
     },
     {
-      title: "Filtres",
-      content: "Ajout filtres via requêtes SQL côté serveur.",
+      title: "Bouton de réservation",
+      content:
+        "Ajout d'un bouton permettant de réserver avec le jeu pré-rempli.",
     },
     {
-      title: "Navigation & réservation",
-      content: "Boutons + pré-remplissage + page détail.",
+      title: "Page de description",
+      content:
+        "Création d'une page détaillée pour chaque jeu.",
     },
   ];
 
+  const bilanPerso = [
+    "Récupérations des données dans une base de données",
+    "Création d'une barre de recherche dynamique"
+  ];
+
+  const difficulties = [
+    "recherche dynamique complexe.",
+  ];
+
   return (
-    <div className="pt-50 min-h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 px-4 py-16 text-white">
+    <>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap');
 
+        .projvr-root * { font-family: 'Syne', sans-serif; }
+        .projvr-root .font-mono { font-family: 'DM Mono', monospace !important; }
 
-      <div className="max-w-6xl mx-auto relative">
+        @keyframes fadeUp {
+          from { opacity: 0; transform: translateY(14px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        .fade-up { animation: fadeUp 0.45s ease both; }
+      `}</style>
 
-        {/* HEADER */}
-        <header className="flex flex-col lg:flex-row gap-6 border-b border-white/20 pb-6 mb-10">
+      <div className="pt-50 projvr-root min-h-screen flex flex-col bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 text-zinc-200 px-6 py-12 relative">
 
-          <div className="flex flex-col items-center lg:items-start lg:w-1/3">
-            <img src={logoVr} className="w-24 h-24 rounded-xl" />
-            <p className="text-sm text-white/60 mt-2">VRTueux</p>
+        {/* Animated background orbs */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-500"></div>
+        </div>
 
-            <Link to="/Stage1" className="text-teal-400 text-sm underline">
-              Voir l'entreprise →
-            </Link>
-            <Link to="/MissionReser" className="text-teal-400 text-sm underline">
-              Voir mission page réservation →
-            </Link>
-          </div>
+        <div className="w-full pr-50 pl-50 flex-1 relative">
 
-          <div className="lg:w-2/3">
-            <h1 className="text-3xl font-bold">
-              Catalogue de jeux — Recherche & Filtres
-            </h1>
-            <p className="text-sm text-white/50 mt-2">
-              01 février 2026
-            </p>
-          </div>
+          {/* Glass card wrapper */}
+          <div className="bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-xl rounded-[2rem] shadow-2xl relative p-8 md:p-12 border border-white/20">
 
-        </header>
+            {/* Decorative corner orbs */}
+            <div className="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-br from-purple-400 to-pink-600 rounded-full blur-2xl opacity-20 pointer-events-none"></div>
+            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full blur-2xl opacity-20 pointer-events-none"></div>
 
-        {/* INTERVENANTS */}
-        <Section title="Intervenants">
-          <p className="text-white/80 text-lg">Maître de stage</p>
-        </Section>
+            <div className="space-y-12">
 
-        {/* DESCRIPTION */}
-        <Section title="Description">
-          <p className="text-white/80 text-lg leading-relaxed">
-            Développement d’un catalogue interactif avec recherche dynamique
-            et filtres permettant aux utilisateurs de naviguer et réserver
-            facilement une session VR.
-          </p>
-        </Section>
+              {/* HEADER */}
+              <header className="fade-up border-b border-white/[0.08] pb-6 flex gap-6 items-center">
+                <img src={logoVr} className="w-16 h-16 rounded-xl" />
 
-        {/* OBJECTIF */}
-        <Section title="Objectif">
-          <p className="text-white/80 text-lg leading-relaxed">
-            Créer un système de recherche et filtrage performant intégré
-            dans une architecture Laravel propre.
-          </p>
-        </Section>
+                <div>
+                  <span className="text-lg font-mono tracking-widest text-cyan-400 uppercase border border-cyan-400/20 bg-cyan-400/5 rounded-full px-3 py-1">
+                    Mission de stage · VRTueux
+                  </span>
 
-        {/* CONTRAINTES */}
-        <Section title="Contraintes">
-          <Card>
-            <p className="text-white/75">
-              Mise en place de filtres SQL + migration vers Laravel (MVC,
-              repository, services).
-            </p>
-          </Card>
-        </Section>
+                  <p className="text-base text-zinc-500 mt-2 mb-2">
+                    Mai – Juin 2025
+                  </p>
 
-        {/* OUTILS */}
-        <Section title="Outils">
-          <p className="text-white/60 text-sm mb-4">
-            Laravel · PHP · MySQL · Blade · SQL
-          </p>
+                  <div className="flex flex-col gap-1">
+                    <Link to="/Projets" className="text-cyan-400 underline hover:text-cyan-300 transition-colors">
+                      Revenir dans les projets de stage →
+                    </Link>
+                    <Link to="/MissionReser" className="text-cyan-400 underline hover:text-cyan-300 transition-colors">
+                      Voir mission réservation →
+                    </Link>
+                    <Link to="/ProjetVR" className="text-cyan-400 underline hover:text-cyan-300 transition-colors">
+                      Voir le projet →
+                    </Link>
+                  </div>
+                </div>
+              </header>
 
-          <div className="flex gap-4 flex-wrap">
-            {[html, css, js].map((img, i) => (
-              <div key={i} className="w-20 h-20 bg-white/10 rounded-xl flex items-center justify-center hover:scale-105 transition">
-                <img src={img} className="p-2" />
-              </div>
-            ))}
-          </div>
-        </Section>
+              {/* DESCRIPTION */}
+              <section className="fade-up">
+                <SectionLabel>Description</SectionLabel>
+                <p className="text-white text-xl max-w-2xl">
+                  Développement d'un catalogue interactif avec recherche dynamique et filtres.
+                </p>
+              </section>
 
-        {/* ÉTAPES */}
-        <Section title="Étapes">
-          <div className="space-y-4">
-            {steps.map((step, i) => (
-              <Card key={i}>
-                <h3 className="text-teal-400 font-semibold mb-2">
-                  {i + 1}. {step.title}
-                </h3>
-                <p className="text-white/75">{step.content}</p>
-              </Card>
-            ))}
-          </div>
-        </Section>
+              {/* OBJECTIF */}
+              <section>
+                <SectionLabel>Objectif</SectionLabel>
+                <p className="text-white text-xl max-w-2xl">
+                  Créer un système de recherche performant intégré dans Laravel.
+                </p>
+              </section>
 
-        {/* DÉMARCHE */}
-        <Section title="Démarche">
-          <NumberedList items={demarche} />
-        </Section>
+              {/* CONTRAINTES */}
+              <section>
+                <SectionLabel>Contraintes</SectionLabel>
+                <GlassCard className="p-6">
+                  <p className="text-white text-xl">
+                    Mise en place de filtres SQL + architecture MVC.
+                  </p>
+                </GlassCard>
+              </section>
 
-        {/* BILAN */}
-        <Section title="Bilan">
-          <Card>
-            <p className="mb-4 text-white/80">
-              Catalogue fonctionnel mais pages détail restantes à finaliser.
-            </p>
+              {/* DIFFICULTÉS */}
+              <section>
+                <SectionLabel>Difficultés</SectionLabel>
+                <GlassCard className="p-6">
+                  <p className="text-zinc-300 text-xl">
+                    {difficulties.map((d, i) => (
+                      <span key={i}>- {d}<br /></span>
+                    ))}
+                  </p>
+                </GlassCard>
+              </section>
 
-            <p className="font-semibold mb-2">Difficulté :</p>
-            <p className="text-white/70 mb-4">
-              Mise en place de la recherche dynamique complexe.
-            </p>
+              {/* TIMELINE */}
+              <section>
+                <SectionLabel>Étapes</SectionLabel>
 
-            <p className="font-semibold mb-2">Apports :</p>
-            <p className="text-white/70">
-              Meilleure maîtrise Laravel + filtres SQL côté serveur.
-            </p>
-          </Card>
-        </Section>
+                <div className="relative pl-10">
+                  <div className="absolute left-2.5 top-1.5 bottom-1.5 w-px bg-gradient-to-b from-cyan-400/70 to-cyan-400/10" />
 
-        {/* FOOTER */}
-        <footer className="text-center text-xs text-white/30 mt-12 border-t border-white/10 pt-4">
-          Portfolio 2025
-        </footer>
+                  <div className="space-y-5">
+                    {steps.map((step, i) => (
+                      <div key={i} className="relative group">
+                        <div className="absolute -left-[34px] top-3.5 w-2.5 h-2.5 rounded-full bg-cyan-400 ring-[3px] ring-cyan-400/15 group-hover:ring-cyan-400/30 transition-all" />
 
+                        <GlassCard className="p-4 group-hover:border-cyan-400/18 group-hover:bg-cyan-400/[0.04] transition-colors">
+                          <p className="text-xl font-semibold">
+                            {step.title}
+                          </p>
+                          <p className="text-zinc-400 text-xl">
+                            {step.content}
+                          </p>
+                        </GlassCard>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </section>
+
+              {/* BILAN */}
+              <section>
+                <SectionLabel>Bilan</SectionLabel>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <GlassCard className="p-6">
+                    <div className="grid grid-cols-2 gap-3">
+                      {bilanPerso.map((item, i) => (
+                        <GlassCard key={i} className="p-3">
+                          <p className="text-white text-xl">{item}</p>
+                        </GlassCard>
+                      ))}
+                    </div>
+                  </GlassCard>
+                </div>
+              </section>
+
+              {/* FOOTER */}
+              <footer className="text-center text-sm text-zinc-600 pt-6 border-t border-white/[0.06] font-mono">
+                Portfolio 2025
+              </footer>
+
+            </div>
+          </div>{/* end glass card */}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

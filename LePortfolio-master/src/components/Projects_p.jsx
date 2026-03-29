@@ -69,7 +69,7 @@ export const PStages = () => {
             </div>
 
             {/* ── VRtueux ──────────────────────────────────────────────────── */}
-            <Section title="Projets de stage 1">
+            <Section title="Projets du stage 1">
                 <CardRow>
                     <CardSlot>
                         <VRtueuxPreview />
@@ -94,7 +94,7 @@ export const PStages = () => {
                     </CardSlot>
                 </CardRow>
             <Link to="/PScolaire" className="text-cyan-400 text-sm underline">
-              Projets scolaire
+              Projets scolaires
             </Link>
             <br></br>
             <Link to="/PPerso" className="text-cyan-400 text-sm underline">

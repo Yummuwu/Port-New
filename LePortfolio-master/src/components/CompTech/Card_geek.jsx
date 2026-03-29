@@ -11,6 +11,7 @@ const techStack = [
   { label: "Shopify", color: "text-indigo-400 border-indigo-400/40 bg-indigo-400/5" },
   { label: "HTML", color: "text-purple-400 border-purple-400/40 bg-purple-400/5" },
   { label: "CSS", color: "text-yellow-400 border-yellow-400/40 bg-yellow-400/5" },
+  { label: "Canva", color: "text-pink-400 border-pink-400/40 bg-pink-400/5" },
 ];
 
 const deliverables = [
@@ -29,12 +30,35 @@ const screenshots = [
 
 const gestionProjets = [
   {
-    title: "Discord - Communication avec le maître de stage",
-    desc: "Echanges rapides, la coordination et le partage d’informations/images.",
+    title: "Discord - Communication",
+    desc: "Discord pour les échanges rapides et la coordination ainsi que le partage d'informations/images.",
   },
   {
-    title: "Daily meeting avec le maître de stage",
+    title: "Daily meeting",
     desc: "Réunion quotidienne pour suivre l’avancement, aborder les difficultés et planifier la suite.",
+  },
+];
+
+const missions = [
+  {
+    title: "1. Intégration des plugins",
+    desc: "Ajout de DiviSupreme et Contact Form 7 pour plus d'options.",
+  },
+  {
+    title: "2. Recherche d'images",
+    desc: "Sélection de visuels libres de droits sur Freepik et retouche.",
+  },
+  {
+    title: "3. Recherche de thèmes Divi",
+    desc: "Récuperation de parties de thèmes Wordpress pour les adapter au projet.",
+  },
+  {
+    title: "4. Intégration du contenu",
+    desc: "Mise en page des sections et contenus via le builder Divi.",
+  },
+    {
+    title: "5. Refonte shopify",
+    desc: "Adaptation du site e-commerce Shopify au nouveau style du site.",
   },
 ];
 
@@ -176,9 +200,9 @@ export default function CardGeek() {
             Refonte d'une site web vitrine sur Wordpress avec un nouveau thème et des fonctionnalités améliorées.
           </p>
 
-        {/* ── A VOIR ── 
+
           <a
-            href="dfdfg"
+            href="/ParadisDuGeek"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-cyan-400 text-black text-xl font-semibold px-4 py-2 rounded-lg hover:bg-cyan-300 transition-colors duration-200"
@@ -188,7 +212,6 @@ export default function CardGeek() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
-          */}
         </header>
 
         <div className="fade-up d2 portfolio-grid">
@@ -223,6 +246,26 @@ export default function CardGeek() {
             </section>
 
             <section>
+            <SectionLabel>Missions</SectionLabel>
+            <div className="grid grid-cols-2 gap-3">
+              {missions.map((d) => (
+                <GlassCard key={d.title} className="p-4">
+                  <p className="font-semibold text-xl text-zinc-100 mb-0.5">{d.title}</p>
+                  <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
+                </GlassCard>
+              ))}
+            </div>
+          </section>
+          <a 
+            href="https://paradisdugeek.com/" 
+            className="text-xl text-zinc-500 mt-2"
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            https://paradisdugeek.com/
+          </a>
+
+            <section>
               <SectionLabel>Difficultés</SectionLabel>
               <GlassCard className="p-4">
                 <p className="text-zinc-300 text-xl leading-relaxed">
@@ -236,12 +279,15 @@ export default function CardGeek() {
 
           {/* RIGHT COLUMN */}
           <div className="right-col">
-            <SectionLabel>Gestion du projet</SectionLabel>
-            <div className="grid grid-cols-1 gap-3">
+          <SectionLabel>Gestion du projet</SectionLabel>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {gestionProjets.map((d) => (
-                <GlassCard key={d.title} className="p-4">
-                  <p className="font-semibold text-xl text-zinc-100 mb-0.5">{d.title}</p>
-                  <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
+                <GlassCard key={d.title} className="p-5 flex gap-4 items-start relative overflow-hidden">
+                  <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-cyan-400 to-blue-600 rounded-l-xl" />
+                  <div className="pl-3">
+                    <p className="font-semibold text-zinc-100 mb-1">{d.title}</p>
+                    <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
+                  </div>
                 </GlassCard>
               ))}
             </div>

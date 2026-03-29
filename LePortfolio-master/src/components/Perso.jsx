@@ -63,18 +63,18 @@ export const Python = () => {
             </div>
 
             {/* ── VRtueux ──────────────────────────────────────────────────── */}
-            <Section title="Projets personnel">
+            <Section title="Projets personnels">
                 <CardRow>
                     <CardSlot>
                         <PythonCard />
                     </CardSlot>
                 </CardRow>
             <Link to="/Projets" className="text-cyan-400 text-sm underline">
-              Projets de stage
+              Projets de stages
             </Link>
             <br></br>
             <Link to="/PScolaire" className="text-cyan-400 text-sm underline">
-              Projets scolaire
+              Projets scolaires
             </Link>
             </Section>
 

@@ -12,6 +12,7 @@ import { PersoProj } from './pages/Persopage'
 import { Contact } from './pages/Contact'
 import { Res } from './pages/Stages/Stage1/Reservation'
 import { Bdd } from './pages/Stages/Stage1/Bdd'
+import { VRProj } from './pages/ProjeTvr'
 import { Cata } from './pages/Stages/Stage1/Catalogue'
 import { Intern1 } from './pages/Stages/Stage1/VRtueux'
 import { Intern2 } from './pages/Stage2/ElixirCreation'
@@ -117,6 +118,7 @@ function App() {
             <Route path="/PPerso" element={<PersoProj/>}/>
             <Route path="/Projets" element={<Projets />} />
             <Route path="/Stage1" element={<Intern1 />} />
+            <Route path="/ProjetVR" element={<VRProj />} />
             <Route path="/MissionReser" element={<MissionReserv />} />
             <Route path="/Stage2" element={<Intern2 />} />
             <Route path="/ParadisDuGeek" element={<Projet1 />} />

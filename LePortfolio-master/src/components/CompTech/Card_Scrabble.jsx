@@ -13,13 +13,21 @@ const techStack = [
 ];
 
 const deliverables = [
+    {
+    title: "1. Maquette Scrabble",
+    desc: "Maquette de l'interface du Scrabble réalisée sur Figma.",
+  },
   {
-    title: "Application Scrabble",
+    title: "2. Application Scrabble",
     desc: "Permet de jouer au Scrabble.",
   },
   {
-    title: "Base de donnée MySQL",
+    title: "3. Base de donnée MySQL",
     desc: "Stocke le dictionnaire et les parties jouées.",
+  },
+  {
+    title: "4. Historique des parties",
+    desc: "Affiche les parties jouées et leurs scores.",
   },
 ];
 
@@ -172,7 +180,7 @@ export default function CardScrabb() {
           </div>
 
           <p className="text-zinc-400 text-xl leading-relaxed max-w-2xl mb-5">
-            Conception et développement d'une application sur Visual studio pour jouer au jeu du Scrabble relié à une base de donnée MySQL pour la gestion des parties entre joueurs ainsi que le dictionnaire français.
+            Développement à partir d'une base une application Scrabble relié à une base de donnée MySQL pour la gestion des parties entre joueurs ainsi que le dictionnaire français.
           </p>
 
         {/* ── A VOIR ── 
@@ -211,7 +219,7 @@ export default function CardScrabb() {
             </section>
 
             <section>
-              <SectionLabel>Livrables</SectionLabel>
+              <SectionLabel>Missions</SectionLabel>
               <div className="grid grid-cols-2 gap-3">
                 {deliverables.map((d) => (
                   <GlassCard key={d.title} className="p-4">
@@ -236,11 +244,14 @@ export default function CardScrabb() {
           {/* RIGHT COLUMN */}
           <div className="right-col">
             <SectionLabel>Gestion de projet</SectionLabel>
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {gestionProjets.map((d) => (
-                <GlassCard key={d.title} className="p-4">
-                  <p className="font-semibold text-xl text-zinc-100 mb-0.5">{d.title}</p>
-                  <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
+                <GlassCard key={d.title} className="p-5 flex gap-4 items-start relative overflow-hidden">
+                  <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-cyan-400 to-blue-600 rounded-l-xl" />
+                  <div className="pl-3">
+                    <p className="font-semibold text-zinc-100 mb-1">{d.title}</p>
+                    <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
+                  </div>
                 </GlassCard>
               ))}
             </div>

@@ -1,6 +1,9 @@
 import { useState } from "react";
 import codee from '../../assets/codee.PNG';
 import multibureau from '../../assets/multibureau.PNG';
+import acc from '../../assets/acc.png';
+import isnc from '../../assets/isnc.png';
+import sprint from '../../assets/sprint.png';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -12,25 +15,35 @@ const techStack = [
 ];
 
 const deliverables = [
-  {
-    title: "Application web",
-    desc: "Réservation de salles de réunion.",
+    {
+    title: "1. Maquette - Canvas",
+    desc: "Maquette de l'interface web.",
   },
-  {
-    title: "Base de donnée MySQL",
+    {
+    title: "2. Base de donnée MySQL",
     desc: "Gestion des équipements et comptes utilisateurs.",
   },
     {
-    title: "Maquette - Canvas",
-    desc: "Maquette de l'interface web.",
+    title: "3. Système de réservation",
+    desc: "Gestion des réservations des bureaux et salles de réunion.",
   },
+  {
+    title: "4. Application web",
+    desc: "Réservation des bureaux et salles de réunion.",
+  },
+  {
+    title: "5. Système de gestion des utilisateurs",
+    desc: "Gestion des comptes utilisateurs et authentification.",
+  },
+
 ];
 
 const screenshots = [
   { src: codee, label: "Inscription" },
   { src: multibureau, label: "Maquette Canva" },
-  { src: "screenshot3.png", label: "A ajouter" },
-  { src: "screenshot4.png", label: "A ajouter" },
+  { src: isnc, label: "Inscription" },
+  { src: sprint, label: "Sprint" },
+  { src: acc, label: "Accueil" },
 ];
 
 const gestionProjets = [
@@ -175,7 +188,7 @@ export default function CardMulti() {
           </div>
 
           <p className="text-zinc-400 text-xl leading-relaxed max-w-2xl mb-5">
-            Conception d'un site web dynamique avec un système de réservation visant à réserver des bureaux pour travailler ou entreprendre des réunions.
+            Conception d'un site web dynamique avec un système de réservation visant à réserver des bureaux pour travailler.
           </p>
 
         {/* ── A VOIR ── 
@@ -214,7 +227,7 @@ export default function CardMulti() {
             </section>
 
             <section>
-              <SectionLabel>Livrables</SectionLabel>
+              <SectionLabel>Missions</SectionLabel>
               <div className="grid grid-cols-2 gap-3">
                 {deliverables.map((d) => (
                   <GlassCard key={d.title} className="p-4">
@@ -239,11 +252,14 @@ export default function CardMulti() {
           {/* RIGHT COLUMN */}
           <div className="right-col">
             <SectionLabel>Gestion du projet</SectionLabel>
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {gestionProjets.map((d) => (
-                <GlassCard key={d.title} className="p-4">
-                  <p className="font-semibold text-xl text-zinc-100 mb-0.5">{d.title}</p>
-                  <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
+                <GlassCard key={d.title} className="p-5 flex gap-4 items-start relative overflow-hidden">
+                  <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-cyan-400 to-blue-600 rounded-l-xl" />
+                  <div className="pl-3">
+                    <p className="font-semibold text-zinc-100 mb-1">{d.title}</p>
+                    <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
+                  </div>
                 </GlassCard>
               ))}
             </div>

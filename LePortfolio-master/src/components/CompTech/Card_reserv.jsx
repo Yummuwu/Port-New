@@ -2,11 +2,10 @@ import { useState } from "react";
 import Reserv_vr from '../../assets/Reserv_vr.png';
 import catalogue from '../../assets/catalogue.png';
 import bdd from '../../assets/bdd.png';
-import reservC from '../../assets/ReservC.png';
 import confirm from '../../assets/confirm.png';
 import trelloStage from '../../assets/trelloStage.png';
 import missions from '../../assets/missions.png';
-import mail from '../../assets/mail.png';
+import github from '../../assets/github.png';
 
 
 // ─── Data ────────────────────────────────────────────────────────────────────
@@ -23,31 +22,41 @@ const techStack = [
 const deliverables = [
 {
   "title": "Site web",
-  "desc": "Interface regroupant réservation, catalogue de jeux, compte utilisateur et infos pratiques."
+  "desc": "Site web dynamique regroupant réservation, catalogue de jeux, compte utilisateur et infos pratiques avec sa base de donnée MySQL."
 },
 {
-  "title": "Système de compte",
-  "desc": "Inscription, connexion et sessions sécurisées via Breeze dans Laravel."
+  "title": "Répositorie github",
+  "desc": "Pour transferer sur un serveur physique et continuer l'avancement du projet."
+},
+];
+
+const steps = [
+{
+  "title": "1. Base de donnée",
+  "desc": "Pour la gestion de compte, des équipement vr, réservations, etc..."
 },
 {
-  "title": "Catalogue de jeux",
+  "title": "2. Système de réservation",
+  "desc": "Réservation de créneaux VR, solo ou en groupe, synchronisée avec MySQL."
+},
+{
+  "title": "3. Catalogue de jeux",
   "desc": "Navigation interactive dans la bibliothèque VR avec filtres et base MySQL."
 },
 {
-  "title": "Système de réservation",
-  "desc": "Réservation de créneaux VR, solo ou en groupe, synchronisée avec MySQL."
-}
+  "title": "4. Système de compte",
+  "desc": "Inscription, connexion et sessions sécurisées via Breeze dans Laravel."
+},
+
+
 ];
 
 const screenshots = [
   { src: catalogue, label: "Catalogue" },
-  { src: reservC, label: "Codes" },
   { src: Reserv_vr, label: "Réservation" },
   { src: bdd, label: "Base de données" },
-  { src: missions, label: "Missions" },
   { src: confirm, label: "Reserv_confirm" },
   { src: trelloStage, label: "Trello" },
-  { src: mail, label: "Mail" },
 ];
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -63,10 +72,6 @@ const gestionProjets = [
   {
     title: "Daily meeting",
     desc: "Réunion concernant les probèmes/ avancement",
-  },
-  {
-    title: "Machine virtuelle",
-    desc: "Vmware",
   },
   {
     title: "GitHub",
@@ -235,9 +240,9 @@ export default function CardVr() {
           <p className="text-zinc-400 text-xl leading-relaxed max-w-2xl mb-5">
             Conception et développement d'un site web dynamique comprenant un système de réservation permettant aux utilisateurs de réserver des créneaux pour faire l'expérience de jeux VR.
           </p>
-        {/* ── A VOIR ── 
+
           <a
-            href="dfdfg"
+            href="/ProjetVR"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-cyan-400 text-black text-xl font-semibold px-4 py-2 rounded-lg hover:bg-cyan-300 transition-colors duration-200"
@@ -247,7 +252,7 @@ export default function CardVr() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
-          */}
+          
         </header>
 
         <div className="fade-up d2 portfolio-grid">
@@ -281,6 +286,27 @@ export default function CardVr() {
             </div>
           </section>
 
+
+          <section>
+            <SectionLabel>Missions</SectionLabel>
+            <div className="grid grid-cols-2 gap-3">
+              {steps.map((d) => (
+                <GlassCard key={d.title} className="p-4">
+                  <p className="font-semibold text-xl text-zinc-100 mb-0.5">{d.title}</p>
+                  <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
+                </GlassCard>
+              ))}
+            </div>
+          </section>
+          <a 
+            href="https://github.com/BaptisteBu/VRtueux" 
+            className="text-xl text-white mt-2"
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            Dépôt GitHub du projet
+          </a>
+
           <section>
             <SectionLabel>Difficultés</SectionLabel>
             <GlassCard className="p-4">
@@ -298,14 +324,17 @@ export default function CardVr() {
         {/* RIGHT COLUMN */}
         <div className="right-col">
           <SectionLabel>Gestion du projet</SectionLabel>
-          <div className="grid grid-cols-3 gap-3">
-            {gestionProjets.map((d) => (
-              <GlassCard key={d.title} className="p-4">
-                <p className="font-semibold text-xl text-zinc-100 mb-0.5">{d.title}</p>
-                <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
-              </GlassCard>
-            ))}
-          </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {gestionProjets.map((d) => (
+                <GlassCard key={d.title} className="p-5 flex gap-4 items-start relative overflow-hidden">
+                  <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-cyan-400 to-blue-600 rounded-l-xl" />
+                  <div className="pl-3">
+                    <p className="font-semibold text-zinc-100 mb-1">{d.title}</p>
+                    <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
+                  </div>
+                </GlassCard>
+              ))}
+            </div>
           <div className="pt-8"></div>
           <SectionLabel>Galerie</SectionLabel>
           <div className="grid grid-cols-2 gap-2">
@@ -326,8 +355,16 @@ export default function CardVr() {
               </button>
             ))}
           </div>
-          <a href= "/SITE.pdf" target="_blank" rel="noopener noreferrer">
+                    <a
+            href="/SITE.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-cyan-400 text-black text-xl font-semibold px-4 py-2 rounded-lg hover:bg-cyan-300 transition-colors duration-200"
+          >
             PDF Missions
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
           </a>
         </div>
 

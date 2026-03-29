@@ -1,4 +1,5 @@
 import { useState } from "react";
+import devant from '../../assets/devant.png';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -13,16 +14,16 @@ const tags = ["Divertissement VR", "Particuliers", "Entreprises", "Formations"];
 // ─── A VOIR PSK SUREMENT FAUX ────────────────────────────────────────────────────────────────────
 const deliverables = [
   {
+    title: "Divertissement VR",
+    desc: "Vente de sessions de réalité virtuelle",
+  },
+  {
     title: "Veille technologique",
     desc: "Suivi des innovations dans le secteur VR",
   },
   {
     title: "Paramétrage des équipements VR",
     desc: "Configuration et maintenance du matériel de réalité virtuelle",
-  },
-  {
-    title: "Configuration des logiciels",
-    desc: "Réservation synchronisée avec MySQL, sans conflits",
   },
 ];
 
@@ -175,7 +176,7 @@ export default function VRtueuxCard() {
               </div>
             </div>
 
-            <p className="text-zinc-400 text-xl max-w-2xl leading-relaxed mb-6">
+            <p className="text-zinc-400 text-2xl max-w-2xl leading-relaxed mb-6">
               Spécialisée dans le{" "}
               <span className="text-purple-300 font-medium">divertissement en réalité virtuelle</span>,
               VRtueux propose des expériences immersives à destination des particuliers et des entreprises.
@@ -228,7 +229,7 @@ export default function VRtueuxCard() {
           {/* ── Gestion de projet ── */}
           <section className="fade-up d4">
             {/* ── Image placeholder ── */}
-            <ImagePlaceholder src={null} alt="VRtueux" />
+            <ImagePlaceholder src={devant} alt="VRtueux" />
           </section>
 
         </div>

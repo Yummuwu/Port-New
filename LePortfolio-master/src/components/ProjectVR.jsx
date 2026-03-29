@@ -1,55 +1,76 @@
-import html from '../assets/html.png';
-import css from '../assets/css.png';
-import js from '../assets/js.png';
+import logoVr from '../assets/logoVr.png';
 import { Link } from 'react-router-dom';
+import Reserv_vr from '../assets/Reserv_vr.png';
+import catalogue from '../assets/catalogue.png';
+import bdd from '../assets/bdd.png';
+import reservC from '../assets/ReservC.png';
+import confirm from '../assets/confirm.png';
+import trelloStage from '../assets/trelloStage.png';
+import missions from '../assets/missions.png';
+import mail from '../assets/mail.png';
 import { useState } from 'react';
-import log from '../assets/log.png';
+import profil from '../assets/profil.png';
+import breeze from '../assets/breeze.png';
+
 
 // ─── Data ────────────────────────────────────────────────────────────────────
-const bilanPerso = [
-  "Montée en compétences sur WordPress et Divi",
-  "Meilleur gestion de projet.", 
+
+
+const difficulties = [
+  "Adaptation de PHP vers Laravel.",
+  "Difficultés avec le MVC.",
+  "Conception de la table reservations.",
+  "Manque d'encadrement technique.",
+  "Base de données en constante évolution.",
+  "Transmission des variables entre pages.",
 ];
+ 
+const contraintes = [
+  "Développement sans encadrement technique",
+  "Construction du site de A à Z",
+  "Apprentissage de Laravel",
+  "Système de réservation complexe",
+];
+ 
+const bilanPerso = [
+  "Meilleure compréhension de Laravel",
+  "Amélioration BDD",
+  "Gestion des routes",
+  "Autonomie renforcée",
+  "nouvelles technologies acquises",
+  "Priorités des tâches en contexte professionnel",
+];
+ 
 const steps = [
   {
-    title: "Analyse de l'ancien site & sélection du template",
-    content:
-      "La réalisation du projet a débuté par l'analyse de l'ancien site du client afin de récupérer les éléments à conserver et à améliorer. Un template adapté a ensuite été recherché et sélectionné via Divi Elegant pour servir de base à la refonte.",
+    title: "Cadrage du projet",
+    content: "Réunion avec le maître de stage pour définir les technologies et la structure. Création d'une maquette sur Canva et recherche de ressources existantes.",
+    images: [missions, mail,trelloStage],
+  },
+  {
+    title: "Phase de conception",
+    content: "Brouillons, schémas des fonctions et modélisation de la logique applicative.",
     images: [],
   },
   {
-    title: "Répartition & construction des pages",
-    content:
-      "Les différentes pages ont été réparties au sein de l'équipe. Chaque page a été construite avec la création des sections « hero », l'intégration de sections de design et la réutilisation des images disponibles sur l'ancien site.",
-    images: [],
+    title: "Développement initial",
+    content: "Intégration du design (Baptiste), création des tables BDD (Alicia). Mise en place de la connexion BDD, du catalogue produits et du système de réservation. Plusieurs restructurations de la BDD en cours de route.",
+    images: [bdd, reservC, confirm],
   },
   {
-    title: "Responsive, navigation & footer",
-    content:
-      "Le travail s'est poursuivi par l'adaptation du responsive, principalement sur la page d'accueil, l'insertion d'ancres sur les boutons, la création du footer et l'ajout des pages légales (Mentions légales et Politique de confidentialité).",
-    images: [],
+    title: "Migration vers Laravel",
+    content: "Découverte du framework, portage des fonctionnalités existantes. Intégration de Breeze/Blade pour l'inscription. Adaptation du catalogue et des réservations, avec nouvelles modifications BDD.",
+    images: [catalogue, Reserv_vr, breeze ,profil],
   },
   {
-    title: "Ajustements contenus & typographies",
-    content:
-      "Des ajustements ont été réalisés sur les pages Services et Tarifs, ainsi que des modifications de typographies pour harmoniser l'ensemble du site et correspondre au style souhaité par le client.",
-    images: [],
-  },
-  {
-    title: "Corrections suite aux retours client",
-    content:
-      "Des corrections ont été apportées en fonction des retours du client transmis via un PDF. Le site est actuellement en attente des images et de précisions sur certaines modifications demandées par le client.",
+    title: "Finalisation",
+    content: "Synchronisation front/back, réorganisation du code, maîtrise des routes et de Blade. Ajout de filtres sur le système de réservation.",
     images: [],
   },
 ];
-
-const contraintes = [
-  "De nombreux allers-retours entre les pages et le menu de WordPress",
-  "Absence de dossier images fourni par le client",
-];
-
+ 
 // ─── Sub-components ───────────────────────────────────────────────────────────
-
+ 
 function SectionLabel({ children }) {
   return (
     <div className="flex items-center gap-3 mb-4">
@@ -59,7 +80,7 @@ function SectionLabel({ children }) {
     </div>
   );
 }
-
+ 
 function GlassCard({ children, className = "" }) {
   return (
     <div
@@ -69,11 +90,11 @@ function GlassCard({ children, className = "" }) {
     </div>
   );
 }
-
+ 
 function ImageCarousel({ images, onOpen }) {
   const [index, setIndex] = useState(0);
   if (!images || images.length === 0) return null;
-
+ 
   const prev = (e) => {
     e.stopPropagation();
     setIndex((i) => (i - 1 + images.length) % images.length);
@@ -82,15 +103,18 @@ function ImageCarousel({ images, onOpen }) {
     e.stopPropagation();
     setIndex((i) => (i + 1) % images.length);
   };
-
+ 
   return (
     <div className="relative flex-shrink-0 w-48 select-none">
+      {/* Image */}
       <img
         src={images[index]}
         alt={`slide-${index}`}
         onClick={() => onOpen(images[index])}
         className="w-48 h-32 object-cover rounded-lg border border-white/[0.08] cursor-zoom-in hover:border-cyan-400/40 hover:scale-105 transition-all duration-200"
       />
+ 
+      {/* Arrows — only shown if more than 1 image */}
       {images.length > 1 && (
         <>
           <button
@@ -105,6 +129,8 @@ function ImageCarousel({ images, onOpen }) {
           >
             ›
           </button>
+ 
+          {/* Dots */}
           <div className="absolute -bottom-4 left-0 right-0 flex justify-center gap-1">
             {images.map((_, i) => (
               <button
@@ -121,20 +147,20 @@ function ImageCarousel({ images, onOpen }) {
     </div>
   );
 }
-
+ 
 // ─── Main Component ───────────────────────────────────────────────────────────
-
-const Project1 = () => {
+ 
+const ProjVR = () => {
   const [lightboxImg, setLightboxImg] = useState(null);
-
+ 
   return (
     <>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap');
-
-        .proj1-root * { font-family: 'Syne', sans-serif; }
-        .proj1-root .font-mono { font-family: 'DM Mono', monospace !important; }
-
+ 
+        .projvr-root * { font-family: 'Syne', sans-serif; }
+        .projvr-root .font-mono { font-family: 'DM Mono', monospace !important; }
+ 
         @keyframes fadeUp {
           from { opacity: 0; transform: translateY(14px); }
           to   { opacity: 1; transform: translateY(0); }
@@ -145,8 +171,8 @@ const Project1 = () => {
         .d3 { animation-delay: 0.20s; }
         .d4 { animation-delay: 0.28s; }
       `}</style>
-
-      <div className="proj1-root min-h-screen flex flex-col bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 text-zinc-200 px-6 py-12 pt-50 relative">
+ 
+      <div className="projvr-root min-h-screen flex flex-col bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 text-zinc-200 px-6 py-12 pt-50 relative">
 
         {/* Animated background orbs */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -157,33 +183,34 @@ const Project1 = () => {
 
         <div className="w-full pr-50 pl-50 flex-1 relative">
 
-          {/* Glass card */}
+          {/* Glass card wrapper */}
           <div className="bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-xl rounded-[2rem] shadow-2xl relative p-8 md:p-12 border border-white/20">
 
-            {/* Decorative orbs */}
+            {/* Decorative corner orbs */}
             <div className="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-br from-purple-400 to-pink-600 rounded-full blur-2xl opacity-20 pointer-events-none"></div>
             <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full blur-2xl opacity-20 pointer-events-none"></div>
 
             <div className="space-y-12">
 
               {/* HEADER */}
-              <header className="fade-up d1 border-b border-white/20 pb-6 flex gap-6 items-center">
-                <div className="bg-cyan-200 w-16 h-16 flex items-center justify-center rounded-xl overflow-hidden flex-shrink-0">
-                  <img src={log} alt="Logo Elixir Création" className="max-w-full max-h-full object-contain" />
-                </div>
+              <header className="fade-up d1 border-b border-white/[0.08] pb-6 flex gap-6 items-center">
+                <img src={logoVr} className="w-16 h-16 rounded-xl" alt="Logo VR" />
                 <div>
                   <div className="flex flex-wrap items-center gap-3 mb-2">
                     <span className="text-lg font-mono tracking-widest text-cyan-400 uppercase border border-cyan-400/20 bg-cyan-400/5 rounded-full px-3 py-1">
-                      Mission de stage · Elixir Création
+                      Mission de stage · VRTueux
                     </span>
                   </div>
-                  <p className="text-base text-zinc-500 mb-2">Janvier - Février 2026</p>
+                  <p className="text-base text-zinc-500 mb-2">Mai – Juin 2025</p>
                   <div className="flex flex-col gap-1">
-                  <Link to="/Projets" className="text-cyan-400 text-base underline hover:text-cyan-300 transition-colors">
-                    Revenir dans les projets de stage →
-                  </Link>
-                    <Link to="/Bridge" className="text-cyan-400 text-base underline hover:text-cyan-300 transition-colors">
-                      Mission conception du site web Bridge Hotel →
+                    <Link to="/Projets" className="text-cyan-400 text-base underline hover:text-cyan-300 transition-colors">
+                      Revenir dans les projets de stage →
+                    </Link>
+                    <Link to="/Catalogue" className="text-cyan-400 text-base underline hover:text-cyan-300 transition-colors">
+                      Voir mission page catalogue →
+                    </Link>
+                    <Link to="/MissionReser" className="text-cyan-400 text-base underline hover:text-cyan-300 transition-colors">
+                      Voir mission système de réservation →
                     </Link>
                   </div>
                 </div>
@@ -192,35 +219,21 @@ const Project1 = () => {
               {/* DESCRIPTION */}
               <section className="fade-up d2 space-y-4">
                 <SectionLabel>Description</SectionLabel>
-                <p className="text-white text-xl leading-relaxed max-w-2xl">
-                  Refonte du site web Paradis du Geek sous WordPress avec Divi
+                <p className="text-white text-xl leading-relaxed max-w-xl">
+                  Création d'un site de réservation VR avec catalogue, compte utilisateur et système de réservation.
                 </p>
               </section>
 
               {/* OBJECTIF */}
               <section className="fade-up d3 space-y-4">
                 <SectionLabel>Objectif</SectionLabel>
-                <p className="text-white text-xl leading-relaxed max-w-2xl">
-                  Refonte complète d'un site web existant sous WordPress en utilisant l'extension Divi. L'objectif était de livrer un site WordPress finalisé tout en prenant en main les fonctionnalités de Divi, en conservant les éléments pertinents de l'ancien site et en améliorant le design global.
-                </p>
-              </section>
-
-              {/* INTERVENANTS */}
-              <section className="fade-up d4 space-y-4">
-                <SectionLabel>Intervenants</SectionLabel>
-                <p className="text-white text-xl leading-relaxed">Maître de stage</p>
-              </section>
-
-              {/* LIVRABLES */}
-              <section className="space-y-4">
-                <SectionLabel>Livrables</SectionLabel>
-                <p className="text-white text-xl leading-relaxed">
-                  Site web WordPress finalisé (en attente de contenu)
+                <p className="text-white text-xl leading-relaxed max-w-xl">
+                  Permettre aux clients de réserver une session VR avec sélection complète.
                 </p>
               </section>
 
               {/* CONTRAINTES */}
-              <section className="space-y-4">
+              <section className="fade-up d4 space-y-4">
                 <SectionLabel>Contraintes</SectionLabel>
                 <GlassCard className="p-6">
                   <div className="grid grid-cols-2 gap-3">
@@ -233,10 +246,23 @@ const Project1 = () => {
                 </GlassCard>
               </section>
 
+              {/* DIFFICULTÉS */}
+              <section className="space-y-4">
+                <SectionLabel>Difficultés</SectionLabel>
+                <GlassCard className="p-6">
+                  <p className="text-zinc-300 text-xl leading-relaxed">
+                    {difficulties.map((d, i) => (
+                      <span key={i}>- {d}<br /></span>
+                    ))}
+                  </p>
+                </GlassCard>
+              </section>
+
               {/* ÉTAPES */}
               <section className="space-y-4">
                 <SectionLabel>Étapes</SectionLabel>
 
+                {/* Lightbox */}
                 {lightboxImg && (
                   <div
                     className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-6"
@@ -281,15 +307,15 @@ const Project1 = () => {
                 </div>
               </section>
 
-              <section>
+              {/* BILAN */}
+              <section className="space-y-4">
                 <SectionLabel>Bilan</SectionLabel>
                 <div className="grid md:grid-cols-2 gap-4">
-
                   <GlassCard className="p-6">
                     <div className="grid grid-cols-2 gap-3">
                       {bilanPerso.map((item, i) => (
                         <GlassCard key={i} className="p-3">
-                          <p className="text-white text-xl">{item}</p>
+                          <p className="text-xl text-white leading-relaxed">{item}</p>
                         </GlassCard>
                       ))}
                     </div>
@@ -297,10 +323,9 @@ const Project1 = () => {
                 </div>
               </section>
 
-
               {/* FOOTER */}
               <footer className="text-center text-sm text-zinc-600 pt-6 border-t border-white/[0.06] font-mono">
-                Cappello Alicia – Portfolio 2025
+                Portfolio 2025
               </footer>
 
             </div>
@@ -310,5 +335,5 @@ const Project1 = () => {
     </>
   );
 };
-
-export default Project1;
+ 
+export default ProjVR;

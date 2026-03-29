@@ -141,67 +141,70 @@ const HomeP = () => {
                                         Compétences acquises au cours de mes 2 années de BTS
                                     </div>
 
-                                    <div className='gap-30 flex'>
+                                    <div className="flex gap-10">
+
                                         {/* Backend */}
                                         <div className="bg-gradient-to-br from-purple-900/20 via-pink-900/20 to-blue-900/20 
                                                         backdrop-blur-sm rounded-2xl p-11 border border-purple-400/30 
                                                         w-125 flex flex-col items-center justify-center relative overflow-hidden">
-
                                             <div className="text-2xl font-bold mb-5 text-white tracking-tight">Compétences Backend</div>
+                                            <div className="flex flex-wrap gap-3 justify-center">
+                                            {/* PHP / Laravel */}
+                                            <span className="px-4 py-2 bg-pink-500/20 border border-pink-400/40 text-pink-200 text-sm rounded-full">Laravel</span>
+                                            <span className="px-4 py-2 bg-pink-500/20 border border-pink-400/40 text-pink-200 text-sm rounded-full">PHP</span>
+                                            <span className="px-4 py-2 bg-pink-500/20 border border-pink-400/40 text-pink-200 text-sm rounded-full">Blade</span>
 
-                                                <div className="flex flex-wrap gap-3 justify-center">
-                                                {/* PHP / Laravel */}
-                                                <span className="px-4 py-2 bg-pink-500/20 border border-pink-400/40 text-pink-200 text-sm rounded-full">Laravel</span>
-                                                <span className="px-4 py-2 bg-pink-500/20 border border-pink-400/40 text-pink-200 text-sm rounded-full">PHP</span>
+                                            {/* Base de données */}
+                                            <span className="px-4 py-2 bg-blue-500/20 border border-blue-400/40 text-blue-200 text-sm rounded-full">MySQL</span>
+                                            <span className="px-4 py-2 bg-blue-500/20 border border-blue-400/40 text-blue-200 text-sm rounded-full">Eloquent ORM</span>
 
-                                                {/* Base de données */}
-                                                <span className="px-4 py-2 bg-blue-500/20 border border-blue-400/40 text-blue-200 text-sm rounded-full">MySQL</span>
-                                                <span className="px-4 py-2 bg-blue-500/20 border border-blue-400/40 text-blue-200 text-sm rounded-full">Eloquent ORM</span>
+                                            {/* APIs */}
+                                            <span className="px-4 py-2 bg-indigo-500/20 border border-indigo-400/40 text-indigo-200 text-sm rounded-full">REST API</span>
+                                            <span className="px-4 py-2 bg-indigo-500/20 border border-indigo-400/40 text-indigo-200 text-sm rounded-full">Postman</span>
 
-                                                {/* APIs */}
-                                                <span className="px-4 py-2 bg-indigo-500/20 border border-indigo-400/40 text-indigo-200 text-sm rounded-full">REST API</span>
-                                                <span className="px-4 py-2 bg-indigo-500/20 border border-indigo-400/40 text-indigo-200 text-sm rounded-full">Postman</span>
-
-                                                {/* Python */}
-                                                <span className="px-4 py-2 bg-yellow-500/20 border border-yellow-400/40 text-yellow-200 text-sm rounded-full">Python</span>
-
-                                                {/* Node.js */}
-                                                <span className="px-4 py-2 bg-green-500/20 border border-green-400/40 text-green-200 text-sm rounded-full">Node.js</span>
-                                                </div>
-
+                                            {/* Autres */}
+                                            <span className="px-4 py-2 bg-yellow-500/20 border border-yellow-400/40 text-yellow-200 text-sm rounded-full">Python</span>
+                                            <span className="px-4 py-2 bg-green-500/20 border border-green-400/40 text-green-200 text-sm rounded-full">Node.js</span>
+                                            </div>
                                         </div>
 
-                                        {/* Frontend */}
+                                        {/* Frontend Web */}
                                         <div className="bg-gradient-to-br from-purple-900/20 via-pink-900/20 to-blue-900/20 
                                                         backdrop-blur-sm rounded-2xl p-11 border border-purple-400/30 
                                                         w-125 flex flex-col items-center justify-center relative overflow-hidden">
-
-                                            <div className="text-2xl font-bold mb-5 text-white tracking-tight">Compétences Frontend</div>
-
+                                            <div className="text-2xl font-bold mb-5 text-white tracking-tight">Compétences Frontend Web</div>
                                             <div className="flex flex-wrap gap-3 justify-center">
-                                                <span className="px-4 py-2 bg-orange-500/20 border border-orange-400/40 text-orange-200 text-sm rounded-full">HTML</span>
-                                                <span className="px-4 py-2 bg-blue-500/20 border border-blue-400/40 text-blue-200 text-sm rounded-full">CSS</span>
-                                                <span className="px-4 py-2 bg-yellow-500/20 border border-yellow-400/40 text-yellow-200 text-sm rounded-full">JavaScript</span>
-                                                <span className="px-4 py-2 bg-cyan-500/20 border border-cyan-400/40 text-cyan-200 text-sm rounded-full">React</span>
-                                                <span className="px-4 py-2 bg-cyan-500/20 border border-cyan-400/40 text-cyan-200 text-sm rounded-full">Vue</span>
-                                                <span className="px-4 py-2 bg-teal-500/20 border border-teal-400/40 text-teal-200 text-sm rounded-full">Tailwind</span>
-                                                <span className="px-4 py-2 bg-teal-500/20 border border-teal-400/40 text-teal-200 text-sm rounded-full">Kotlin</span>
-                                                <span className="px-4 py-2 bg-teal-500/20 border border-teal-400/40 text-teal-200 text-sm rounded-full">Vite</span>
-                                                <span className="px-4 py-2 bg-teal-500/20 border border-teal-400/40 text-teal-200 text-sm rounded-full">Blade</span>
-                                                <span className="px-4 py-2 bg-teal-500/20 border border-teal-400/40 text-teal-200 text-sm rounded-full">Clip Studio Paint</span>
-                                                <span className="px-4 py-2 bg-teal-500/20 border border-teal-400/40 text-teal-200 text-sm rounded-full">Paint Tool Sai</span>
-                                                <span className="px-4 py-2 bg-indigo-500/20 border border-indigo-400/40 text-indigo-200 text-sm rounded-full">Responsive Design</span>
+                                            <span className="px-4 py-2 bg-orange-500/20 border border-orange-400/40 text-orange-200 text-sm rounded-full">HTML</span>
+                                            <span className="px-4 py-2 bg-blue-500/20 border border-blue-400/40 text-blue-200 text-sm rounded-full">CSS</span>
+                                            <span className="px-4 py-2 bg-yellow-500/20 border border-yellow-400/40 text-yellow-200 text-sm rounded-full">JavaScript</span>
+                                            <span className="px-4 py-2 bg-cyan-500/20 border border-cyan-400/40 text-cyan-200 text-sm rounded-full">React</span>
+                                            <span className="px-4 py-2 bg-cyan-500/20 border border-cyan-400/40 text-cyan-200 text-sm rounded-full">Vue</span>
+                                            <span className="px-4 py-2 bg-teal-500/20 border border-teal-400/40 text-teal-200 text-sm rounded-full">Tailwind</span>
+                                            <span className="px-4 py-2 bg-teal-500/20 border border-teal-400/40 text-teal-200 text-sm rounded-full">Vite</span>
+                                            <span className="px-4 py-2 bg-indigo-500/20 border border-indigo-400/40 text-indigo-200 text-sm rounded-full">Responsive Design</span>
                                             </div>
+                                        </div>
+
+                                        {/* Design / Illustration */}
+                                        <div className="bg-gradient-to-br from-purple-900/20 via-pink-900/20 to-blue-900/20 
+                                                        backdrop-blur-sm rounded-2xl p-11 border border-purple-400/30 
+                                                        w-125 flex flex-col items-center justify-center relative overflow-hidden">
+                                            <div className="text-2xl font-bold mb-5 text-white tracking-tight">Autres</div>
+                                            <div className="flex flex-wrap gap-3 justify-center">
+                                            <span className="px-4 py-2 bg-teal-500/20 border border-teal-400/40 text-teal-200 text-sm rounded-full">Clip Studio Paint</span>
+                                            <span className="px-4 py-2 bg-teal-500/20 border border-teal-400/40 text-teal-200 text-sm rounded-full">Paint Tool Sai</span>
+                                            <span className="px-4 py-2 bg-teal-500/20 border border-teal-400/40 text-teal-200 text-sm rounded-full">Kotlin</span>
+                                            </div>
+                                        </div>
 
                                         </div>
-                                    </div>
                             </div>
                             
                                     <div className="flex justify-center mt-8 gap-60">
                                         {[
-                                        { end: 3, label: "Projets scolaire" },
-                                        { end: 4, label: "Projets Stage" },
-                                        { end: 1, label: "Projet personnel" },
+                                        { end: 3, label: "Projets scolaires" },
+                                        { end: 4, label: "Projets stages" },
+                                        { end: 1, label: "Projets personnels" },
                                         { end: 8, label: "Languages appris" },
                                         ].map(({ end, label }, index) => (
                                         <motion.div

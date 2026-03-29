@@ -31,16 +31,8 @@ const deliverables = [
 
 const gestionProjets = [
   {
-    title: "Trello",
-    desc: "Organisation visuelle des tâches et suivi de l'avancement",
-  },
-  {
     title: "Discord",
     desc: "Communication en temps réel et partage d'informations avec l'équipe",
-  },
-  {
-    title: "Découpage du travail par pages",
-    desc: "Livraison itérative, page par page",
   },
   {
     title: "Approche agile",
@@ -172,7 +164,7 @@ export default function ElixirCard() {
             <div className="flex items-center gap-4 mb-4">
               <div>
                 <h1 className="text-white font-bold text-3xl tracking-tight leading-tight">Elixir Création</h1>
-                <span className="text-purple-300/80 text-xl font-mono tracking-widest uppercase">SARL · Privée</span>
+                <span className="text-purple-300/80 text-xl font-mono tracking-widest uppercase">SARL</span>
               </div>
               <div className="ml-auto shrink-0">
                 <span className="px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/25 text-emerald-300 text-xl font-semibold">

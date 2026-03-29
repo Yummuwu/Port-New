@@ -4,6 +4,8 @@ import phone from '../../assets/phone.png';
 import api from '../../assets/api_routes.png';
 import formumu from '../../assets/formumu.png';
 import param from '../../assets/param.png';
+import peri from '../../assets/peri.png';
+import diag from '../../assets/diag.png'; 
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -17,22 +19,28 @@ const techStack = [
 ];
 
 const deliverables = [
+    {
+    title: "1. Modélisations diagrammes UML",
+    desc: "Stocke participants, notes, résultats et les paramètres concours.",
+  },
   {
-    title: "API RESTful",
+    title: "2. Conception périmètre fonctionnel",
+    desc: "Définition des fonctionnalités requises.",
+  },
+  {
+    title: "3. API RESTful",
     desc: "Relis la base de données MySQL avec l'application web et mobile via une API RESTful sécurisée.",
   },
-  {
-    title: "Application web",
-    desc: "Inscription au concours, consultation et publication des résultats (admins).",
-  },
-  {
-    title: "Application mobile",
+    {
+    title: "4. Application mobile",
     desc: "Les juges notent les participants via codes uniques et envoient les notes via API.",
   },
   {
-    title: "Base de données MySQL",
-    desc: "Stocke participants, notes, résultats et les paramètres concours.",
+    title: "5. Application web",
+    desc: "Inscription au concours, consultation et publication des résultats (admins).",
   },
+
+
 ];
 
 const screenshots = [
@@ -41,6 +49,8 @@ const screenshots = [
   { src: trello, label: "Gestion du projet" },
   { src: phone, label: "Application mobile" },
   { src: api, label: "API RESTful" },
+  { src: peri, label: "Périmètre fonctionnel" },
+  { src: diag, label: "Diagramme de classes" },
 ];
 
 const gestionProjets = [
@@ -49,7 +59,7 @@ const gestionProjets = [
     desc: "Communication rapide et partage d'informations/images.",
   },
   {
-    title: "Trello - Gestion de projet",
+    title: "Trello",
     desc: "Gestion des tâches et suivi du projet.",
   },
   {
@@ -228,7 +238,7 @@ export default function CardGourm() {
             </section>
 
             <section>
-              <SectionLabel>Livrables</SectionLabel>
+              <SectionLabel>Missions</SectionLabel>
               <div className="grid grid-cols-2 gap-3">
                 {deliverables.map((d) => (
                   <GlassCard key={d.title} className="p-4">
@@ -238,6 +248,14 @@ export default function CardGourm() {
                 ))}
               </div>
             </section>
+            <a 
+            href="https://canva.link/9oa6darpn8chuqh" 
+            className="text-xl text-white mt-2"
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            Documentation Gourmetise
+          </a>
 
             <section>
               <SectionLabel>Difficultés</SectionLabel>
@@ -253,11 +271,14 @@ export default function CardGourm() {
           {/* RIGHT COLUMN */}
           <div className="right-col">
             <SectionLabel>Gestion du projet</SectionLabel>
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {gestionProjets.map((d) => (
-                <GlassCard key={d.title} className="p-4">
-                  <p className="font-semibold text-xl text-zinc-100 mb-0.5">{d.title}</p>
-                  <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
+                <GlassCard key={d.title} className="p-5 flex gap-4 items-start relative overflow-hidden">
+                  <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-cyan-400 to-blue-600 rounded-l-xl" />
+                  <div className="pl-3">
+                    <p className="font-semibold text-zinc-100 mb-1">{d.title}</p>
+                    <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
+                  </div>
                 </GlassCard>
               ))}
             </div>

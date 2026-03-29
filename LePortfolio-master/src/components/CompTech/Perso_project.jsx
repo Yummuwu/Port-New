@@ -23,6 +23,21 @@ const deliverables = [
 },
 ];
 
+const missions = [
+{
+  title: "Récupération de données",
+  desc: "Récupération des données des joueurs d'un monde Minecraft grâce à l'invité de commande et NBTExplorer.",
+},
+{
+  title: "Traitement des données",
+  desc: "Traite les données récupérées sur Python pour les afficher de manière appropriée sur Discord.",
+},
+{
+  title: "Affichage sur Discord",
+  desc: "Affiche les données récupérées sur un channel Discord.",
+},
+];
+
 const screenshots = [
   { src: python_botest, label: "Bot_test discord" },
   { src: utilisation, label: "Documentation d'utilisation" },
@@ -130,17 +145,18 @@ export default function CardScrabb() {
           Livrables       | Galerie        ← row 2 (galerie spans rows 2+3)
           Gestion projet  |                ← row 3
         */
-        .aligned-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          grid-template-rows: auto auto auto;
-          gap: 24px;
-        }
-        .cell-top-left    { grid-column: 1; grid-row: 1; }
-        .cell-top-right   { grid-column: 2; grid-row: 1; }
-        .cell-mid-left    { grid-column: 1; grid-row: 2; }
-        .cell-bottom-left { grid-column: 1; grid-row: 3; }
-        .cell-right-tall  { grid-column: 2; grid-row: 2 / 4; }
+  .aligned-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 24px;
+  }
+
+  .cell-top-left    { grid-column: 1; grid-row: 1; } /* Difficultés */
+  .cell-top-right   { grid-column: 2; grid-row: 1; } /* Gestion */
+  .cell-mid-left    { grid-column: 1; grid-row: 2; } /* Technologies */
+  .cell-bottom-left { grid-column: 1; grid-row: 3; } /* Livrables */
+  .cell-right-tall  { grid-column: 2; grid-row: 2 / 4; } /* Galerie */
       `}</style>
 
       <div className="vrtueux-root w-full text-zinc-200">
@@ -181,7 +197,7 @@ export default function CardScrabb() {
             <SectionLabel>Difficultés</SectionLabel>
             <GlassCard className="p-4">
               <p className="text-zinc-300 text-xl leading-relaxed">
-                - Tests seulement sur 1 fichier <br /> - recherche des bon imports.
+                - Tests seulement sur 1 fichier <br /> - recherche des bon imports. <br /> - Découverte de méthodes Python
               </p>
             </GlassCard>
           </section>
@@ -199,18 +215,33 @@ export default function CardScrabb() {
             </div>
           </section>
 
-          {/* ROW 3 LEFT: Gestion du projet */}
-          <div className=" flex flex-wrap">
-            <section className="cell-bottom-left">
-              <SectionLabel>Gestion du projet</SectionLabel>
-              <div className="grid grid-cols-3 gap-3">
-                {gestionProjets.map((d) => (
+            <section>
+              <SectionLabel>Missions</SectionLabel>
+              <div className="grid grid-cols-2 gap-3">
+                {missions.map((d) => (
                   <GlassCard key={d.title} className="p-4">
                     <p className="font-semibold text-xl text-zinc-100 mb-0.5">{d.title}</p>
                     <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
                   </GlassCard>
                 ))}
               </div>
+            </section>
+
+          {/* ROW 3 LEFT: Gestion du projet */}
+          <div className=" flex flex-wrap">
+            <section className="">
+              <SectionLabel>Gestion du projet</SectionLabel>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {gestionProjets.map((d) => (
+                <GlassCard key={d.title} className="p-5 flex gap-4 items-start relative overflow-hidden">
+                  <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-cyan-400 to-blue-600 rounded-l-xl" />
+                  <div className="pl-3">
+                    <p className="font-semibold text-zinc-100 mb-1">{d.title}</p>
+                    <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
+                  </div>
+                </GlassCard>
+              ))}
+            </div>
             </section>
           </div>
 

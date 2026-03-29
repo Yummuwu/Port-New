@@ -7,6 +7,8 @@ const techStack = [
   { label: "Wordpress", color: "text-orange-400 border-orange-400/40 bg-orange-400/5" },
   { label: "Elementor", color: "text-indigo-400 border-indigo-400/40 bg-indigo-400/5" },
   { label: "Elementor Royal", color: "text-indigo-400 border-indigo-400/40 bg-indigo-400/5" },
+  { label: "Blocksy", color: "text-purple-400 border-purple-400/40 bg-purple-400/5" },
+  { label: "Canva", color: "text-yellow-400 border-yellow-400/40 bg-yellow-400/5" },
 ];
 
 const deliverables = [
@@ -24,12 +26,39 @@ const screenshots = [
 
 const gestionProjets = [
   {
-    title: "Discord - Communication avec le maître de stage",
-    desc: "Discord pour les échanges rapides et la coordination avec le maître de stage ainsi que le partage d'informations/images.",
+    title: "Discord - Communication",
+    desc: "Discord pour les échanges rapides et la coordination ainsi que le partage d'informations/images.",
   },
   {
-    title: "Daily meeting avec le maître de stage",
-    desc: "Daily meeting avec le maître de stage pour faire le point sur l'avancement du projet, discuter des difficultés rencontrées et planifier les prochaines étapes.",
+    title: "Daily meeting",
+    desc: "Daily meeting pour faire le point sur l'avancement du projet, discuter des difficultés rencontrées et planifier les prochaines étapes.",
+  },
+];
+
+const missions = [
+  {
+    title: "1. Intégration des plugins",
+    desc: "Ajout de Contact Form 7 pour enrichir les fonctionnalités du site.",
+  },
+  {
+    title: "2. Apprentissage d'Elementor",
+    desc: "Tutoriels et tests pour maîtriser le builder et reproduire fidèlement la maquette.",
+  },
+  {
+    title: "3. Création des heroes",
+    desc: "Création des headers et sections d'accroche en respectant la maquette fournie.",
+  },
+  {
+    title: "4. Intégration du contenu",
+    desc: "Mise en page des sections, textes et images via Elementor.",
+  },
+  {
+    title: "5. Header & footer avec Blocksy",
+    desc: "Personnalisation du header et footer via le thème Blocksy selon la maquette.",
+  },
+  {
+    title: "6. Système de réservation",
+    desc: "Intégration du module de réservation en JS fourni par l'agence partenaire.",
   },
 ];
 
@@ -171,9 +200,8 @@ export default function CardBh() {
             Conception et développement d'un site web pour une agence tier sur Wordpress avec Elementor.
           </p>
 
-        {/* ── A VOIR ── 
           <a
-            href="dfdfg"
+            href="/Bridge"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-cyan-400 text-black text-xl font-semibold px-4 py-2 rounded-lg hover:bg-cyan-300 transition-colors duration-200"
@@ -183,7 +211,6 @@ export default function CardBh() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
-          */}
         </header>
 
         <div className="fade-up d2 portfolio-grid">
@@ -218,6 +245,26 @@ export default function CardBh() {
             </section>
 
             <section>
+            <SectionLabel>Missions</SectionLabel>
+            <div className="grid grid-cols-2 gap-3">
+              {missions.map((d) => (
+                <GlassCard key={d.title} className="p-4">
+                  <p className="font-semibold text-xl text-zinc-100 mb-0.5">{d.title}</p>
+                  <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
+                </GlassCard>
+              ))}
+            </div>
+          </section>
+          <a 
+            href="https://www.bridgehotel.fr/" 
+            className="text-xl text-zinc-500 mt-2"
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            https://www.bridgehotel.fr/
+          </a>
+
+            <section>
               <SectionLabel>Difficultés</SectionLabel>
               <GlassCard className="p-4">
                 <p className="text-zinc-300 text-xl leading-relaxed">
@@ -225,17 +272,19 @@ export default function CardBh() {
                 </p>
               </GlassCard>
             </section>
-
           </div>
 
           {/* RIGHT COLUMN */}
           <div className="right-col">
             <SectionLabel>Gestion du projet</SectionLabel>
-            <div className="grid grid-cols-1 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {gestionProjets.map((d) => (
-                <GlassCard key={d.title} className="p-4">
-                  <p className="font-semibold text-xl text-zinc-100 mb-0.5">{d.title}</p>
-                  <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
+                <GlassCard key={d.title} className="p-5 flex gap-4 items-start relative overflow-hidden">
+                  <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-cyan-400 to-blue-600 rounded-l-xl" />
+                  <div className="pl-3">
+                    <p className="font-semibold text-zinc-100 mb-1">{d.title}</p>
+                    <p className="text-xl text-zinc-400 leading-relaxed">{d.desc}</p>
+                  </div>
                 </GlassCard>
               ))}
             </div>

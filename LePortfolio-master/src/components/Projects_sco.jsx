@@ -65,7 +65,7 @@ export const PScolaire = () => {
             </div>
 
             {/* ── Projet Scolaire ──────────────────────────────────────────── */}
-            <Section title="Projet Scolaire">
+            <Section title="Projets Scolaires">
                 <CardRow>
                     {/*<CardSlot>
                         <ElaborateCard/>
@@ -81,11 +81,11 @@ export const PScolaire = () => {
                     </CardSlot>
                 </CardRow>
             <Link to="/Projets" className="text-cyan-400 text-sm underline">
-              Projets de stage
+              Projets de stages
             </Link>
             <br></br>
             <Link to="/PPerso" className="text-cyan-400 text-sm underline">
-              Projets perso
+              Projets personnels
             </Link>
             </Section>
 
